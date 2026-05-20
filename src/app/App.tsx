@@ -27,8 +27,8 @@ const student = {
   name: "Nguyễn Tuấn Thành",
   handle: "@thanhnguyn",
   studentId: "25112107",
-  school: "Đại học Quốc Gia Hà Nội",
-  className: "Công nghệ thông tin 2",
+  school: "Đại học Quốc gia Hà Nội",
+  className: "Công nghệ thông tin",
   email: "25112107@vnu.edu.vn",
   github: "https://github.com/thanhnguyn",
 };
@@ -41,8 +41,8 @@ const projectCategories: ProjectCategory[] = [
 ];
 
 const rubricSignals = [
-  "Có trang giới thiệu, 6 bài nộp và trang tổng kết",
-  "Mỗi bài có link gốc và ảnh chụp minh họa thật",
+  "Có phần giới thiệu, 6 bài nộp và phần tổng kết",
+  "Mỗi bài có link gốc và ảnh chụp minh họa",
   "Thiết kế chạy tốt trên desktop và mobile",
   "Avatar 3D đồng bộ theo giao diện hệ thống",
 ];
@@ -186,8 +186,8 @@ function HeroCard() {
         <div className="mt-6 grid grid-cols-3 gap-2 text-center">
         {[
           { value: "06", label: "bài nộp" },
-          { value: "03", label: "trang chính" },
-          { value: "02", label: "giao diện" },
+          { value: "01", label: "portfolio" },
+          { value: "02", label: "chế độ" },
         ].map((item) => (
           <div
             key={item.label}
@@ -236,13 +236,13 @@ function Hero() {
 
           <h2 className="max-w-4xl text-balance font-serif text-5xl leading-tight text-stone-950 md:text-7xl lg:text-[7vw] dark:text-white">
             Hồ sơ học tập<br />
-            <em className="text-[#e85d2c] dark:text-[#ffb829]">được viết như một hồ sơ nộp bài.</em>
+            <em className="text-[#e85d2c] dark:text-[#ffb829]">được trình bày thành portfolio.</em>
           </h2>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-stone-700 dark:text-white/70 md:text-lg">
-            Mình gom 6 bài nộp của học phần vào một portfolio có cấu trúc rõ ràng:
-            3 trang chính là giới thiệu, dự án và tổng kết. Mỗi tuần là một case file riêng, có
-            mục tiêu, quá trình, kết quả, link gốc và ảnh chụp minh họa để đối chiếu nhanh.
+            Portfolio tổng hợp 6 bài nộp của học phần theo cấu trúc rõ ràng:
+            giới thiệu cá nhân, danh sách dự án và phần tổng kết. Mỗi bài được trình bày như
+            một case study ngắn, có mục tiêu, cách thực hiện, kết quả, link gốc và ảnh minh họa.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -290,7 +290,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
         <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-stone-600 dark:text-white/50">— Bài nộp</p>
           <h3 className="mt-2 text-balance font-serif text-4xl leading-tight text-stone-950 dark:text-white md:text-6xl">
-            6 bài nộp, 1 portfolio.
+            6 bài nộp trong một portfolio.
           </h3>
         </div>
 
@@ -444,17 +444,17 @@ function Reflection() {
     {
       icon: BookOpenCheck,
       title: "Điều học được",
-      text: "Biết cách gom bài rời rạc thành một sản phẩm thống nhất, có câu chuyện rõ và có nhịp đọc từ giới thiệu tới kết thúc.",
+      text: "Các bài nộp rời rạc được tổ chức thành một sản phẩm thống nhất, có cấu trúc đọc rõ từ giới thiệu, dự án đến tổng kết.",
     },
     {
       icon: Search,
       title: "Thách thức",
-      text: "Khó nhất là biến bằng chứng học tập thành thứ người xem hiểu ngay, không chỉ là một đống link và ảnh chụp.",
+      text: "Phần khó nhất là biến bằng chứng học tập thành nội dung dễ hiểu, không chỉ dừng ở danh sách link và ảnh chụp.",
     },
     {
       icon: Sparkles,
       title: "Áp dụng tiếp",
-      text: "Các kỹ năng tổ chức dữ liệu, tìm kiếm nguồn, prompt engineering và AI có trách nhiệm có thể dùng lại cho học tập và dự án nhóm.",
+      text: "Kỹ năng tổ chức dữ liệu, tìm kiếm nguồn, prompt engineering và sử dụng AI có trách nhiệm có thể áp dụng tiếp cho học tập và dự án nhóm.",
     },
   ];
 
@@ -499,7 +499,7 @@ function Contact() {
         <div className="lg:col-span-6">
           <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-stone-600 dark:text-white/50">— Submit ready</p>
           <h3 className="mt-2 text-balance font-serif text-5xl leading-tight text-stone-950 dark:text-white md:text-7xl">
-            Portfolio sẵn để nộp.
+            Hồ sơ đã sẵn sàng.
           </h3>
         </div>
 

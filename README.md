@@ -2,7 +2,7 @@
 
 Live demo: https://thanhnguyn.github.io/vnu-portfolio-25112107/
 
-Portfolio học phần của Nguyễn Tuấn Thành. Site này gom 6 bài nộp chính thành một hồ sơ duy nhất, kèm một bài bonus.
+Portfolio học phần của Nguyễn Tuấn Thành. Trang này tổng hợp 6 bài nộp chính thành một hồ sơ học tập thống nhất, kèm một bài bonus.
 
 ## Run locally
 

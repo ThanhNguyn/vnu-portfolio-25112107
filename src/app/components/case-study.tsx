@@ -61,7 +61,7 @@ export const projects: Project[] = [
     problem:
       "Bài yêu cầu chứng minh khả năng quản lý tệp và thư mục bằng một cấu trúc rõ ràng, dễ tìm và dễ mở rộng.",
     approach:
-      "Mình chia nội dung theo từng lớp, giữ quy tắc tên thống nhất và đính kèm ảnh chụp minh họa để người xem đọc cấu trúc ngay.",
+      "Nội dung được chia theo từng lớp, giữ quy tắc tên thống nhất và đính kèm ảnh chụp minh họa để cấu trúc dễ theo dõi.",
     outcome:
       "Bộ bài nộp cho thấy cách tổ chức dữ liệu gọn gàng và có thể dùng lại cho các tuần sau.",
     metrics: [
@@ -87,9 +87,9 @@ export const projects: Project[] = [
     problem:
       "Bài tập yêu cầu không chỉ tìm ra thông tin mà còn giải thích được vì sao một nguồn đáng dùng hơn nguồn khác.",
     approach:
-      "Mình dùng các toán tử tìm kiếm như site:, filetype:, intitle: và inurl:, rồi ghi lại tiêu chí đánh giá theo tác giả, độ mới và mức liên quan.",
+      "Quy trình sử dụng các toán tử tìm kiếm như site:, filetype:, intitle: và inurl:, sau đó ghi lại tiêu chí đánh giá theo tác giả, độ mới và mức liên quan.",
     outcome:
-      "Phần trình bày cuối cho thấy quy trình tìm kiếm có kiểm soát, đủ rõ để người đọc theo dõi cách mình chọn nguồn.",
+      "Phần trình bày cuối cho thấy quy trình tìm kiếm có kiểm soát, đủ rõ để theo dõi cách lựa chọn nguồn.",
     metrics: [
       { k: "Toán tử", v: "site / filetype / intitle" },
       { k: "Đánh giá", v: "tác giả, độ mới" },
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     problem:
       "Yêu cầu mơ hồ khiến phản hồi của AI khó ổn định, nên cần biến nó thành một nhiệm vụ rõ đầu vào và đầu ra.",
     approach:
-      "Mình viết nhiều vòng, đổi thứ tự thông tin và thêm tiêu chí để xem chất lượng phản hồi thay đổi ra sao.",
+      "Prompt được viết qua nhiều vòng, điều chỉnh thứ tự thông tin và bổ sung tiêu chí để so sánh sự thay đổi của chất lượng phản hồi.",
     outcome:
       "Bản cuối cho thấy prompt đã trở thành một bản mô tả nhiệm vụ có thể kiểm chứng.",
     metrics: [
@@ -137,9 +137,9 @@ export const projects: Project[] = [
     summary:
       "Trình bày cách dùng công cụ quản lý dự án để phân công, theo dõi tiến độ và giữ nhịp làm việc chung của nhóm.",
     problem:
-      "Bài này cần chứng minh nhóm có tổ chức khi làm việc trực tuyến, không chỉ tạo bảng cho có.",
+      "Bài nộp cần thể hiện cách tổ chức nhóm khi làm việc trực tuyến, không chỉ dừng ở việc tạo bảng quản lý.",
     approach:
-      "Mình mô tả quy trình bằng Kanban, danh sách nhiệm vụ và các mốc cập nhật để mọi người nhìn thấy trạng thái công việc.",
+      "Quy trình được mô tả bằng Kanban, danh sách nhiệm vụ và các mốc cập nhật để trạng thái công việc được thể hiện rõ.",
     outcome:
       "Sản phẩm cuối cho thấy workflow nhóm rõ ràng hơn: trách nhiệm, deadline và trạng thái việc được đặt đúng chỗ.",
     metrics: [
@@ -163,11 +163,11 @@ export const projects: Project[] = [
     summary:
       "Xây dựng sản phẩm nội dung số với AI tạo sinh, từ phác thảo workflow tới hoàn thiện infographic hoặc bài trình bày.",
     problem:
-      "Bài này đòi hỏi dùng AI như công cụ hỗ trợ sáng tạo, không để nội dung bị rời rạc hoặc quá máy móc.",
+      "Bài nộp yêu cầu sử dụng AI như công cụ hỗ trợ sáng tạo, đồng thời giữ nội dung mạch lạc và có chọn lọc.",
     approach:
-      "Mình chia quy trình thành các bước: lên ý tưởng, tạo bản nháp, lọc nội dung, chỉnh visual và chốt đầu ra.",
+      "Quy trình được chia thành các bước: lên ý tưởng, tạo bản nháp, lọc nội dung, chỉnh visual và chốt đầu ra.",
     outcome:
-      "Kết quả là một workflow dễ giải thích và có thể tái sử dụng cho các bài nội dung số khác.",
+      "Kết quả là một workflow dễ giải thích và có thể tái sử dụng cho các sản phẩm nội dung số khác.",
     metrics: [
       { k: "Workflow", v: "tạo nội dung" },
       { k: "Bản nháp", v: "đã lọc ý" },
@@ -189,11 +189,11 @@ export const projects: Project[] = [
     summary:
       "Phân tích chính sách, xây dựng bộ nguyên tắc cá nhân và phản biện các thách thức đạo đức khi dùng AI trong môi trường đại học.",
     problem:
-      "Bài này không chỉ nói về AI có trách nhiệm mà còn phải chuyển nó thành nguyên tắc cá nhân có thể áp dụng được.",
+      "Bài nộp không chỉ trình bày khái niệm AI có trách nhiệm mà còn chuyển nội dung đó thành nguyên tắc có thể áp dụng trong học tập.",
     approach:
-      "Mình đọc lại policy, đối chiếu các rủi ro như đạo văn, phụ thuộc AI và thiếu minh bạch, rồi rút ra bộ nguyên tắc riêng.",
+      "Nội dung đối chiếu policy với các rủi ro như đạo văn, phụ thuộc AI và thiếu minh bạch, từ đó rút ra bộ nguyên tắc áp dụng cho học tập.",
     outcome:
-      "Bộ nguyên tắc cuối cùng vừa thực tế vừa đủ chặt để dùng trong học tập và các dự án sau này.",
+      "Bộ nguyên tắc cuối cùng vừa thực tế vừa đủ chặt để sử dụng trong học tập và các dự án tiếp theo.",
     metrics: [
       { k: "Nguyên tắc", v: "6 điều" },
       { k: "Phân tích", v: "liên hệ policy" },
@@ -363,7 +363,7 @@ export function CaseStudy({
           {[
             { title: "Bằng chứng", body: "Mỗi bài được gắn link gốc, mô tả đầu ra và lý do tổ chức nội dung." },
             { title: "Trình bày", body: "Cấu trúc được thiết kế để người xem đọc theo tuần, không bị lẫn giữa các nhiệm vụ." },
-            { title: "Tính nộp bài", body: "Có đủ phần giới thiệu, 6 case file và tổng kết theo rubric." },
+            { title: "Tính nộp bài", body: "Có đủ phần giới thiệu, 6 case study và phần tổng kết theo yêu cầu." },
           ].map((item) => (
             <div key={item.title} className="rounded-[22px] border border-stone-900/15 bg-[#fbf5e8] p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur">
               <div className="flex items-center gap-2 text-sm font-medium text-stone-950 dark:text-white">
