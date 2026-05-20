@@ -96,7 +96,7 @@ export const projects: Project[] = [
       { k: "Kết luận", v: "nguồn đáng tin" },
     ],
     artifacts: ["Nhật ký tìm kiếm", "So sánh nguồn", "Đánh giá tin cậy"],
-    link: "https://thanhnguyn.github.io/git-visualization-research/",
+    link: "https://thanhnguyn.github.io/git-visualization-research/#intro",
     next: "week-03",
   },
   {
