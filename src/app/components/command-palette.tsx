@@ -97,7 +97,7 @@ export function CommandPalette({
               className="
                 w-full max-w-xl overflow-hidden rounded-[24px] border
                 bg-[#fbf5e8] border-stone-900/20 shadow-[8px_8px_0_0_#1c140d]
-                dark:bg-[#0f1320] dark:border-white/15 dark:shadow-2xl
+                dark:bg-[#0f1320] dark:border-white/15 dark:shadow-[8px_8px_0_0_#ffb829]
               "
             >
               <Command label="Command Menu" className="w-full">

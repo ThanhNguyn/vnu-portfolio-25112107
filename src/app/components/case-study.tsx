@@ -251,7 +251,7 @@ export function CaseStudy({
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
           <Reveal>
-            <div className="rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] p-7 shadow-[8px_8px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur">
+            <div className="rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] p-7 shadow-[8px_8px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[8px_8px_0_0_#ffb829] dark:backdrop-blur">
               <div className="flex flex-wrap gap-2">
                 {project.artifacts.map((artifact) => (
                   <span
@@ -283,7 +283,7 @@ export function CaseStudy({
           </Reveal>
 
           <Reveal delay={0.08}>
-            <div className="rounded-[28px] border border-stone-900/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(255,255,255,0.55))] p-5 shadow-[8px_8px_0_0_#1c140d] dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:shadow-none dark:backdrop-blur">
+            <div className="rounded-[28px] border border-stone-900/15 bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(255,255,255,0.55))] p-5 shadow-[8px_8px_0_0_#1c140d] dark:border-white/10 dark:bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] dark:shadow-[8px_8px_0_0_#ffb829] dark:backdrop-blur">
               <div className="overflow-hidden rounded-[24px] border border-black/10 bg-black/5">
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <ImageWithFallback
@@ -365,7 +365,7 @@ export function CaseStudy({
             { title: "Trình bày", body: "Cấu trúc được thiết kế để người xem đọc theo tuần, không bị lẫn giữa các nhiệm vụ." },
             { title: "Tính nộp bài", body: "Có đủ phần giới thiệu, 6 case file và tổng kết theo rubric." },
           ].map((item) => (
-            <div key={item.title} className="rounded-[22px] border border-stone-900/15 bg-[#fbf5e8] p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur">
+            <div key={item.title} className="rounded-[22px] border border-stone-900/15 bg-[#fbf5e8] p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur">
               <div className="flex items-center gap-2 text-sm font-medium text-stone-950 dark:text-white">
                 <CheckCircle2 size={16} style={{ color: project.color }} />
                 {item.title}

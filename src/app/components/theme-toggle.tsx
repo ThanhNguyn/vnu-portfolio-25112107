@@ -10,7 +10,7 @@ export function ThemeToggle() {
       className="
         group relative h-10 w-[72px] rounded-full transition-all duration-300 ease-out
         border border-stone-900/25 bg-[#FBF5E8] shadow-[3px_3px_0_0_#1c140d] hover:shadow-[1px_1px_0_0_#1c140d] hover:translate-x-[2px] hover:translate-y-[2px]
-        dark:border-white/15 dark:bg-white/5 dark:shadow-none dark:backdrop-blur dark:hover:translate-x-0 dark:hover:translate-y-0 dark:hover:border-[#FFB829]
+        dark:border-white/15 dark:bg-white/5 dark:shadow-[3px_3px_0_0_#FFB829] dark:backdrop-blur dark:hover:translate-x-[2px] dark:hover:translate-y-[2px] dark:hover:border-[#FFB829] dark:hover:shadow-[1px_1px_0_0_#FFB829]
       "
       aria-label="Toggle theme"
     >

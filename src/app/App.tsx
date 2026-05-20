@@ -59,11 +59,12 @@ const bonusReport = {
 function Background() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(28,20,13,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(28,20,13,0.08)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60 dark:opacity-0" />
+      <div className="absolute inset-0 hidden bg-[radial-gradient(circle_at_top,#142131_0%,#080b10_55%,#040506_100%)] dark:block" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(28,20,13,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(28,20,13,0.08)_1px,transparent_1px)] bg-[size:72px_72px] opacity-60 dark:hidden" />
       <div className="absolute -left-32 top-24 h-[360px] w-[360px] rounded-full bg-[#ffb829]/35 blur-[90px] dark:bg-[#ffb829]/20" />
       <div className="absolute right-[-140px] top-[24%] h-[440px] w-[440px] rounded-full bg-[#39a78e]/30 blur-[110px] dark:bg-[#39a78e]/20" />
       <div className="absolute bottom-[-180px] left-[35%] h-[520px] w-[520px] rounded-full bg-[#e85d2c]/25 blur-[130px] dark:bg-[#5b7cfa]/20" />
-      <div className="absolute inset-0 hidden bg-[radial-gradient(circle_at_top,#142131_0%,#080b10_55%,#040506_100%)] dark:block" />
+      <div className="absolute inset-0 hidden bg-[linear-gradient(to_right,rgba(255,184,41,0.07)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,184,41,0.06)_1px,transparent_1px)] bg-[size:72px_72px] opacity-45 dark:block" />
     </div>
   );
 }
@@ -86,7 +87,7 @@ function StatusBar() {
   }, []);
 
   return (
-    <div className="flex items-center justify-between px-5 pt-3 font-mono text-xs text-stone-700 dark:text-white/70 md:hidden">
+    <div className="relative z-20 mx-auto flex min-h-6 w-full max-w-7xl items-center justify-between px-5 pt-3 font-mono text-xs text-stone-700 dark:text-[#f6efe1]/85 md:hidden">
       <span>{time}</span>
       <span className="flex items-center gap-1.5">
         <MapPin size={11} /> Hà Nội
@@ -106,8 +107,13 @@ function Header({ onNavigate }: { onNavigate: (slug: string | null) => void }) {
   return (
     <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-5 pt-6 md:px-10">
       <a href="#profile" className="flex items-center gap-2 text-stone-900 dark:text-white">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-[#1c140d] font-serif text-lg italic text-[#ffb829] shadow-[3px_3px_0_0_#ffb829] dark:bg-[#ffb829] dark:text-black dark:shadow-none">
-          T
+        <span className="relative h-9 w-9 shrink-0">
+          <span className="grid h-9 w-9 place-items-center rounded-full border border-stone-900/25 bg-[#fbf5e8] font-serif text-lg italic text-[#1c140d] shadow-[3px_3px_0_0_#e85d2c] dark:hidden">
+            T
+          </span>
+          <span className="hidden h-9 w-9 place-items-center rounded-full bg-[#1c140d] font-serif text-lg italic text-[#ffb829] shadow-[3px_3px_0_0_#ffb829] dark:grid">
+            T
+          </span>
         </span>
         <span className="font-serif text-xl">
           Portfolio <span className="text-stone-500 dark:text-white/40">{student.studentId}</span>
@@ -147,7 +153,7 @@ function HeroCard() {
       initial={{ opacity: 0, y: 26, scale: 0.97 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-      className="relative mx-auto w-full max-w-[390px] overflow-hidden rounded-[30px] border border-stone-900/15 bg-[#fbf5e8] p-5 shadow-[10px_10px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-2xl dark:backdrop-blur-xl"
+      className="relative mx-auto w-full max-w-[430px] overflow-hidden rounded-[30px] border border-stone-900/15 bg-[#fbf5e8] p-5 shadow-[10px_10px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[10px_10px_0_0_#ffb829] dark:backdrop-blur-xl"
     >
       <div className="absolute right-5 top-5 z-10 rounded-full bg-[#1c140d] px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-[#ffb829] dark:bg-[#ffb829] dark:text-black">
         MSSV {student.studentId}
@@ -169,7 +175,9 @@ function HeroCard() {
       </div>
 
       <div className="mt-6 text-center">
-        <h1 className="font-serif text-4xl leading-tight text-stone-950 dark:text-white">{student.name}</h1>
+        <h1 className="whitespace-nowrap font-serif text-[clamp(1.55rem,7vw,2.35rem)] leading-tight text-stone-950 dark:text-white">
+          {student.name}
+        </h1>
         <p className="mt-2 text-sm text-stone-600 dark:text-white/60">
           {student.className} · {student.school}
         </p>
@@ -196,14 +204,14 @@ function HeroCard() {
       <div className="mt-6 flex gap-2">
         <a
           href="#archive"
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#1c140d] px-4 py-3 text-sm font-medium text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-[#ffb829] dark:text-black dark:shadow-none"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#1c140d] px-4 py-3 text-sm font-medium text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-[#ffb829] dark:text-black dark:shadow-[3px_3px_0_0_#1c140d]"
         >
           Mở portfolio <ArrowUpRight size={14} />
         </a>
         <a
           href={`mailto:${student.email}`}
           aria-label="Gửi email"
-          className="grid h-12 w-12 place-items-center rounded-full border border-stone-900/20 bg-white text-stone-900 shadow-[2px_2px_0_0_#1c140d] transition hover:-translate-y-0.5 dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-none"
+          className="grid h-12 w-12 place-items-center rounded-full border border-stone-900/20 bg-white text-stone-900 shadow-[2px_2px_0_0_#1c140d] transition hover:-translate-y-0.5 dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-[2px_2px_0_0_#ffb829]"
         >
           <Mail size={17} />
         </a>
@@ -221,7 +229,7 @@ function Hero() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-900/15 bg-[#fbf5e8] px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-stone-700 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:shadow-none dark:backdrop-blur">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-900/15 bg-[#fbf5e8] px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-stone-700 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:shadow-[2px_2px_0_0_#ffb829] dark:backdrop-blur">
             <Sparkles size={12} className="text-[#e85d2c] dark:text-[#ffb829]" />
             Bài tập dự án cá nhân · 2026
           </div>
@@ -240,7 +248,7 @@ function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#archive"
-              className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-white dark:text-black dark:shadow-none"
+              className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-white dark:text-black dark:shadow-[3px_3px_0_0_#ffb829]"
             >
               Mở portfolio <ArrowUpRight size={14} />
             </a>
@@ -287,7 +295,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
         </div>
 
         <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:px-0">
-          <div className="inline-flex gap-1 rounded-full border border-stone-900/15 bg-[#fbf5e8] p-1 shadow-[3px_3px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:shadow-none dark:backdrop-blur">
+          <div className="inline-flex gap-1 rounded-full border border-stone-900/15 bg-[#fbf5e8] p-1 shadow-[3px_3px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:shadow-[3px_3px_0_0_#ffb829] dark:backdrop-blur">
             {projectCategories.map((category) => (
               <button
                 key={category}
@@ -318,7 +326,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.04 }}
-              className="group relative min-h-[320px] overflow-hidden rounded-[26px] border border-stone-900/15 bg-[#fbf5e8] p-6 shadow-[5px_5px_0_0_#1c140d] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur"
+              className="group relative min-h-[320px] overflow-hidden rounded-[26px] border border-stone-900/15 bg-[#fbf5e8] p-6 shadow-[5px_5px_0_0_#1c140d] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:backdrop-blur"
             >
               <div
                 className="absolute right-[-42px] top-[-42px] h-32 w-32 rounded-full opacity-25 blur-2xl"
@@ -333,7 +341,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
                   </h4>
                 </div>
                 <span
-                  className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-stone-900/10 bg-white text-stone-950 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-none"
+                  className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl border border-stone-900/10 bg-white text-stone-950 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/10 dark:text-white dark:shadow-[2px_2px_0_0_#ffb829]"
                   style={{ color: project.color }}
                 >
                   <Icon size={21} />
@@ -385,7 +393,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
       </motion.div>
 
       <div className="mt-6">
-        <article className="grid overflow-hidden rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] shadow-[5px_5px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur lg:grid-cols-[1.1fr_0.9fr]">
+        <article className="grid overflow-hidden rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] shadow-[5px_5px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:backdrop-blur lg:grid-cols-[1.1fr_0.9fr]">
           <div className="relative aspect-[16/10] overflow-hidden border-b border-stone-900/10 lg:border-b-0 lg:border-r dark:border-white/10">
             <ImageWithFallback
               src={bonusReport.cover}
@@ -466,7 +474,7 @@ function Reflection() {
             return (
               <article
                 key={point.title}
-                className="flex gap-4 rounded-[24px] border border-stone-900/15 bg-[#fbf5e8]/80 p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur"
+                className="flex gap-4 rounded-[24px] border border-stone-900/15 bg-[#fbf5e8]/80 p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur"
               >
                 <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#1c140d] text-[#ffb829] dark:bg-[#ffb829] dark:text-black">
                   <Icon size={20} />
@@ -505,7 +513,7 @@ function Contact() {
               href={item.href}
               target={item.href.startsWith("http") ? "_blank" : undefined}
               rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-              className="group flex items-center gap-4 rounded-[22px] border border-stone-900/15 bg-[#fbf5e8] p-4 shadow-[3px_3px_0_0_#1c140d] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-none dark:backdrop-blur"
+              className="group flex items-center gap-4 rounded-[22px] border border-stone-900/15 bg-[#fbf5e8] p-4 shadow-[3px_3px_0_0_#1c140d] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[3px_3px_0_0_#ffb829] dark:backdrop-blur"
             >
               <span className="grid h-12 w-12 place-items-center rounded-2xl bg-[#1c140d] text-[#ffb829] dark:bg-[#ffb829] dark:text-black">
                 <item.icon size={18} />
@@ -539,13 +547,13 @@ function MobileDock() {
 
   return (
     <nav className="fixed bottom-4 left-1/2 z-40 -translate-x-1/2 md:hidden" aria-label="Mobile navigation">
-      <div className="flex items-center gap-1 rounded-full border border-stone-900/20 bg-[#fbf5e8] p-1.5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/10 dark:shadow-none dark:backdrop-blur-xl">
+      <div className="flex items-center gap-1 rounded-full border border-stone-900/20 bg-[#fbf5e8] p-1.5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/10 dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur-xl">
         {items.map((item, index) =>
           "action" in item ? (
             <button
               key={index}
               onClick={item.action}
-              className="grid h-11 w-11 place-items-center rounded-full bg-[#e85d2c] text-white shadow-[2px_2px_0_0_#1c140d] transition dark:bg-[#ffb829] dark:text-black dark:shadow-none"
+              className="grid h-11 w-11 place-items-center rounded-full bg-[#e85d2c] text-white shadow-[2px_2px_0_0_#1c140d] transition dark:bg-[#ffb829] dark:text-black dark:shadow-[2px_2px_0_0_#1c140d]"
               aria-label={item.label}
             >
               <item.icon size={18} />
