@@ -1,11 +1,11 @@
+# VNU Portfolio 25112107
 
-  # Portfolio design request
+Portfolio học phần của Nguyễn Tuấn Thành, tổng hợp 6 bài nộp chính và một báo cáo bonus.
 
-  This is a code bundle for Portfolio design request. The original project is available at https://www.figma.com/design/tM4Lo8lbk7WufCqa2j75KI/Portfolio-design-request.
+## Running the code
 
-  ## Running the code
+Run `npm i` to install the dependencies.
 
-  Run `npm i` to install the dependencies.
+Run `npm run dev` to start the development server.
 
-  Run `npm run dev` to start the development server.
-  
+Run `npm run build` to create the production build.

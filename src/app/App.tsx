@@ -13,7 +13,7 @@ import {
   Grid3x3,
   CheckCircle2,
 } from "lucide-react";
-import { ImageWithFallback } from "./components/figma/ImageWithFallback";
+import { ImageWithFallback } from "./components/media/ImageWithFallback";
 import { ThemeToggle } from "./components/theme-toggle";
 import { Grain } from "./components/grain";
 import { useIsDark } from "./components/use-theme";

@@ -11,7 +11,7 @@ import {
   CheckCircle2,
   Link2,
 } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./media/ImageWithFallback";
 import { Magnetic } from "./magnetic";
 import { Reveal, RevealWords } from "./reveal";
 import coverWeek01 from "../../assets/evidence/week-01.png";
