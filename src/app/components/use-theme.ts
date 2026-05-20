@@ -24,7 +24,3 @@ export function useThemeMode() {
     toggleTheme: () => setTheme(isDark ? "light" : "dark"),
   };
 }
-
-export function useIsDark() {
-  return useThemeMode().isDark;
-}

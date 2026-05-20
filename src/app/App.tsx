@@ -16,7 +16,6 @@ import {
 import { ImageWithFallback } from "./components/media/ImageWithFallback";
 import { ThemeToggle } from "./components/theme-toggle";
 import { Grain } from "./components/grain";
-import { useIsDark } from "./components/use-theme";
 import { MagneticCursor } from "./components/magnetic";
 import { CommandPalette } from "./components/command-palette";
 import { CaseStudy, projects } from "./components/case-study";
@@ -136,7 +135,12 @@ function Header({ onNavigate }: { onNavigate: (slug: string | null) => void }) {
 }
 
 function HeroCard() {
-  const dark = useIsDark();
+  useEffect(() => {
+    [avatarDark, avatarLight].forEach((src) => {
+      const image = new Image();
+      image.src = src;
+    });
+  }, []);
 
   return (
     <motion.article
@@ -150,22 +154,18 @@ function HeroCard() {
       </div>
 
       <div className="relative aspect-square overflow-hidden rounded-[24px] border border-stone-900/10 bg-stone-100 dark:border-white/10 dark:bg-black">
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={dark ? "dark" : "light"}
-            initial={{ opacity: 0, scale: 1.02, filter: "blur(8px)" }}
-            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-            exit={{ opacity: 0, scale: 0.99, filter: "blur(8px)" }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0"
-          >
-            <ImageWithFallback
-              src={dark ? avatarDark : avatarLight}
-              alt={`Avatar 3D của ${student.name}`}
-              className="h-full w-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
+        <ImageWithFallback
+          src={avatarLight}
+          alt={`Avatar 3D của ${student.name}`}
+          loading="eager"
+          className="h-full w-full object-cover dark:hidden"
+        />
+        <ImageWithFallback
+          src={avatarDark}
+          alt={`Avatar 3D của ${student.name}`}
+          loading="eager"
+          className="hidden h-full w-full object-cover dark:block"
+        />
       </div>
 
       <div className="mt-6 text-center">
@@ -499,7 +499,6 @@ function Contact() {
           {[
             { icon: Mail, label: "Email VNU", value: student.email, href: `mailto:${student.email}` },
             { icon: Github, label: "GitHub", value: student.handle, href: student.github },
-            { icon: Grid3x3, label: "Trang gốc", value: "thanhnguyn.github.io", href: "https://thanhnguyn.github.io" },
           ].map((item) => (
             <a
               key={item.label}

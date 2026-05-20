@@ -10,7 +10,6 @@ import {
   MessageCircle,
   Moon,
   Search,
-  Send,
   Sparkles,
   Sun,
   Grid3x3,
@@ -159,9 +158,6 @@ export function CommandPalette({
                     </Item>
                     <Item icon={<Github size={14} />} onSelect={() => window.open("https://github.com/thanhnguyn", "_blank")}>
                       GitHub
-                    </Item>
-                    <Item icon={<Send size={14} />} onSelect={() => window.open("https://thanhnguyn.github.io", "_blank")}>
-                      Trang gốc
                     </Item>
                   </Command.Group>
                 </Command.List>
