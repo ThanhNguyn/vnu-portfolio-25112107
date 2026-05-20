@@ -1,14 +1,30 @@
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+
+function getDocumentTheme() {
+  if (typeof document === "undefined") {
+    return "light";
+  }
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+export function useThemeMode() {
+  const { resolvedTheme, setTheme, theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const activeTheme = mounted ? resolvedTheme ?? theme : getDocumentTheme();
+  const isDark = activeTheme === "dark";
+
+  return {
+    isDark,
+    toggleTheme: () => setTheme(isDark ? "light" : "dark"),
+  };
+}
 
 export function useIsDark() {
-  const [dark, setDark] = useState(() =>
-    typeof document !== "undefined" && document.documentElement.classList.contains("dark")
-  );
-  useEffect(() => {
-    const el = document.documentElement;
-    const obs = new MutationObserver(() => setDark(el.classList.contains("dark")));
-    obs.observe(el, { attributes: true, attributeFilter: ["class"] });
-    return () => obs.disconnect();
-  }, []);
-  return dark;
+  return useThemeMode().isDark;
 }

@@ -45,7 +45,7 @@ const rubricSignals = [
   "Có trang giới thiệu, 6 bài nộp và trang tổng kết",
   "Mỗi bài có link gốc và ảnh chụp minh họa thật",
   "Thiết kế chạy tốt trên desktop và mobile",
-  "Có chế độ dark/light với avatar 3D riêng",
+  "Avatar 3D đồng bộ theo giao diện hệ thống",
 ];
 
 const bonusReport = {
@@ -150,14 +150,22 @@ function HeroCard() {
       </div>
 
       <div className="relative aspect-square overflow-hidden rounded-[24px] border border-stone-900/10 bg-stone-100 dark:border-white/10 dark:bg-black">
-        <ImageWithFallback
-          src={dark ? avatarDark : avatarLight}
-          alt={`Avatar 3D của ${student.name}`}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute bottom-3 left-3 rounded-full bg-black/65 px-3 py-1.5 font-mono text-[10px] uppercase tracking-widest text-white backdrop-blur">
-          {dark ? "dark avatar" : "light avatar"}
-        </div>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={dark ? "dark" : "light"}
+            initial={{ opacity: 0, scale: 1.02, filter: "blur(8px)" }}
+            animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+            exit={{ opacity: 0, scale: 0.99, filter: "blur(8px)" }}
+            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute inset-0"
+          >
+            <ImageWithFallback
+              src={dark ? avatarDark : avatarLight}
+              alt={`Avatar 3D của ${student.name}`}
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       <div className="mt-6 text-center">
@@ -596,10 +604,10 @@ export default function App() {
 
             <footer className="relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-8 pb-28 font-mono text-xs text-stone-600 dark:text-white/50 md:flex-row md:items-center md:px-10 md:pb-8">
             <span>© 2026 {student.name} · Portfolio học phần</span>
-              <span>VNU · {student.studentId} · dark/light portfolio</span>
-            </footer>
-          </motion.div>
-        )}
+            <span>VNU · {student.studentId} · portfolio</span>
+          </footer>
+        </motion.div>
+      )}
       </AnimatePresence>
 
       <MobileDock />
