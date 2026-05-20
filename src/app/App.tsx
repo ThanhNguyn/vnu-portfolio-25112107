@@ -110,8 +110,8 @@ function Header({ onNavigate }: { onNavigate: (slug: string | null) => void }) {
         <span className="grid h-9 w-9 place-items-center rounded-full bg-[#1c140d] font-serif text-lg italic text-[#ffb829] shadow-[3px_3px_0_0_#ffb829] dark:bg-[#ffb829] dark:text-black dark:shadow-none">
           T
         </span>
-        <span className="font-serif text-xl italic">
-          thanh<span className="text-stone-500 dark:text-white/40">.archive</span>
+        <span className="font-serif text-xl">
+          Portfolio <span className="text-stone-500 dark:text-white/40">{student.studentId}</span>
         </span>
       </a>
 
@@ -571,7 +571,7 @@ export default function App() {
     <div className="relative min-h-screen overflow-hidden bg-[#f6efe1] text-stone-900 antialiased transition-colors duration-500 dark:bg-[#050607] dark:text-white">
       <style>{`
         body { font-family: 'Inter', system-ui, sans-serif; }
-        .font-serif { font-family: 'Fraunces', 'Noto Serif', Georgia, serif; font-weight: 400; font-optical-sizing: auto; }
+        .font-serif { font-family: 'Noto Serif', Georgia, serif; font-weight: 500; }
         .font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
         html { scroll-behavior: smooth; }
       `}</style>
@@ -596,7 +596,7 @@ export default function App() {
 
             <footer className="relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-between gap-2 px-5 py-8 pb-28 font-mono text-xs text-stone-600 dark:text-white/50 md:flex-row md:items-center md:px-10 md:pb-8">
             <span>© 2026 {student.name} · Portfolio học phần</span>
-              <span>VNU · {student.studentId} · dark/light archive</span>
+              <span>VNU · {student.studentId} · dark/light portfolio</span>
             </footer>
           </motion.div>
         )}
