@@ -19,11 +19,36 @@ import { Grain } from "./components/grain";
 import { MagneticCursor } from "./components/magnetic";
 import { CommandPalette } from "./components/command-palette";
 import { CaseStudy, projects } from "./components/case-study";
+import { Reveal, RevealWords } from "./components/reveal";
 import avatarDark from "../assets/avatar-dark.png";
 import avatarLight from "../assets/avatar-light.png";
 import bonusCover from "../assets/evidence/bonus.png";
 
-const student = {
+export interface StudentInfo {
+  name: string;
+  handle: string;
+  studentId: string;
+  school: string;
+  className: string;
+  email: string;
+  github: string;
+}
+
+export interface BonusReport {
+  title: string;
+  subtitle: string;
+  summary: string;
+  link: string;
+  cover: string;
+}
+
+export interface ReflectionPoint {
+  icon: typeof BookOpenCheck;
+  title: string;
+  text: string;
+}
+
+const student: StudentInfo = {
   name: "Nguyễn Tuấn Thành",
   handle: "@thanhnguyn",
   studentId: "25112107",
@@ -40,14 +65,14 @@ const projectCategories: ProjectCategory[] = [
   ...Array.from(new Set(projects.map((p) => p.category))) as (typeof projects)[number]["category"][],
 ];
 
-const rubricSignals = [
+const rubricSignals: string[] = [
   "Có phần giới thiệu, 6 bài nộp và phần tổng kết",
   "Mỗi bài có link gốc và ảnh chụp minh họa",
   "Thiết kế chạy tốt trên desktop và mobile",
   "Avatar 3D đồng bộ theo giao diện hệ thống",
 ];
 
-const bonusReport = {
+const bonusReport: BonusReport = {
   title: "Báo cáo so sánh AI",
   subtitle: "Đánh giá 3 mô hình AI qua năng lực sáng tạo, lập trình và xử lý nhiệm vụ học thuật.",
   summary:
@@ -202,19 +227,23 @@ function HeroCard() {
       </div>
 
       <div className="mt-6 flex gap-2">
-        <a
+        <motion.a
+          whileHover={{ scale: 1.03, y: -2 }}
+          whileTap={{ scale: 0.97 }}
           href="#archive"
-          className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#1c140d] px-4 py-3 text-sm font-medium text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-[#ffb829] dark:text-black dark:shadow-[3px_3px_0_0_#1c140d]"
+          className="inline-flex flex-1 items-center justify-center gap-2 rounded-full bg-[#1c140d] px-4 py-3 text-sm font-medium text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition dark:bg-[#ffb829] dark:text-black dark:shadow-[3px_3px_0_0_#1c140d]"
         >
           Mở portfolio <ArrowUpRight size={14} />
-        </a>
-        <a
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.08, y: -2 }}
+          whileTap={{ scale: 0.92 }}
           href={`mailto:${student.email}`}
           aria-label="Gửi email"
-          className="grid h-12 w-12 place-items-center rounded-full border border-stone-900/20 bg-white text-stone-900 shadow-[2px_2px_0_0_#1c140d] transition hover:-translate-y-0.5 dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-[2px_2px_0_0_#ffb829]"
+          className="grid h-12 w-12 place-items-center rounded-full border border-stone-900/20 bg-white text-stone-900 shadow-[2px_2px_0_0_#1c140d] transition dark:border-white/15 dark:bg-white/5 dark:text-white dark:shadow-[2px_2px_0_0_#ffb829]"
         >
           <Mail size={17} />
-        </a>
+        </motion.a>
       </div>
     </motion.article>
   );
@@ -229,45 +258,59 @@ function Hero() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-900/15 bg-[#fbf5e8] px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-stone-700 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:shadow-[2px_2px_0_0_#ffb829] dark:backdrop-blur">
-            <Sparkles size={12} className="text-[#e85d2c] dark:text-[#ffb829]" />
-            Bài tập dự án cá nhân · 2026
-          </div>
+          <Reveal delay={0.1} y={15}>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-stone-900/15 bg-[#fbf5e8] px-3 py-1.5 font-mono text-[11px] uppercase tracking-widest text-stone-700 shadow-[2px_2px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:text-white/70 dark:shadow-[2px_2px_0_0_#ffb829] dark:backdrop-blur">
+              <Sparkles size={12} className="text-[#e85d2c] dark:text-[#ffb829]" />
+              Bài tập dự án cá nhân · 2026
+            </div>
+          </Reveal>
 
-          <h2 className="max-w-4xl text-balance font-serif text-5xl leading-tight text-stone-950 md:text-7xl lg:text-[7vw] dark:text-white">
-            Hồ sơ học tập<br />
-            <em className="text-[#e85d2c] dark:text-[#ffb829]">được trình bày thành portfolio.</em>
-          </h2>
+          <Reveal delay={0.15} y={20}>
+            <h2 className="max-w-4xl text-balance font-serif text-5xl leading-tight text-stone-950 md:text-7xl lg:text-[7vw] dark:text-white">
+              Hồ sơ học tập<br />
+              <em className="text-[#e85d2c] dark:text-[#ffb829]">được trình bày thành portfolio.</em>
+            </h2>
+          </Reveal>
 
-          <p className="mt-6 max-w-2xl text-base leading-8 text-stone-700 dark:text-white/70 md:text-lg">
-            Portfolio tổng hợp 6 bài nộp của học phần theo cấu trúc rõ ràng:
-            giới thiệu cá nhân, danh sách dự án và phần tổng kết. Mỗi bài được trình bày như
-            một case study ngắn, có mục tiêu, cách thực hiện, kết quả, link gốc và ảnh minh họa.
-          </p>
+          <Reveal delay={0.35} y={20}>
+            <p className="mt-6 max-w-2xl text-base leading-8 text-stone-700 dark:text-white/70 md:text-lg">
+              Portfolio tổng hợp 6 bài nộp của học phần theo cấu trúc rõ ràng:
+              giới thiệu cá nhân, danh sách dự án và phần tổng kết. Mỗi bài được trình bày như
+              một case study ngắn, có mục tiêu, cách thực hiện, kết quả, link gốc và ảnh minh họa.
+            </p>
+          </Reveal>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a
-              href="#archive"
-              className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition hover:-translate-y-0.5 dark:bg-white dark:text-black dark:shadow-[3px_3px_0_0_#ffb829]"
-            >
-              Mở portfolio <ArrowUpRight size={14} />
-            </a>
-            <a
-              href={student.github}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-stone-900/30 px-5 py-3 text-sm text-stone-900 transition hover:bg-stone-950 hover:text-[#fbf5e8] dark:border-white/15 dark:text-white/90 dark:hover:bg-white/10"
-            >
-              GitHub <Github size={14} />
-            </a>
-          </div>
+          <Reveal delay={0.45} y={20}>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                href="#archive"
+                className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm text-[#fbf5e8] shadow-[3px_3px_0_0_#ffb829] transition dark:bg-white dark:text-black dark:shadow-[3px_3px_0_0_#ffb829]"
+              >
+                Mở portfolio <ArrowUpRight size={14} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+                href={student.github}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-stone-900/30 px-5 py-3 text-sm text-stone-900 transition dark:border-white/15 dark:text-white/90 dark:hover:bg-white/10"
+              >
+                GitHub <Github size={14} />
+              </motion.a>
+            </div>
+          </Reveal>
 
           <div className="mt-10 grid grid-cols-2 gap-3 border-t border-stone-900/15 pt-6 dark:border-white/10 md:grid-cols-4">
-            {rubricSignals.map((item) => (
-              <div key={item} className="flex items-start gap-2 text-sm text-stone-700 dark:text-white/65">
-                <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#39a78e] dark:text-[#ffb829]" />
-                <span>{item}</span>
-              </div>
+            {rubricSignals.map((item, index) => (
+              <Reveal key={item} delay={0.55 + index * 0.08} y={15}>
+                <div className="flex items-start gap-2 text-sm text-stone-700 dark:text-white/65">
+                  <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#39a78e] dark:text-[#ffb829]" />
+                  <span>{item}</span>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -294,7 +337,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
           </h3>
         </div>
 
-        <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:px-0">
+        <div className="-mx-5 overflow-x-auto px-5 md:mx-0 md:px-0 md:overflow-x-visible md:flex-shrink-0 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="inline-flex gap-1 rounded-full border border-stone-900/15 bg-[#fbf5e8] p-1 shadow-[3px_3px_0_0_#1c140d] dark:border-white/10 dark:bg-white/5 dark:shadow-[3px_3px_0_0_#ffb829] dark:backdrop-blur">
             {projectCategories.map((category) => (
               <button
@@ -326,10 +369,10 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.04 }}
-              className="group relative min-h-[320px] overflow-hidden rounded-[26px] border border-stone-900/15 bg-[#fbf5e8] p-6 shadow-[5px_5px_0_0_#1c140d] transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:backdrop-blur"
+              className="group relative min-h-[320px] overflow-hidden rounded-[26px] border border-stone-900/15 bg-[#fbf5e8] p-6 shadow-[5px_5px_0_0_#1c140d] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[10px_10px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:hover:shadow-[10px_10px_0_0_#ffb829] dark:backdrop-blur"
             >
               <div
-                className="absolute right-[-42px] top-[-42px] h-32 w-32 rounded-full opacity-25 blur-2xl"
+                className="absolute right-[-42px] top-[-42px] h-32 w-32 rounded-full opacity-25 blur-2xl transition-all duration-500 ease-out group-hover:scale-125 group-hover:opacity-40"
                 style={{ background: project.color }}
               />
 
@@ -369,23 +412,27 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
               </div>
 
               <div className="mt-6 flex items-center justify-between">
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.04 }}
+                  whileTap={{ scale: 0.96 }}
                   onClick={() => onOpenProject(project.slug)}
                   data-magnetic
                   data-cursor="open"
-                  className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-4 py-2 text-sm text-[#fbf5e8] transition hover:-translate-y-0.5 dark:bg-white dark:text-black"
+                  className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-4 py-2 text-sm text-[#fbf5e8] transition dark:bg-white dark:text-black"
                 >
                   Xem chi tiết <ArrowUpRight size={14} />
-                </button>
-                <a
+                </motion.button>
+                <motion.a
+                  whileHover={{ scale: 1.1, rotate: 15 }}
+                  whileTap={{ scale: 0.9 }}
                   href={project.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded-full border border-stone-900/10 p-2 text-stone-600 transition hover:-translate-y-0.5 hover:text-[#e85d2c] dark:border-white/10 dark:text-white/45 dark:hover:text-[#ffb829]"
+                  className="rounded-full border border-stone-900/10 p-2 text-stone-600 transition dark:border-white/10 dark:text-white/45 dark:hover:text-[#ffb829]"
                   aria-label={`Open ${project.title}`}
                 >
                   <ArrowUpRight size={18} />
-                </a>
+                </motion.a>
               </div>
             </motion.article>
           );
@@ -393,12 +440,12 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
       </motion.div>
 
       <div className="mt-6">
-        <article className="grid overflow-hidden rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] shadow-[5px_5px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:backdrop-blur lg:grid-cols-[1.1fr_0.9fr]">
+        <article className="group relative grid overflow-hidden rounded-[28px] border border-stone-900/15 bg-[#fbf5e8] shadow-[5px_5px_0_0_#1c140d] transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[10px_10px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[5px_5px_0_0_#ffb829] dark:hover:shadow-[10px_10px_0_0_#ffb829] dark:backdrop-blur lg:grid-cols-[1.1fr_0.9fr]">
           <div className="relative aspect-[16/10] overflow-hidden border-b border-stone-900/10 lg:border-b-0 lg:border-r dark:border-white/10">
             <ImageWithFallback
               src={bonusReport.cover}
               alt="Ảnh chụp minh họa báo cáo so sánh AI"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
             />
             <div className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.25em] text-white backdrop-blur">
               Bonus
@@ -420,14 +467,16 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.03, y: -2 }}
+                whileTap={{ scale: 0.97 }}
                 href={bonusReport.link}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-4 py-2 text-sm text-[#fbf5e8] transition hover:-translate-y-0.5 dark:bg-white dark:text-black"
+                className="inline-flex items-center gap-2 rounded-full bg-stone-950 px-4 py-2 text-sm text-[#fbf5e8] transition dark:bg-white dark:text-black"
               >
                 Mở bài bonus <ArrowUpRight size={14} />
-              </a>
+              </motion.a>
               <span className="rounded-full border border-stone-900/10 bg-white/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-stone-600 dark:border-white/10 dark:bg-white/10 dark:text-white/55">
                 Không tính vào 6 bài bắt buộc
               </span>
@@ -440,7 +489,7 @@ function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void
 }
 
 function Reflection() {
-  const points = [
+  const points: ReflectionPoint[] = [
     {
       icon: BookOpenCheck,
       title: "Điều học được",
@@ -469,21 +518,23 @@ function Reflection() {
         </div>
 
         <div className="grid gap-4 lg:col-span-7">
-          {points.map((point) => {
+          {points.map((point, index) => {
             const Icon = point.icon;
             return (
-              <article
-                key={point.title}
-                className="flex gap-4 rounded-[24px] border border-stone-900/15 bg-[#fbf5e8]/80 p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur"
-              >
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#1c140d] text-[#ffb829] dark:bg-[#ffb829] dark:text-black">
-                  <Icon size={20} />
-                </span>
-                <div>
-                  <h4 className="font-serif text-2xl leading-tight text-stone-950 dark:text-white">{point.title}</h4>
-                  <p className="mt-2 leading-7 text-stone-700 dark:text-white/68">{point.text}</p>
-                </div>
-              </article>
+              <Reveal key={point.title} delay={index * 0.1} y={20}>
+                <motion.article
+                  whileHover={{ scale: 1.015, y: -2 }}
+                  className="flex gap-4 rounded-[24px] border border-stone-900/15 bg-[#fbf5e8]/80 p-5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur"
+                >
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#1c140d] text-[#ffb829] dark:bg-[#ffb829] dark:text-black">
+                    <Icon size={20} />
+                  </span>
+                  <div>
+                    <h4 className="font-serif text-2xl leading-tight text-stone-950 dark:text-white">{point.title}</h4>
+                    <p className="mt-2 leading-7 text-stone-700 dark:text-white/68">{point.text}</p>
+                  </div>
+                </motion.article>
+              </Reveal>
             );
           })}
         </div>
@@ -550,23 +601,27 @@ function MobileDock() {
       <div className="flex items-center gap-1 rounded-full border border-stone-900/20 bg-[#fbf5e8] p-1.5 shadow-[4px_4px_0_0_#1c140d] dark:border-white/10 dark:bg-white/10 dark:shadow-[4px_4px_0_0_#ffb829] dark:backdrop-blur-xl">
         {items.map((item, index) =>
           "action" in item ? (
-            <button
+            <motion.button
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
               key={index}
               onClick={item.action}
               className="grid h-11 w-11 place-items-center rounded-full bg-[#e85d2c] text-white shadow-[2px_2px_0_0_#1c140d] transition dark:bg-[#ffb829] dark:text-black dark:shadow-[2px_2px_0_0_#1c140d]"
               aria-label={item.label}
             >
               <item.icon size={18} />
-            </button>
+            </motion.button>
           ) : (
-            <a
+            <motion.a
+              whileHover={{ scale: 1.15 }}
+              whileTap={{ scale: 0.9 }}
               key={index}
               href={item.href}
               aria-label={item.label}
               className="grid h-11 w-11 place-items-center rounded-full text-stone-700 transition hover:bg-[#1c140d] hover:text-[#ffb829] dark:text-white/80 dark:hover:bg-[#ffb829] dark:hover:text-black"
             >
               <item.icon size={18} />
-            </a>
+            </motion.a>
           )
         )}
       </div>

@@ -242,12 +242,16 @@ export function CaseStudy({
         <p className="font-mono text-[11px] uppercase tracking-[0.35em]" style={{ color: project.color }}>
           — {project.category} · {project.week}
         </p>
-        <h1 className="mt-3 max-w-5xl text-balance font-serif text-5xl leading-tight text-stone-950 dark:text-white md:text-7xl lg:text-[7vw]">
-          <RevealWords text={project.title} />
-        </h1>
-        <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700 dark:text-white/70 md:text-xl">
-          <RevealWords text={project.subtitle} delay={0.12} />
-        </p>
+        <Reveal delay={0.05} y={15}>
+          <h1 className="mt-3 max-w-5xl text-balance font-serif text-5xl leading-tight text-stone-950 dark:text-white md:text-7xl lg:text-[7vw]">
+            {project.title}
+          </h1>
+        </Reveal>
+        <Reveal delay={0.15} y={15}>
+          <p className="mt-5 max-w-3xl text-lg leading-8 text-stone-700 dark:text-white/70 md:text-xl">
+            {project.subtitle}
+          </p>
+        </Reveal>
 
         <div className="mt-10 grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
           <Reveal>
