@@ -210,12 +210,10 @@ export function CaseStudy({
   project,
   onBack,
   onNavigate,
-  onViewCode,
 }: {
   project: Project;
   onBack: () => void;
   onNavigate: (slug: string) => void;
-  onViewCode: (slug: string) => void;
 }) {
   const nextProject = projects.find((p) => p.slug === project.next) ?? projects[0];
 
@@ -336,12 +334,25 @@ export function CaseStudy({
                       <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-stone-500 dark:text-white/45">
                         Mã nguồn
                       </p>
-                      <button
-                        onClick={() => onViewCode(project.slug)}
-                        className="mt-1 inline-flex items-center gap-2 text-sm text-stone-900 dark:text-white underline decoration-stone-400 underline-offset-4 cursor-pointer"
+                      <a
+                        href={(() => {
+                          const link = project.link;
+                          const hashIndex = link.indexOf('#');
+                          if (hashIndex !== -1) {
+                            const base = link.slice(0, hashIndex);
+                            const hash = link.slice(hashIndex);
+                            const separator = base.includes('?') ? '&' : '?';
+                            return `${base}${separator}code=true${hash}`;
+                          }
+                          const separator = link.includes('?') ? '&' : '?';
+                          return `${link}${separator}code=true`;
+                        })()}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-1 inline-flex items-center gap-2 text-sm text-stone-900 dark:text-white underline decoration-stone-400 underline-offset-4"
                       >
                         Xem mã nguồn <Code size={14} />
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div>

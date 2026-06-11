@@ -329,13 +329,7 @@ function Hero({ onViewCode }: { onViewCode: () => void }) {
   );
 }
 
-function ProjectBoard({
-  onOpenProject,
-  onOpenProjectCode,
-}: {
-  onOpenProject: (slug: string) => void;
-  onOpenProjectCode: (slug: string) => void;
-}) {
+function ProjectBoard({ onOpenProject }: { onOpenProject: (slug: string) => void }) {
   const [active, setActive] = useState<ProjectCategory>("Tất cả");
 
   const filtered = useMemo(
@@ -493,14 +487,16 @@ function ProjectBoard({
               >
                 Mở bài bonus <ArrowUpRight size={14} />
               </motion.a>
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.03, y: -2 }}
                 whileTap={{ scale: 0.97 }}
-                onClick={() => onOpenProjectCode("bonus")}
+                href={`${bonusReport.link}?code=true`}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-stone-900/30 px-4 py-2 text-sm text-stone-900 transition dark:border-white/15 dark:text-white/90 dark:hover:bg-white/10 cursor-pointer"
               >
                 Mã nguồn <Code size={14} />
-              </motion.button>
+              </motion.a>
               <span className="rounded-full border border-stone-900/10 bg-white/70 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-stone-600 dark:border-white/10 dark:bg-white/10 dark:text-white/55">
                 Không tính vào 6 bài bắt buộc
               </span>
@@ -656,7 +652,6 @@ function MobileDock() {
 export default function App() {
   const [route, setRoute] = useState<string | null>(null);
   const [viewingPortfolioCode, setViewingPortfolioCode] = useState<boolean>(false);
-  const [viewingProjectCode, setViewingProjectCode] = useState<string | null>(null);
   const project = projects.find((p) => p.slug === route) ?? null;
 
   useEffect(() => {
@@ -683,7 +678,6 @@ export default function App() {
               project={project}
               onBack={() => setRoute(null)}
               onNavigate={(slug) => setRoute(slug)}
-              onViewCode={(slug) => setViewingProjectCode(slug)}
             />
           </motion.div>
         ) : (
@@ -693,7 +687,6 @@ export default function App() {
             <Hero onViewCode={() => setViewingPortfolioCode(true)} />
             <ProjectBoard
               onOpenProject={(slug) => setRoute(slug)}
-              onOpenProjectCode={(slug) => setViewingProjectCode(slug)}
             />
             <Reflection />
             <Contact />
@@ -713,12 +706,6 @@ export default function App() {
           <CodeExplorer
             projectSlug="portfolio"
             onClose={() => setViewingPortfolioCode(false)}
-          />
-        )}
-        {viewingProjectCode && (
-          <CodeExplorer
-            projectSlug={viewingProjectCode}
-            onClose={() => setViewingProjectCode(null)}
           />
         )}
       </AnimatePresence>
