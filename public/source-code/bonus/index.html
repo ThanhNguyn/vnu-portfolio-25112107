@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo Cáo So Sánh AI - Nguyễn Tuấn Thành</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-gradient"></div>
+
+    <header class="header">
+        <div class="container header-inner">
+            <h1 class="logo"><i class="fa-solid fa-microchip"></i> AI <span>Compare</span></h1>
+            <nav class="nav">
+                <a href="#models">Mô Hình</a>
+                <a href="#criteria">Tiêu Chí</a>
+                <a href="#prompts">Bộ Câu Hỏi</a>
+                <a href="#summary">Đánh Giá</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <div class="container hero-content fade-in">
+                <div class="badge">Báo cáo Môn Học</div>
+                <h1 class="hero-title">Đánh Giá & So Sánh Năng Lực Sáng Tạo, Lập Trình Của <span class="text-gradient">3
+                        Mô Hình AI</span> Hàng Đầu</h1>
+                <p class="hero-subtitle">Một góc nhìn toàn diện, phân tích chuyên sâu về sức mạnh của Gemini 3.1 Pro,
+                    GPT 5.4 Pro và Claude 4.6 Sonnet qua 5 lĩnh vực phức tạp.</p>
+
+                <div class="student-info glass-card">
+                    <div class="student-avatar">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div class="student-details">
+                        <p class="name">Nguyễn Tuấn Thành</p>
+                        <p class="id">MSSV: 25112107 | Lớp: E252047</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MODELS & SCREENSHOTS SECTION -->
+        <section class="models section" id="models">
+            <div class="container">
+                <h2 class="section-title fade-in">I. Các Công Cụ Sử Dụng & Minh Chứng</h2>
+                <div class="grid-3">
+                    <div class="glass-card model-card fade-in">
+                        <div class="model-header gemini-bg">
+                            <i class="fa-solid fa-sparkles"></i> Gemini 3.1 Pro
+                        </div>
+                        <div class="model-body">
+                            <p>Mô hình đa phương thức tiên tiến từ Google với khả năng suy luận mạnh mẽ.</p>
+                            <div class="screenshot-box">
+                                <!-- Điền ảnh minh chứng tại đây -->
+                                <img src="images/image copy 2.png" alt="Gemini Screenshot" class="screenshot-img">
+                                <span class="screenshot-caption">Minh chứng sử dụng Gemini</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card model-card fade-in" style="animation-delay: 0.1s">
+                        <div class="model-header gpt-bg">
+                            <i class="fa-solid fa-bolt"></i> GPT 5.4 Pro
+                        </div>
+                        <div class="model-body">
+                            <p>Kiến trúc AI mạnh mẽ nhất của OpenAI, xuất sắc trong tư duy logic và lập trình.</p>
+                            <div class="screenshot-box">
+                                <!-- Điền ảnh minh chứng tại đây -->
+                                <img src="images/image copy.png" alt="GPT Screenshot" class="screenshot-img">
+                                <span class="screenshot-caption">Minh chứng sử dụng GPT</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card model-card fade-in" style="animation-delay: 0.2s">
+                        <div class="model-header sonnet-bg">
+                            <i class="fa-solid fa-pen-nib"></i> Claude 4.6 Sonnet
+                        </div>
+                        <div class="model-body">
+                            <p>Bản cập nhật mới nhất từ Anthropic, thiên về sự an toàn, tinh tế và coding xuất sắc.</p>
+                            <div class="screenshot-box">
+                                <!-- Điền ảnh minh chứng tại đây -->
+                                <img src="images/image.png" alt="Sonnet Screenshot" class="screenshot-img">
+                                <span class="screenshot-caption">Minh chứng sử dụng Sonnet</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CRITERIA SECTION -->
+        <section class="criteria section" id="criteria">
+            <div class="container">
+                <h2 class="section-title fade-in">II. Các Tiêu Chí Đánh Giá</h2>
+                <div class="criteria-list glass-card fade-in">
+                    <ul>
+                        <li><i class="fa-solid fa-check-circle"></i> <strong>Độ chính xác:</strong> Thông tin đưa ra có
+                            chuẩn xác, code có chạy được không.</li>
+                        <li><i class="fa-solid fa-list-check"></i> <strong>Độ chi tiết & đầy đủ:</strong> Khả năng giải
+                            thích cặn kẽ mọi góc độ của vấn đề.</li>
+                        <li><i class="fa-solid fa-brain"></i> <strong>Hiểu ngữ cảnh & ý định:</strong> Đáp ứng đúng các
+                            yêu cầu ẩn/cụ thể trong prompt.</li>
+                        <li><i class="fa-solid fa-lightbulb"></i> <strong>Tính sáng tạo & đa dạng:</strong> Cách tiếp
+                            cận mới lạ, không rập khuôn.</li>
+                        <li><i class="fa-solid fa-language"></i> <strong>Xử lý tiếng Việt:</strong> Văn phong tự nhiên,
+                            đúng ngữ pháp, đúng thuật ngữ.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROMPTS AND RESPONSES SECTION (Core) -->
+        <section class="prompts section" id="prompts">
+            <div class="container">
+                <h2 class="section-title fade-in">III. Bộ Câu Hỏi & Phân Tích So Sánh</h2>
+                <p class="section-desc fade-in">Bộ 5 câu hỏi được thiết kế phức tạp, bao phủ nhiều khía cạnh để thử
+                    thách trí tuệ của các mô hình.</p>
+
+                <div class="workspace glass-card fade-in">
+                    <!-- Sidebar: Tabs Câu Hỏi -->
+                    <div class="prompt-tabs">
+                        <button class="prompt-tab active" data-target="prompt-1">
+                            <div class="p-num">1</div>
+                            <div class="p-info">
+                                <span class="p-domain">Lập trình (C++ & OOP)</span>
+                                <span class="p-title">Dijkstra chuẩn Competitive</span>
+                            </div>
+                        </button>
+                        <button class="prompt-tab" data-target="prompt-2">
+                            <div class="p-num">2</div>
+                            <div class="p-info">
+                                <span class="p-domain">Vật Lý & Tư Duy Không Gian</span>
+                                <span class="p-title">Định lý Gauss (Không có PT)</span>
+                            </div>
+                        </button>
+                        <button class="prompt-tab" data-target="prompt-3">
+                            <div class="p-num">3</div>
+                            <div class="p-info">
+                                <span class="p-domain">Luật học & Triết học</span>
+                                <span class="p-title">Lý Luận Nhà Nước</span>
+                            </div>
+                        </button>
+                        <button class="prompt-tab" data-target="prompt-4">
+                            <div class="p-num">4</div>
+                            <div class="p-info">
+                                <span class="p-domain">Ngoại Ngữ & Sư Phạm</span>
+                                <span class="p-title">Ngữ Pháp Tiếng Nhật</span>
+                            </div>
+                        </button>
+                        <button class="prompt-tab" data-target="prompt-5">
+                            <div class="p-num">5</div>
+                            <div class="p-info">
+                                <span class="p-domain">Thể Thao & Chiến thuật</span>
+                                <span class="p-title">Phân tích Real Madrid</span>
+                            </div>
+                        </button>
+                    </div>
+
+                    <!-- Content: Chứa Prompt và Responses -->
+                    <div class="prompt-content">
+                        <!-- PROMPT 1 -->
+                        <div class="prompt-pane active" id="prompt-1">
+                            <div class="the-prompt box-dark">
+                                <h3><i class="fa-solid fa-terminal"></i> Lệnh yêu cầu (Prompt)</h3>
+                                <p class="prompt-text">Viết một chương trình C++ giải quyết bài toán tìm đường đi ngắn
+                                    nhất trên đồ thị (thuật toán Dijkstra) nhưng bắt buộc phải thiết kế theo chuẩn Lập
+                                    trình hướng đối tượng (OOP). Cụ thể, hãy đóng gói đồ thị thành một class Graph, quản
+                                    lý các đỉnh và cạnh rõ ràng. Yêu cầu code phải tối ưu thời gian chạy theo chuẩn thi
+                                    đấu Competitive Programming và có comment tiếng Việt giải thích tư duy thiết kế
+                                    class chứ không chỉ giải thích thuật toán.</p>
+                            </div>
+
+                            <!-- Tabs Mô hình Trả lời -->
+                            <div class="model-tabs">
+                                <button class="model-tab gemini-tab active" data-model="g">Gemini 3.1 Pro</button>
+                                <button class="model-tab gpt-tab" data-model="p">GPT 5.4 Pro</button>
+                                <button class="model-tab sonnet-tab" data-model="s">Claude 4.6 Sonnet</button>
+                            </div>
+
+                            <!-- Gemini 3.1 Pro Response -->
+                            <div class="model-pane active" id="p1-g">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Gemini 3.1 Pro):</h4>
+                                    <p>Sự kết hợp giữa tốc độ thực thi trong Competitive Programming (như trên
+                                        Codeforces hay LeetCode) và tính minh bạch của Lập trình hướng đối tượng (OOP)
+                                        là một hướng đi rất thú vị. Dưới đây là mã nguồn C++ giải quyết thuật toán
+                                        Dijkstra giữ nguyên các tối ưu cốt lõi về thời gian chạy nhưng cấu trúc tuân thủ
+                                        các nguyên tắc đóng gói và trừu tượng hóa của OOP.</p>
+
+                                    <div class="code-wrapper">
+                                        <pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;queue&gt;
+
+using namespace std;
+
+const int INF = 1e9; // Đại diện cho vô cực trong các bài toán đồ thị
+
+class Graph {
+private:
+    int numVertices;
+    
+    // ĐÓNG GÓI (Encapsulation): Danh sách kề đặt làm private.
+    // Tư duy: Cấu trúc bên trong không được phép can thiệp trực tiếp từ bên ngoài.
+    // Tối ưu CP: Dùng vector chứa pair đảm bảo Cache Locality.
+    vector&lt;vector&lt;pair&lt;int, int&gt;&gt;&gt; adj;
+
+public:
+    // CONSTRUCTOR: Khởi tạo đồ thị
+    Graph(int V) : numVertices(V) {
+        adj.resize(V); // Tối ưu CP: resize ngay lập tức tránh reallocate
+    }
+
+    // GIAO DIỆN CÔNG CẤP (Public Interface)
+    void addEdge(int u, int v, int weight, bool isDirected = false) {
+        adj[u].push_back({weight, v});
+        if (!isDirected) {
+            adj[v].push_back({weight, u});
+        }
+    }
+
+    // TRỪU TƯỢNG HÓA (Abstraction): Hàm dijkstra 'const' bảo vệ dữ liệu
+    vector&lt;int&gt; dijkstra(int start) const {
+        vector&lt;int&gt; dist(numVertices, INF);
+        // Min-heap ưu tiên khoảng cách nhỏ
+        priority_queue&lt;pair&lt;int, int&gt;, vector&lt;pair&lt;int, int&gt;&gt;, greater&lt;pair&lt;int, int&gt;&gt;&gt; pq;
+
+        dist[start] = 0;
+        pq.push({0, start});
+
+        while (!pq.empty()) {
+            int d = pq.top().first;
+            int u = pq.top().second;
+            pq.pop();
+
+            // Tối ưu CP (Lazy Deletion): bỏ qua nếu khoảng cách cũ
+            if (d &gt; dist[u]) continue;
+
+            // Dùng tham chiếu hằng (const auto&) tránh copy
+            for (const auto&amp; edge : adj[u]) {
+                int weight = edge.first;
+                int v = edge.second;
+
+                if (dist[u] + weight &lt; dist[v]) {
+                    dist[v] = dist[u] + weight;
+                    pq.push({dist[v], v});
+                }
+            }
+        }
+        return dist;
+    }
+};
+
+int main() {
+    // Tối ưu CP: Tắt đồng bộ I/O
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int N, M, S; 
+    if (!(cin &gt;&gt; N &gt;&gt; M &gt;&gt; S)) return 0;
+
+    Graph g(N);
+    for (int i = 0; i &lt; M; ++i) {
+        int u, v, w;
+        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+        g.addEdge(u, v, w, true); 
+    }
+
+    // Gửi thông điệp (Message Passing) 
+    vector&lt;int&gt; distances = g.dijkstra(S);
+
+    for (int i = 0; i &lt; N; ++i) {
+        if (distances[i] == INF) cout &lt;&lt; "-1 ";
+        else cout &lt;&lt; distances[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; "\n";
+    return 0;
+}</code></pre>
+                                    </div>
+                                    <p><strong>Điểm nhấn trong tư duy thiết kế:</strong> Tính Đóng Gói (Encapsulation),
+                                        Trạng thái bất biến (Const Correctness), và Hiệu Suất (Performance) không sử
+                                        dụng con trỏ hay hàm ảo.</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <!-- ĐÁNH GIÁ ĐÃ HOÀN THIỆN -->
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(9/10)</strong> Thuật toán chạy chuẩn xác O((V+E)log V). Tuy nhiên dùng <code>int</code> cho trọng số dễ bị tràn số (overflow) trong một số bài CP khó.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(8.5/10)</strong> Comment rõ ràng từng block chức năng. Thiếu sót nhỏ là cấu trúc dữ liệu <code>pair</code> bên trong chưa quy hoạch thành struct Edge để thuần OOP hơn.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(9.5/10)</strong> Nắm bắt đúng tinh thần "cân bằng" giữa tính cồng kềnh của OOP và tốc độ Fast I/O của CP.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(9/10)</strong> Nhấn mạnh khái niệm "Trạng thái bất biến" (Const Correctness) — điều hiếm thấy ở các newbie lập trình.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Hành văn trôi chảy, dịch đúng chuẩn các thuật ngữ hệ thống.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- GPT Pane -->
+                            <div class="model-pane" id="p1-p">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (GPT 5.4 Pro):</h4>
+                                    <p>Tôi sẽ viết lời giải C++ theo hướng OOP nhưng vẫn tối ưu kiểu Competitive
+                                        Programming, với <code>class Graph</code> quản lý danh sách kề, API thêm cạnh rõ
+                                        ràng, <code>dijkstra()</code> dùng <code>priority_queue</code>, và comment tiếng
+                                        Việt nhấn mạnh tư duy thiết kế class.</p>
+
+                                    <div class="code-wrapper">
+                                        <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+// Dùng long long để an toàn khi tổng trọng số lớn
+using ll = long long;
+const ll INF = (ll)4e18;
+
+struct Edge {
+    int to;
+    ll weight;
+    Edge(int _to, ll _weight) : to(_to), weight(_weight) {}
+};
+
+class Graph {
+private:
+    int n;
+    bool directed;
+    vector&lt;vector&lt;Edge&gt;&gt; adj;
+
+public:
+    Graph(int _n, bool _directed = false) : n(_n), directed(_directed) {
+        adj.assign(n + 1, vector&lt;Edge&gt;());
+    }
+
+    void addEdge(int u, int v, ll w) {
+        adj[u].emplace_back(v, w);
+        if (!directed) adj[v].emplace_back(u, w);
+    }
+
+    vector&lt;ll&gt; dijkstra(int source) const {
+        vector&lt;ll&gt; dist(n + 1, INF);
+        priority_queue&lt;pair&lt;ll, int&gt;, vector&lt;pair&lt;ll, int&gt;&gt;, greater&lt;pair&lt;ll, int&gt;&gt;&gt; pq;
+
+        dist[source] = 0;
+        pq.push({0, source});
+
+        while (!pq.empty()) {
+            auto [curDist, u] = pq.top();
+            pq.pop();
+
+            if (curDist != dist[u]) continue;
+
+            for (const Edge &amp;edge : adj[u]) {
+                int v = edge.to;
+                ll w = edge.weight;
+
+                if (dist[v] &gt; dist[u] + w) {
+                    dist[v] = dist[u] + w;
+                    pq.push({dist[v], v});
+                }
+            }
+        }
+        return dist;
+    }
+
+    int size() const { return n; }
+};
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int n, m; cin &gt;&gt; n &gt;&gt; m;
+    Graph g(n, false);
+    for (int i = 0; i &lt; m; i++) {
+        int u, v; ll w;
+        cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;
+        g.addEdge(u, v, w);
+    }
+    
+    int s; cin &gt;&gt; s;
+    vector&lt;ll&gt; dist = g.dijkstra(s);
+    for (int i = 1; i &lt;= g.size(); i++) {
+        cout &lt;&lt; (dist[i] == INF ? -1 : dist[i]) &lt;&lt; ' ';
+    }
+    cout &lt;&lt; '\n';
+    return 0;
+}</code></pre>
+                                    </div>
+                                    <div class="mt-4">
+                                        <h5>Giải thích ngắn về thiết kế OOP:</h5>
+                                        <ol style="margin-left: 1.5rem">
+                                            <li><strong><code>Graph</code> là nơi quản lý dữ liệu đồ thị:</strong> Tránh
+                                                code ngoài sửa linh tinh vào cấu trúc dữ liệu. Khi thay đổi cách lưu đồ
+                                                thị, code main gần như không phải sửa.</li>
+                                            <li><strong><code>addEdge()</code> là API chuẩn để thêm cạnh:</strong> Nhằm
+                                                kiểm soát được logic đồ thị có hướng hay vô hướng ở một nơi.</li>
+                                            <li><strong><code>dijkstra()</code> là hành vi tự nhiên của đồ thị:</strong>
+                                                Thuật toán đường đi ngắn nhất tác động trực tiếp lên dữ liệu đồ thị nên
+                                                hợp lý khi là method của Graph.</li>
+                                        </ol>
+
+                                        <h5 class="mt-4">Vì sao cách này vẫn đủ "chuẩn thi đấu":</h5>
+                                        <p>Nhiều bạn sợ OOP sẽ chậm, nhưng ở đây overhead rất nhỏ vì:</p>
+                                        <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                            <li><code>Edge</code> chỉ là struct đơn giản.</li>
+                                            <li><code>adj</code> vẫn là <code>vector&lt;vector&lt;Edge&gt;&gt;</code>,
+                                                rất quen thuộc trong CP.</li>
+                                            <li>Không dùng kế thừa, virtual function, dynamic polymorphism.</li>
+                                            <li>Dijkstra vẫn dùng min-heap chuẩn.</li>
+                                        </ul>
+                                        <p>Nên hiệu năng thực tế vẫn tốt như cách code thủ tục thông thường.</p>
+
+                                        <h5 class="mt-4">Độ phức tạp:</h5>
+                                        <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+                                            <li>Bộ nhớ: <strong>O(N + M)</strong></li>
+                                            <li>Thời gian Dijkstra: <strong>O((N + M) log N)</strong></li>
+                                        </ul>
+
+                                        <h5>Input/Output mẫu:</h5>
+                                        <div class="code-wrapper">
+                                            <pre><code>[Input]
+5 6
+1 2 2
+1 3 4
+2 3 1
+2 4 7
+3 5 3
+4 5 1
+1
+
+[Output]
+0 2 3 7 6</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <!-- ĐÁNH GIÁ ĐÃ HOÀN THIỆN -->
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Code tuyệt đối an toàn với <code>long long</code> chống tràn, sử dụng mảng 1-indexed chuẩn thi đấu.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(9.5/10)</strong> Giải thích tập trung mạnh vào mục tiêu câu hỏi (tư duy OOP), tuy lược bớt giải thích Dijkstra nhưng rất hợp lý.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(9.5/10)</strong> Thấu hiểu vai trò của việc đóng gói <code>vector&lt;vector&lt;Edge&gt;&gt;</code> tránh bị can thiệp bên ngoài. Nhập vai "giáo viên hướng dẫn code" đôi chỗ hơi giáo điều.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(9/10)</strong> Cấu trúc sạch sẽ, phong cách viết class <code>Edge</code> giúp luồng dữ liệu minh bạch hơn hẳn.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Từ vựng lập trình chính xác, giải thích thẳng thắn đúng trọng tâm người chuyên nghiệp.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sonnet Pane -->
+                            <div class="model-pane" id="p1-s">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Claude 4.6 Sonnet):</h4>
+                                    <p>Giải pháp thiết kế: `Graph` đóng gói CẤU TRÚC đồ thị, `Dijkstra` đóng gói HÀNH
+                                        VI. Sử dụng Edge struct, Lazy Deletion trong priority_queue, và tránh resize
+                                        vector ngầm để tối ưu cho Competitive Programming.</p>
+                                    <div class="code-wrapper">
+                                        <pre><code class="language-cpp">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+using ll   = long long;
+using pli  = pair&lt;ll, int&gt;;
+constexpr ll INF = 4e18;
+
+struct Edge {
+    int to;
+    ll  w;
+};
+
+class Graph {
+public:
+    explicit Graph(int n) : n_(n), adj_(n) {}
+
+    Graph&amp; addEdge(int u, int v, ll w, bool directed = true) {
+        adj_[u].push_back({v, w});
+        if (!directed) adj_[v].push_back({u, w});
+        return *this;
+    }
+
+    [[nodiscard]] int numVertices() const { return n_; }
+    [[nodiscard]] const vector&lt;Edge&gt;&amp; neighbors(int u) const { return adj_[u]; }
+
+private:
+    int                   n_;
+    vector&lt;vector&lt;Edge&gt;&gt;  adj_;
+};
+
+class Dijkstra {
+public:
+    explicit Dijkstra(const Graph&amp; g) : g_(g) {}
+
+    const vector&lt;ll&gt;&amp; run(int src) {
+        int n = g_.numVertices();
+        dist_.assign(n, INF);
+        prev_.assign(n, -1);
+
+        priority_queue&lt;pli, vector&lt;pli&gt;, greater&lt;pli&gt;&gt; pq;
+        dist_[src] = 0;
+        pq.push({0, src});
+
+        while (!pq.empty()) {
+            auto [d, u] = pq.top(); pq.pop();
+
+            if (d &gt; dist_[u]) continue;
+
+            for (const Edge&amp; e : g_.neighbors(u)) {
+                ll nd = dist_[u] + e.w;
+                if (nd &lt; dist_[e.to]) {
+                    dist_[e.to] = nd;
+                    prev_[e.to]  = u;
+                    pq.push({nd, e.to});
+                }
+            }
+        }
+        return dist_;
+    }
+
+    [[nodiscard]] ll distTo(int v) const { return dist_[v]; }
+    
+    [[nodiscard]] vector&lt;int&gt; pathTo(int v) const {
+        if (dist_[v] == INF) return {};
+        vector&lt;int&gt; path;
+        for (int cur = v; cur != -1; cur = prev_[cur])
+            path.push_back(cur);
+        reverse(path.begin(), path.end());
+        return path;
+    }
+
+private:
+    const Graph&amp; g_;
+    vector&lt;ll&gt;   dist_;
+    vector&lt;int&gt;  prev_;
+};
+
+void printPath(const vector&lt;int&gt;&amp; path) {
+    if (path.empty()) { cout &lt;&lt; "Không tồn tại đường đi\n"; return; }
+    for (int i = 0; i &lt; (int)path.size(); ++i) {
+        if (i) cout &lt;&lt; " → ";
+        cout &lt;&lt; path[i];
+    }
+    cout &lt;&lt; '\n';
+}
+
+int main() {
+    ios::sync_with_stdio(false); cin.tie(nullptr);
+    Graph g(6);
+    g.addEdge(0, 1, 2).addEdge(0, 2, 4).addEdge(1, 2, 1)
+     .addEdge(1, 3, 7).addEdge(1, 4, 1).addEdge(2, 4, 3)
+     .addEdge(3, 5, 5).addEdge(4, 3, 2).addEdge(4, 5, 1);
+
+    Dijkstra dijk(g);
+    dijk.run(0);
+
+    for (int v = 0; v &lt; g.numVertices(); ++v) {
+        cout &lt;&lt; "0 → " &lt;&lt; v &lt;&lt; " : " &lt;&lt; (dijk.distTo(v) == INF ? "∞" : to_string(dijk.distTo(v))) &lt;&lt; "  |  Đường đi: ";
+        printPath(dijk.pathTo(v));
+    }
+    return 0;
+}</code></pre>
+                                    </div>
+                                    <p><strong>Điểm nhấn trong tư duy thiết kế:</strong> Tách biệt cấu trúc dữ liệu
+                                        (`Graph`) và hành vi thuật toán (`Dijkstra`). Áp dụng chặt chẽ "Single
+                                        Responsibility Principle" (SRP) cho phép tái sử dụng đối tượng `Graph` nguyên
+                                        vẹn cho nhiều query Dijkstra khác nhau. Kèm theo Best Practice `[[nodiscard]]`
+                                        và kiểu `long long` cho trọng số.</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <!-- ĐÁNH GIÁ ĐÃ HOÀN THIỆN -->
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Code vững chắc, chuẩn C++20. Tư duy xử lý cực kỳ cứng cáp và an toàn tuyệt đối.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Thấu hiểu đến từng vi hạt: khuyên dùng <code>[[nodiscard]]</code> và <code>explicit</code> constructor vô cùng chỉn chu.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Vượt mong đợi. GPT và Gemini gộp <code>dijkstra</code> vào đồ thị, Sonnet tách <code>Dijkstra</code> ra class riêng giúp tái sử dụng cho nhiều Root Node mà không cần clone object.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Khẳng định đẳng cấp AI cực mạnh bằng việc mang nguyên tắc thiết kế đỉnh cao "Single Responsibility Principle (SRP)" vào bài toán Competitive Programming.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(9.5/10)</strong> Hệ thống rành mạch, giải thích uyên bác. Tuy nhiên văn phong hơi "khô học thuật" so với 2 mô hình còn lại.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Các PROMPT KHÁC TƯƠNG TỰ (ẨN ĐI TRƯỚC) -->
+                        <div class="prompt-pane" id="prompt-2">
+                            <div class="the-prompt box-dark">
+                                <h3><i class="fa-solid fa-atom"></i> Lệnh yêu cầu (Prompt) 2</h3>
+                                <p class="prompt-text">Một quả cầu đặc cách điện bán kính R có điện tích phân bố không
+                                    đồng đều với mật độ điện tích khối tỷ lệ thuận với khoảng cách tính từ tâm quả cầu.
+                                    Hãy dùng định lý Gauss để lập luận và chỉ ra cách tính cường độ điện trường tại một
+                                    điểm nằm bên trong quả cầu. Yêu cầu: Trình bày từng bước tư duy vật lý hoàn toàn
+                                    bằng văn xuôi tiếng Việt, giải thích cách chọn mặt Gauss mà không dùng bất kỳ công
+                                    thức hay ký hiệu toán học phức tạp nào.</p>
+                            </div>
+                            <div class="model-tabs">
+                                <button class="model-tab gemini-tab active" data-model="g">Gemini 3.1 Pro</button>
+                                <button class="model-tab gpt-tab" data-model="p">GPT 5.4 Pro</button>
+                                <button class="model-tab sonnet-tab" data-model="s">Claude 4.6 Sonnet</button>
+                            </div>
+
+                            <!-- Gemini 3.1 Pro cho Prompt 2 -->
+                            <div class="model-pane active" id="p2-g">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Gemini 3.1 Pro):</h4>
+                                    <p>Chào bạn, đây là một bài toán vật lý rất thú vị và đòi hỏi sự tư duy không gian
+                                        tốt. Việc bạn muốn dùng văn xuôi để lập luận thay vì bám vào các công thức khô
+                                        khan là một cách tuyệt vời để thực sự hiểu bản chất cốt lõi của định lý Gauss.
+                                    </p>
+                                    <p>Chúng ta sẽ cùng nhau "mổ xẻ" vấn đề này từng bước một nhé.</p>
+
+                                    <h5 class="mt-4">1. Phân tích tính đối xứng của hệ thống</h5>
+                                    <p>Đầu tiên, hãy tưởng tượng quả cầu cách điện này giống như một củ hành tây với rất
+                                        nhiều lớp vỏ xếp chồng lên nhau. Đề bài cho biết mật độ điện tích tỷ lệ thuận
+                                        với khoảng cách từ tâm, nghĩa là ở ngay tâm, quả cầu không có điện tích, nhưng
+                                        càng đi ra xa phía ngoài vỏ, các lớp "hành tây" càng chứa nhiều điện tích hơn
+                                        một cách đều đặn.</p>
+                                    <p>Vì quả cầu là hoàn hảo và sự phân bố điện tích tỏa đều ra mọi hướng từ tâm, hệ
+                                        thống này có <strong>tính đối xứng cầu tuyệt đối</strong>. Điều này dẫn đến hai
+                                        hệ quả vật lý cực kỳ quan trọng đối với hướng của lực điện trường:</p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li>Đường sức của điện trường bắt buộc phải hướng thẳng từ tâm ra ngoài (hoặc
+                                            đâm thẳng từ ngoài vào tâm). Nó không thể nghiêng sang trái hay sang phải,
+                                            vì không có hướng nào là "ưu tiên" hơn hướng nào cả.</li>
+                                        <li>Tại bất kỳ điểm nào cách tâm một khoảng cách bằng nhau, độ lớn của điện
+                                            trường bắt buộc phải giống hệt nhau.</li>
+                                    </ul>
+
+                                    <h5 class="mt-4">2. Cách chọn "Mặt Gauss" hoàn hảo</h5>
+                                    <p>Định lý Gauss yêu cầu chúng ta phải vẽ tưởng tượng một mặt kín bao quanh khu vực
+                                        cần xét. Để tính điện trường tại một điểm nằm sâu bên trong quả cầu, chúng ta sẽ
+                                        chọn một mặt Gauss là <strong>một mặt cầu ảo, có tâm trùng với tâm của quả cầu
+                                            thật, và bề mặt của nó đi ngang qua chính điểm mà chúng ta đang muốn tính
+                                            toán.</strong></p>
+                                    <p><strong>Tại sao lại chọn mặt cầu ảo này?</strong> Đây là bước khôn ngoan nhất
+                                        trong việc dùng định lý Gauss. Nhờ tính đối xứng đã phân tích ở trên, mặt cầu ảo
+                                        này mang lại cho chúng ta hai lợi thế tuyệt đối:</p>
+                                    <ul style="margin-left: 1.5rem;">
+                                        <li>Mọi điểm trên bề mặt ảo này đều cách tâm một khoảng như nhau, do đó cường độ
+                                            điện trường trên toàn bộ bề mặt này là một con số không đổi.</li>
+                                        <li>Hướng của điện trường luôn đâm xuyên thẳng góc (vuông góc) qua bề mặt ảo tại
+                                            mọi điểm.</li>
+                                    </ul>
+                                    <p>Nhờ hai điều kiện này, "tổng lượng từ thông" (có thể hiểu nôm na là tổng số lượng
+                                        các tia điện trường đâm xuyên qua toàn bộ mặt ảo) đơn giản chỉ là phép nhân giữa
+                                        cường độ điện trường tại điểm ta cần tìm với tổng diện tích của bề mặt cầu ảo
+                                        đó.</p>
+
+                                    <h5 class="mt-4">3. Tính lượng điện tích bị "nhốt" bên trong mặt ảo</h5>
+                                    <p>Theo định lý Gauss, tổng lượng từ thông đâm xuyên ra khỏi mặt cầu ảo chỉ phụ
+                                        thuộc duy nhất vào <strong>tổng lượng điện tích nằm gọn bên trong</strong> mặt
+                                        cầu ảo đó. Lớp vỏ quả cầu thật nằm bên ngoài mặt ảo sẽ không đóng góp gì vào kết
+                                        quả này và bị loại bỏ hoàn toàn khỏi suy nghĩ của chúng ta.</p>
+                                    <p>Nhưng làm sao để tính lượng điện tích bên trong khi nó phân bố không đều?</p>
+                                    <p>Chúng ta lại dùng hình ảnh củ hành tây. Ta sẽ chia không gian bên trong mặt cầu
+                                        ảo thành vô số những lớp vỏ cầu cực kỳ mỏng. Đối với mỗi lớp vỏ mỏng manh này,
+                                        khoảng cách từ nó đến tâm coi như không đổi, nên mật độ điện tích của nó là đồng
+                                        nhất. Ta tính lượng điện tích của từng lớp vỏ mỏng bằng cách lấy thể tích của
+                                        lớp vỏ đó nhân với mật độ điện tích tại đúng vị trí đó. Sau đó, ta cộng dồn
+                                        (tích lũy) điện tích của tất cả các lớp vỏ mỏng này lại, bắt đầu từ tâm quét dần
+                                        ra cho đến khi chạm đến mặt cầu ảo. Kết quả của việc cộng dồn này chính là tổng
+                                        lượng điện tích bị "nhốt".</p>
+
+                                    <h5 class="mt-4">4. Kết luận: Rút ra cách tính cường độ điện trường</h5>
+                                    <p>Bây giờ, ta đặt hai phía của định lý Gauss lên bàn cân:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Một bên là:</strong> Cường độ điện trường cần tìm nhân với diện tích
+                                            của mặt cầu ảo.</li>
+                                        <li><strong>Một bên là:</strong> Tổng lượng điện tích bị nhốt bên trong (vừa
+                                            tính ở bước 3) chia cho một hằng số môi trường (độ tự thẩm của chân không).
+                                        </li>
+                                    </ul>
+                                    <p>Từ sự cân bằng này, cách tính cường độ điện trường trở nên vô cùng rõ ràng:
+                                        <strong>Bạn chỉ cần lấy tổng lượng điện tích bị "nhốt" bên trong mặt cầu ảo,
+                                            chia cho một hằng số môi trường, rồi tiếp tục chia cho diện tích của chính
+                                            mặt cầu ảo đó.</strong> Vậy là xong! Chúng ta đã giải quyết bài toán hoàn
+                                        toàn bằng tư duy vật lý mà không bị rối mắt bởi các ký hiệu cực kỳ nhanh gọn.
+                                    </p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Tuân thủ nghiêm ngặt nguyên tắc không dùng công thức. Lập luận Gauss tuyệt đối chuẩn xác.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Quá trình trình bày từ tính đối xứng (Symetry) đến việc kết luận vi phân theo vỏ cực kỳ trọn vẹn.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Bắt nhịp quá tốt yêu cầu "dùng văn xuôi", cách khởi đầu tự nhiên, gần gũi nhưng hàn lâm sâu sắc.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Hình ảnh "củ hành tây mỏng" biến phương pháp tích phân thành hình ảnh khối 3D trực quan. Cực kỳ xuất sắc.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Lập luận sư phạm hạng A. Ngôn từ có sức thuyết phục cao.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- GPT Pane -->
+                            <div class="model-pane" id="p2-p">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (GPT 5.4 Pro):</h4>
+                                    <p>Ta có thể lập luận rất gọn bằng tư duy đối xứng và định lý Gauss như sau.</p>
+
+                                    <h5 class="mt-4">Bước đầu tiên: nhận ra loại đối xứng của bài toán.</h5>
+                                    <p>Mật độ điện tích không đều, nhưng nó chỉ thay đổi theo độ xa gần so với tâm quả
+                                        cầu, chứ không phụ thuộc vào hướng. Điều đó có nghĩa là quả cầu vẫn có
+                                        <strong>đối xứng cầu</strong>. Nói đơn giản, nếu quay quả cầu theo bất kỳ hướng
+                                        nào thì cách phân bố điện tích nhìn từ tâm vẫn y hệt. Vì thế, điện trường bên
+                                        trong không thể thiên vị một phương nào ngoài phương nối từ tâm đến điểm đang
+                                        xét. Do đó, điện trường tại điểm ấy chỉ có thể hướng dọc theo bán kính: nếu điện
+                                        tích dương thì hướng ra ngoài, nếu điện tích âm thì hướng vào trong.
+                                    </p>
+
+                                    <h5 class="mt-4">Bước thứ hai: chọn mặt Gauss thích hợp.</h5>
+                                    <p>Ta tưởng tượng một mặt cầu kín, cùng tâm với quả cầu thật, và đi qua điểm bên
+                                        trong mà ta muốn xét điện trường. Đây là lựa chọn tự nhiên nhất vì mọi điểm trên
+                                        mặt cầu tưởng tượng này đều cách tâm một khoảng như nhau. Mà bài toán lại đối
+                                        xứng theo khoảng cách đến tâm, nên trên toàn bộ mặt Gauss đó, độ lớn điện trường
+                                        phải giống nhau. Hơn nữa, hướng điện trường ở mọi điểm trên mặt ấy lại vuông góc
+                                        với mặt cầu, vì nó đi theo phương bán kính. Đây chính là lý do mặt Gauss hình
+                                        cầu là lựa chọn "đẹp" nhất: nó biến định lý Gauss thành một công cụ rất đơn giản
+                                        để dùng.</p>
+
+                                    <h5 class="mt-4">Bước thứ ba: dùng ý nghĩa vật lý của định lý Gauss.</h5>
+                                    <p>Định lý Gauss nói rằng tổng "dòng điện trường" đi xuyên qua mặt kín chỉ phụ thuộc
+                                        vào <strong>điện tích nằm bên trong mặt đó</strong>. Vì trên mặt Gauss của ta
+                                        điện trường có cùng độ lớn ở mọi nơi và luôn vuông góc với mặt, nên tổng dòng
+                                        điện trường qua mặt chỉ là "độ lớn điện trường" nhân với "diện tích mặt cầu".
+                                        Vậy muốn biết điện trường, ta chỉ còn việc tìm xem bên trong mặt cầu tưởng tượng
+                                        ấy chứa bao nhiêu điện tích.</p>
+
+                                    <h5 class="mt-4">Bước thứ tư: tính điện tích nằm bên trong mặt Gauss bằng cách chia
+                                        thành các lớp cầu mỏng.</h5>
+                                    <p>Hãy hình dung phần từ tâm đến mặt Gauss được tách thành vô số lớp cầu mỏng đồng
+                                        tâm. Với mỗi lớp mỏng như vậy, lượng điện tích chứa trong nó phụ thuộc vào hai
+                                        chuyện:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li>Thứ nhất, lớp ở xa tâm hơn thì có diện tích lớn hơn, nên nếu dày như nhau,
+                                            nó có thể tích lớn hơn.</li>
+                                        <li>Thứ hai, đề bài còn cho biết mật độ điện tích lại tăng theo khoảng cách đến
+                                            tâm, nên lớp ở xa tâm hơn không chỉ lớn hơn về thể tích mà còn "đậm điện
+                                            tích" hơn.</li>
+                                    </ul>
+                                    <p>Kết hợp hai ý này, ta thấy điện tích của một lớp cầu mỏng tăng rất nhanh khi đi
+                                        ra xa tâm. Cụ thể về mặt xu hướng, diện tích lớp cầu tăng theo bình phương
+                                        khoảng cách đến tâm, còn mật độ điện tích tăng theo chính khoảng cách ấy. Vì vậy
+                                        điện tích của mỗi lớp mỏng tăng theo lũy thừa bậc ba của khoảng cách đến tâm.
+                                        Khi cộng dồn tất cả các lớp từ tâm ra tới mặt Gauss, tổng điện tích bị bao bởi
+                                        mặt Gauss sẽ tăng theo lũy thừa bậc bốn của bán kính mặt Gauss.</p>
+
+                                    <h5 class="mt-4">Bước thứ năm: so sánh điện tích chứa bên trong với diện tích mặt
+                                        Gauss.</h5>
+                                    <p>Diện tích của mặt Gauss hình cầu chỉ tăng theo bình phương khoảng cách đến tâm.
+                                        Trong khi đó, như vừa lập luận, điện tích chứa bên trong lại tăng theo lũy thừa
+                                        bậc bốn của khoảng cách ấy. Theo định lý Gauss, điện trường được quyết định bởi
+                                        "điện tích bên trong" chia cho "diện tích mặt". Vì vậy, sau khi rút gọn mức
+                                        tăng, ta kết luận:</p>
+                                    <p><strong>Độ lớn điện trường bên trong quả cầu tăng theo bình phương khoảng cách từ
+                                            tâm đến điểm đang xét.</strong></p>
+                                    <p>Nói cách khác, càng ra xa tâm thì điện trường tăng nhanh hơn trường hợp mật độ
+                                        điện tích đều. Ở đúng tâm, điện trường bằng không. Đi ra khỏi tâm một đoạn nhỏ,
+                                        điện trường tăng dần, và khi tiến tới mặt ngoài thì đạt giá trị lớn nhất ở bên
+                                        trong.</p>
+
+                                    <h5 class="mt-4">Bước thứ sáu: vì sao điện tích nằm ngoài mặt Gauss không cần tính?
+                                    </h5>
+                                    <p>Về mặt định lý Gauss, chỉ điện tích nằm bên trong mặt kín mới quyết định tổng
+                                        dòng điện trường qua mặt ấy. Còn về trực giác đối xứng, phần điện tích nằm ở
+                                        ngoài mặt Gauss có thể coi như gồm các lớp cầu đồng tâm bao quanh điểm đang xét;
+                                        mỗi lớp như vậy không tạo ra điện trường thuần ở vùng bên trong nó. Vì thế, khi
+                                        tính điện trường tại điểm bên trong, ta chỉ cần quan tâm đến điện tích từ tâm
+                                        đến mặt Gauss.</p>
+
+                                    <h5 class="mt-4">Kết luận ngắn gọn</h5>
+                                    <p>Cách tính điện trường tại một điểm bên trong quả cầu là:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li>Lấy một mặt cầu Gauss đồng tâm đi qua điểm đó.</li>
+                                        <li>Tìm điện tích chứa bên trong mặt cầu này bằng cách cộng các lớp cầu mỏng từ
+                                            tâm ra ngoài.</li>
+                                        <li>Dùng định lý Gauss để suy ra điện trường.</li>
+                                    </ul>
+                                    <p>Kết quả vật lý quan trọng nhất là: <strong>điện trường bên trong không tăng tỉ lệ
+                                            thuận với khoảng cách đến tâm, mà tăng theo bình phương của khoảng cách
+                                            đó</strong>. Hướng của điện trường là theo bán kính.</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Không chỉ giải thích phương pháp mà còn tính nhẩm được luôn sự phụ thuộc bậc hai (bình phương khoảng cách) của điện trường!</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Bóc tách từng bước tinh gọn, bổ sung phân tích "lũy thừa bậc ba" cho điện tích lớp mỏng vô cùng tinh tế.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(9.5/10)</strong> Hiểu rất đúng tinh thần tư duy lô-gic, kết luận vật lý cụ thể (sự gia tăng bình phương) mà không cần dùng chuỗi phương trình vi phân phức tạp. Đôi chỗ giải thích hơi dài.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> So sánh tốc độ tăng của diện tích mặt cầu (bậc 2) và lượng điện tích bị nhốt (bậc 4) để suy biến ra kết quả là tuyệt đỉnh của tư duy định lượng bằng trực giác.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Lập luận dõng dạc, mạch lạc như một vị giáo sư chuyên ngành đang chậm rãi chắp nối kiến thức.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sonnet Pane -->
+                            <div class="model-pane" id="p2-s">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Claude 4.6 Sonnet):</h4>
+                                    <h4 class="mt-2"
+                                        style="border-bottom: 1px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                        Tìm Cường Độ Điện Trường Bên Trong Quả Cầu Bằng Định Lý Gauss</h4>
+
+                                    <h5 class="mt-4">Bước 1 — Hiểu bản chất của bài toán</h5>
+                                    <p>Trước tiên, ta cần hình dung rõ vật thể đang xét. Đây là một quả cầu đặc, cách
+                                        điện, nghĩa là các điện tích không thể di chuyển mà bị "gắn chặt" tại chỗ trong
+                                        lòng vật liệu. Điều đặc biệt là điện tích không được phân bố đều — vùng nào càng
+                                        xa tâm thì mật độ điện tích càng lớn, và sự tăng này diễn ra theo một quy luật
+                                        tuyến tính, tức là nếu khoảng cách tăng gấp đôi thì mật độ điện tích tại đó cũng
+                                        tăng gấp đôi. Hiểu được điều này là nền tảng để ta lập luận tiếp theo.</p>
+
+                                    <h5 class="mt-4">Bước 2 — Nhận ra tính đối xứng cầu</h5>
+                                    <p>Đây là bước tư duy vật lý quan trọng nhất. Ta hỏi: nếu xoay quả cầu theo bất kỳ
+                                        hướng nào xung quanh tâm của nó, sự phân bố điện tích có thay đổi không? Câu trả
+                                        lời là không, bởi vì mật độ điện tích chỉ phụ thuộc vào khoảng cách tính từ tâm,
+                                        không phụ thuộc vào phương hướng. Điều này có nghĩa là bài toán mang tính đối
+                                        xứng cầu hoàn toàn.</p>
+                                    <p>Từ tính đối xứng này, ta rút ra một kết luận rất mạnh về điện trường: tại bất kỳ
+                                        điểm nào cách tâm một khoảng bằng nhau, cường độ điện trường phải có cùng độ
+                                        lớn. Hơn nữa, điện trường tại mỗi điểm chỉ có thể hướng thẳng ra xa tâm hoặc
+                                        thẳng vào tâm — nó không thể nghiêng sang bên, vì nếu có thành phần nằm ngang
+                                        thì sẽ phá vỡ sự đối xứng. Đây là lý luận thuần túy từ tính chất đối xứng, không
+                                        cần tính toán gì cả.</p>
+
+                                    <h5 class="mt-4">Bước 3 — Chọn mặt Gauss: Tại sao lại là mặt cầu?</h5>
+                                    <p>Định lý Gauss nói rằng tổng thông lượng điện trường đi qua một mặt kín tỉ lệ với
+                                        tổng điện tích nằm bên trong mặt đó. Nhưng định lý này chỉ trở nên hữu ích khi
+                                        ta chọn được một mặt kín mà trên toàn bộ bề mặt đó, điện trường có độ lớn không
+                                        đổi và luôn vuông góc với mặt.</p>
+                                    <p>Xuất phát từ kết luận ở bước hai — điện trường có cùng độ lớn tại mọi điểm cách
+                                        tâm một khoảng bằng nhau, và luôn hướng theo phương bán kính — ta thấy rằng một
+                                        mặt cầu tưởng tượng có tâm trùng với tâm quả cầu thực sẽ thỏa mãn đúng hai điều
+                                        kiện đó. Trên toàn bộ mặt cầu tưởng tượng này, điện trường vừa có độ lớn như
+                                        nhau, vừa vuông góc với mặt tại mọi điểm. Đây chính là lý do ta chọn mặt Gauss
+                                        là mặt cầu đồng tâm — không phải vì thói quen hay công thức, mà vì tính đối xứng
+                                        của bài toán "ra lệnh" cho ta phải chọn như vậy.</p>
+
+                                    <h5 class="mt-4">Bước 4 — Xác định điện tích nằm bên trong mặt Gauss</h5>
+                                    <p>Bây giờ ta đặt điểm cần tính điện trường ở một vị trí nằm bên trong quả cầu, cách
+                                        tâm một khoảng nào đó nhỏ hơn bán kính quả cầu thực. Mặt Gauss của ta là mặt cầu
+                                        tưởng tượng đi qua điểm đó, bán kính của nó bằng đúng khoảng cách từ tâm đến
+                                        điểm xét.</p>
+                                    <p>Theo định lý Gauss, chỉ có điện tích nằm bên trong mặt Gauss mới đóng góp vào
+                                        thông lượng điện trường qua mặt đó. Phần điện tích nằm ngoài mặt Gauss — tức là
+                                        phần vỏ cầu từ mặt Gauss ra đến bề mặt quả cầu thực — hoàn toàn không có tác
+                                        dụng gì đến điện trường tại điểm ta đang xét. Đây là một trong những điều thú vị
+                                        và sâu sắc nhất của định lý Gauss.</p>
+                                    <p>Để tính lượng điện tích nằm bên trong mặt Gauss, ta phải tích hợp mật độ điện
+                                        tích theo toàn bộ thể tích của khối cầu nhỏ hơn đó. Vì mật độ điện tích tăng
+                                        tuyến tính theo khoảng cách từ tâm, phần điện tích gần tâm thưa hơn và phần gần
+                                        mặt Gauss đặc hơn. Phép tích phân này về mặt vật lý là việc "cộng dồn" tất cả
+                                        điện tích trong từng lớp cầu mỏng từ tâm ra đến mặt Gauss.</p>
+
+                                    <h5 class="mt-4">Bước 5 — Áp dụng định lý Gauss và rút ra kết quả</h5>
+                                    <p>Sau khi đã có tổng điện tích bên trong, ta áp dụng định lý Gauss. Vế trái của
+                                        định lý là tổng thông lượng qua mặt Gauss: vì điện trường có độ lớn không đổi
+                                        trên toàn mặt cầu và luôn vuông góc với mặt, thông lượng này đơn giản chỉ là
+                                        tích của cường độ điện trường với diện tích toàn phần của mặt cầu tưởng tượng
+                                        đó. Vế phải là điện tích bên trong chia cho hằng số điện môi của chân không.</p>
+                                    <p>Từ đó, ta giải ra cường độ điện trường tại điểm xét bằng cách chia vế phải cho
+                                        diện tích mặt cầu. Kết quả thu được là một biểu thức cho biết cường độ điện
+                                        trường tại vị trí đó phụ thuộc như thế nào vào khoảng cách tính từ tâm. Vì mật
+                                        độ điện tích tăng tuyến tính theo khoảng cách, lượng điện tích tích lũy bên
+                                        trong tăng nhanh hơn so với trường hợp phân bố đều, nên điện trường bên trong
+                                        quả cầu này cũng sẽ tăng nhanh hơn khi ta đi ra xa tâm so với trường hợp phân bố
+                                        điện tích đồng đều thông thường.</p>
+
+                                    <h5 class="mt-4">Tóm lại</h5>
+                                    <p>Toàn bộ phương pháp dựa trên một chuỗi lập luận vật lý chặt chẽ: nhận ra tính đối
+                                        xứng cầu, từ đó suy ra hình dạng và hướng của điện trường, chọn mặt Gauss phù
+                                        hợp với tính đối xứng đó, tính điện tích bên trong bằng cách chú ý đến quy luật
+                                        phân bố, rồi cân bằng hai vế của định lý Gauss. Sức mạnh của phương pháp này nằm
+                                        ở chỗ nó biến một bài toán tưởng chừng phức tạp thành một phép tính thẳng thắn,
+                                        nhờ vào việc khai thác triệt để tính đối xứng của hệ.</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Lý giải chuẩn xác tính chất vector của điện trường và hệ quả phân bố điện tích khối.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Cấu trúc bài viết 5 bước cực kỳ chặt chẽ, dẫn dắt người đọc từ khái niệm đến quy luật toán học cốt lõi.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Thấu hiểu triệt để yêu cầu loại bỏ công thức khô khan, sử dụng lý luận hình học và vật lý lớp vỏ để thay thế.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(9.5/10)</strong> Nhấn mạnh việc tính đối xứng cầu "ra lệnh" cho việc chọn mặt Gauss là một cụm từ biểu cảm cực mạnh, gây ấn tượng sâu sắc.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Hành văn nghiêm túc, đậm chất chuyên môn giáo khoa. Màn trình diễn xuất sắc.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROMPT 3 SECTION -->
+                        <div class="prompt-pane" id="prompt-3">
+                            <div class="the-prompt box-dark">
+                                <h3><i class="fa-solid fa-scale-balanced"></i> Lệnh yêu cầu (Prompt) 3</h3>
+                                <p class="prompt-text">Trong môn Lý luận Nhà nước và Pháp luật, hãy phân tích sự khác
+                                    biệt cốt lõi giữa Kiểu nhà nước và Hình thức nhà nước. Sau đó, hãy lấy một ví dụ
+                                    thực tiễn trong lịch sử để chứng minh rằng: Một quốc gia có thể thay đổi hoàn toàn
+                                    hình thức nhà nước (từ quân chủ sang cộng hòa) nhưng bản chất giai cấp của kiểu nhà
+                                    nước vẫn không thay đổi. Trình bày lập luận thật chặt chẽ.</p>
+                            </div>
+                            <div class="model-tabs">
+                                <button class="model-tab gemini-tab active" data-model="g">Gemini 3.1 Pro</button>
+                                <button class="model-tab gpt-tab" data-model="p">GPT 5.4 Pro</button>
+                                <button class="model-tab sonnet-tab" data-model="s">Claude 4.6 Sonnet</button>
+                            </div>
+
+                            <!-- Gemini Pane -->
+                            <div class="model-pane active" id="p3-g">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Gemini 3.1 Pro):</h4>
+                                    <p>Chào bạn. Việc phân định rạch ròi giữa "bản chất bên trong" và "biểu hiện bên
+                                        ngoài" là một tư duy phân tích rất sắc bén, đặc biệt hữu ích để bạn xây dựng các
+                                        luận điểm chặt chẽ khi làm bài thảo luận trong môn Lý luận Nhà nước và Pháp
+                                        luật.</p>
+                                    <p>Dưới đây là phân tích chi tiết về sự khác biệt cốt lõi giữa hai khái niệm này,
+                                        cùng với một minh chứng lịch sử cụ thể.</p>
+
+                                    <h5 class="mt-4">1. Sự khác biệt cốt lõi: Kiểu nhà nước vs. Hình thức nhà nước</h5>
+                                    <p>Sự khác biệt lớn nhất nằm ở triết học về <strong>Nội dung (Bản chất)</strong> và
+                                        <strong>Hình thức (Hiện tượng)</strong>.
+                                    </p>
+
+                                    <p><strong>Kiểu nhà nước (Type of State) – Trả lời câu hỏi "Quyền lực thuộc về
+                                            ai?":</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li>Đây là khái niệm chỉ <strong>bản chất giai cấp</strong> của nhà nước. Nó xác
+                                            định nhà nước đó do giai cấp nào lập ra, bảo vệ lợi ích kinh tế - chính trị
+                                            của giai cấp nào và dùng để trấn áp lực lượng nào.</li>
+                                        <li>Theo học thuyết Marx-Lenin, lịch sử có 4 kiểu nhà nước tương ứng với 4 hình
+                                            thái kinh tế - xã hội có giai cấp: Chủ nô, Phong kiến, Tư sản và Xã hội chủ
+                                            nghĩa.</li>
+                                        <li><em>Tính chất:</em> Ít biến động, chỉ thay đổi khi có một cuộc cách mạng xã
+                                            hội làm thay đổi toàn bộ quan hệ sản xuất và giai cấp cầm quyền.</li>
+                                    </ul>
+
+                                    <p><strong>Hình thức nhà nước (Form of State) – Trả lời câu hỏi "Quyền lực được tổ
+                                            chức như thế nào?":</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li>Đây là <strong>cách thức tổ chức, trình tự thiết lập và phương thức thực
+                                                thi</strong> quyền lực nhà nước. Nó bao gồm 3 yếu tố: Hình thức chính
+                                            thể (Quân chủ hay Cộng hòa), Hình thức cấu trúc (Đơn nhất hay Liên bang), và
+                                            Chế độ chính trị (Dân chủ hay Phản dân chủ).</li>
+                                        <li><em>Tính chất:</em> Rất linh hoạt và dễ biến động. Một kiểu nhà nước có thể
+                                            sử dụng nhiều hình thức nhà nước khác nhau tùy thuộc vào hoàn cảnh lịch sử,
+                                            tương quan lực lượng chính trị, hoặc truyền thống văn hóa.</li>
+                                    </ul>
+
+                                    <p><strong>Tóm lại:</strong> Kiểu nhà nước là "linh hồn" và bộ gen của nhà nước,
+                                        trong khi Hình thức nhà nước chỉ là "bộ quần áo" khoác lên mình cơ thể đó.</p>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">2. Chứng
+                                        minh thực tiễn: Đổi "Hình thức" nhưng không đổi "Kiểu"</h5>
+                                    <p>Để chứng minh luận điểm một quốc gia có thể thay đổi hoàn toàn hình thức nhà nước
+                                        (từ Quân chủ sang Cộng hòa) mà bản chất giai cấp (Kiểu nhà nước) không đổi,
+                                        chúng ta hãy nhìn vào <strong>Nước Ý (Italy) vào năm 1946</strong> hoặc nước
+                                        Pháp trong thế kỷ 18-19. Ở đây, tôi sẽ dùng ví dụ về <strong>Nước Ý</strong> vì
+                                        tính dứt khoát và điển hình của nó.</p>
+
+                                    <p><strong>Bối cảnh lịch sử:</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Trước năm 1946:</strong> Nước Ý tồn tại dưới hình thức <strong>Vương
+                                                quốc Ý</strong> (Hình thức chính thể: Quân chủ lập hiến). Đứng đầu nhà
+                                            nước là Nhà vua (thuộc gia tộc Savoy).</li>
+                                        <li><strong>Tháng 6 năm 1946:</strong> Thông qua một cuộc trưng cầu dân ý, nhân
+                                            dân Ý đã phế truất nhà vua, xóa bỏ chế độ vương quyền và thành lập
+                                            <strong>Cộng hòa Ý</strong> (Hình thức chính thể: Cộng hòa đại nghị), đứng
+                                            đầu là Tổng thống do bầu cử.
+                                        </li>
+                                    </ul>
+
+                                    <p><strong>Lập luận chứng minh sự bất biến của Kiểu nhà nước:</strong></p>
+                                    <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Sự thay đổi triệt để về Hình thức nhà nước:</strong> Cơ cấu tổ chức
+                                            quyền lực tối cao của Ý đã thay đổi hoàn toàn. Ngôi vị nguyên thủ quốc gia
+                                            không còn được truyền ngôi theo thế tập (cha truyền con nối) mà được quyết
+                                            định bằng con đường bầu cử dân chủ (Cộng hòa). Quyền lực của cá nhân nhà vua
+                                            bị xóa bỏ, thay vào đó là quyền lực của Nghị viện đại diện cho các đảng
+                                            phái.</li>
+                                        <li><strong>Sự nguyên vẹn của Kiểu nhà nước (Nhà nước Tư sản):</strong><br>
+                                            Dù thay đổi từ Vương quốc sang nền Cộng hòa, bản chất giai cấp của nhà nước
+                                            Ý <strong>hoàn toàn không thay đổi</strong>.
+                                            <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
+                                                <li><em>Về cơ sở kinh tế:</em> Nước Ý trước và sau năm 1946 vẫn duy trì
+                                                    chế độ sở hữu tư nhân tư bản chủ nghĩa về tư liệu sản xuất. Các tập
+                                                    đoàn tư bản công nghiệp và tài chính (như Fiat, Pirelli) vẫn nắm giữ
+                                                    huyết mạch kinh tế của quốc gia.</li>
+                                                <li><em>Về cơ sở quyền lực:</em> Bộ máy nhà nước Cộng hòa mới lập ra vẫn
+                                                    tiếp tục phục vụ và bảo vệ lợi ích cốt lõi của <strong>giai cấp tư
+                                                        sản Ý</strong>. Các đạo luật được ban hành tập trung bảo vệ
+                                                    quyền tư hữu, tự do kinh doanh và duy trì trật tự bóc lột sức lao
+                                                    động làm thuê. Giai cấp công nhân và nhân dân lao động Ý vẫn là
+                                                    những người bị trị về mặt kinh tế.</li>
+                                            </ul>
+                                        </li>
+                                    </ol>
+
+                                    <p><strong>Kết luận:</strong> Sự kiện năm 1946 tại Ý chỉ là một sự điều chỉnh về
+                                        "cách thức quản lý" (loại bỏ chế độ quân chủ đã mất uy tín sau Thế chiến II) để
+                                        giai cấp tư sản cai trị hiệu quả hơn, chứ không phải là một cuộc cách mạng thay
+                                        đổi quyền sở hữu hay lật đổ giai cấp tư sản. Do đó, "bộ quần áo" đã đổi từ Quân
+                                        chủ sang Cộng hòa, nhưng "cơ thể" bên trong vẫn mang bản chất của <strong>Kiểu
+                                            Nhà nước Tư sản</strong>.</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Định nghĩa Kiểu nhà nước và Hình thức nhà nước dựa trên triết học Mác–Lênin cực kỳ chuẩn xác.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Lập luận đối chiếu "Quyền lực thuộc về ai vs Quyền lực được tổ chức thế nào" làm bật lên ngay bản chất vấn đề.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Lấy ví dụ lịch sử nước Ý (1946) tước ngôi vua đổi thành Cộng Hòa nhưng vẫn giữ nguyên chế độ Tư bản là minh chứng đanh thép.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(9.5/10)</strong> Biện pháp ẩn dụ sắc sảo: Kiểu nhà nước là "bộ gen" còn Hình thức là "bộ quần áo" giúp bài luận trở nên mượt mà, dễ hình dung.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Hành văn dứt khoát rành mạch. Vận dụng từ vựng Pháp lý – Chính trị chuyên sâu rất thuyết phục.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- GPT Pane -->
+                            <div class="model-pane" id="p3-p">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (GPT 5.4 Pro):</h4>
+                                    <p>Cần nói thật chặt ngay từ đầu: <strong>“quân chủ” và “cộng hòa” xét nghiêm ngặt
+                                            là các dạng của chính thể</strong>, mà <strong>chính thể lại là bộ phận
+                                            trung tâm của hình thức nhà nước</strong>. Vì vậy, khi nói một nước chuyển
+                                        “từ quân chủ sang cộng hòa”, về mặt lý luận là đang nói đến <strong>sự thay đổi
+                                            rất lớn trong hình thức nhà nước</strong>; còn điều đó <strong>chưa
+                                            đủ</strong> để kết luận kiểu nhà nước đã thay đổi.</p>
+
+                                    <h5 class="mt-4">1) Khác biệt cốt lõi giữa <em>Kiểu nhà nước</em> và <em>Hình thức
+                                            nhà nước</em></h5>
+
+                                    <p><strong>a) Kiểu nhà nước là gì?</strong></p>
+                                    <p>Trong Lý luận Nhà nước và Pháp luật, <strong>kiểu nhà nước</strong> dùng để chỉ
+                                        <strong>bản chất giai cấp của nhà nước</strong>, tức là nhà nước đó thuộc về
+                                        giai cấp nào, phục vụ trước hết cho lợi ích của giai cấp nào, và tồn tại trên cơ
+                                        sở của kiểu quan hệ sản xuất nào.<br>
+                                        Nói ngắn gọn: <strong>kiểu nhà nước trả lời câu hỏi “quyền lực nhà nước về bản
+                                            chất là của ai?”</strong>
+                                    </p>
+                                    <p>Theo cách phân chia kinh điển, lịch sử có các kiểu nhà nước cơ bản như: chủ nô,
+                                        phong kiến, tư sản, xã hội chủ nghĩa.</p>
+
+                                    <p class="mt-4"><strong>b) Hình thức nhà nước là gì?</strong></p>
+                                    <p><strong>Hình thức nhà nước</strong> là <strong>cách thức tổ chức và thực hiện
+                                            quyền lực nhà nước</strong>. Nó trả lời câu hỏi: quyền lực ấy được tổ chức
+                                        như thế nào, vận hành ra sao. Thông thường, hình thức nhà nước được xem xét trên
+                                        ba phương diện:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Chính thể:</strong> quân chủ hay cộng hòa;</li>
+                                        <li><strong>Cấu trúc nhà nước:</strong> đơn nhất hay liên bang;</li>
+                                        <li><strong>Chế độ chính trị:</strong> dân chủ hay phản dân chủ.</li>
+                                    </ul>
+                                    <p>Nói ngắn gọn: <strong>hình thức nhà nước trả lời câu hỏi “quyền lực nhà nước được
+                                            tổ chức bằng cách nào?”</strong></p>
+
+                                    <h5 class="mt-4">2) Vì sao hai khái niệm này không được đồng nhất?</h5>
+                                    <p>Điểm khác biệt cốt lõi nhất là: <strong>Kiểu nhà nước là mặt “nội dung xã hội –
+                                            giai cấp” của quyền lực nhà nước; hình thức nhà nước là mặt “tổ chức – pháp
+                                            lý – phương thức thực hiện” của quyền lực đó.</strong></p>
+
+                                    <p>Từ đây kéo theo ba hệ quả lý luận rất quan trọng:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Thứ nhất, tiêu chí xác định khác nhau:</strong> Kiểu nhà nước được
+                                            xác định bởi cơ sở kinh tế và sự thống trị giai cấp. Còn hình thức nhà nước
+                                            chịu ảnh hưởng của tương quan thế lực chính trị, truyền thống, văn hóa.</li>
+                                        <li><strong>Thứ hai, hình thức biến đổi linh hoạt hơn kiểu:</strong> Một cuộc
+                                            cách mạng hay cải cách hiến pháp có thể thay đổi nhanh hình thức (quân chủ
+                                            sang cộng hòa), nhưng kiểu nhà nước chỉ thay đổi khi căn bản giai cấp đổi
+                                            mới. <em>Đổi cách tổ chức quyền lực chưa chắc đã đổi bản chất giai cấp.</em>
+                                        </li>
+                                        <li><strong>Thứ ba, không thể suy kiểu nhà nước từ tên gọi:</strong> Đã từng có
+                                            cộng hòa chủ nô, cộng hòa tư sản và cộng hòa XHCN. Hình thức cộng hòa chứa
+                                            đựng nhiều kiểu nhà nước khác nhau.</li>
+                                    </ul>
+
+                                    <h5 class="mt-4">3) Ví dụ lịch sử: Pháp từ Quân chủ tháng Bảy sang Cộng hòa thứ Hai
+                                        (1830–1848)</h5>
+
+                                    <p><strong>Bước 1: Trước 1848</strong></p>
+                                    <p>Thời <strong>Quân chủ tháng Bảy</strong> (1830–1848), tuy vẫn mang hình thức
+                                        <strong>quân chủ lập hiến</strong>, nhưng nhà nước này về căn bản phục vụ lợi
+                                        ích của giai cấp tư sản. Tức là: <em>Hình thức chính thể: quân chủ lập hiến;
+                                            Kiểu nhà nước: Tư sản.</em>
+                                    </p>
+
+                                    <p><strong>Bước 2: Năm 1848, Pháp chuyển sang cộng hòa</strong></p>
+                                    <p>Cách mạng tháng Hai năm 1848 lật đổ vương triều, thiết lập <strong>Cộng hòa thứ
+                                            Hai</strong>. Ở đây đã có sự thay đổi lớn từ <em>quân chủ sang cộng
+                                            hòa</em>.</p>
+
+                                    <p><strong>Bước 3: Nhưng kiểu nhà nước có đổi không?</strong></p>
+                                    <p>Câu trả lời là: <strong>không đổi về bản chất giai cấp</strong>. Nó vẫn là nhà
+                                        nước tư sản vì:</p>
+                                    <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Nền tảng kinh tế không đổi:</strong> Quan hệ sản xuất tư bản chủ
+                                            nghĩa và chế độ tư hữu vẫn giữ vai trò bá chủ.</li>
+                                        <li><strong>Giai cấp nắm quyền không đổi:</strong> Việc xóa bỏ ngôi vua không
+                                            biến công nhân thay thế tư sản thành giai cấp cầm quyền. Bộ máy nhà nước mới
+                                            tiếp tục bảo vệ lợi ích của tầng lớp hữu sản và tài sản tư.</li>
+                                        <li><strong>Chức năng xã hội không đổi:</strong> Khi công nhân Paris nổi dậy bảo
+                                            vệ quyền lợi, chính quyền Cộng hòa đã đàn áp. Tức là chức năng thực tiễn của
+                                            nó là dùng bạo lực để bảo vệ trật tự của tư sản.</li>
+                                    </ol>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">4) Kết
+                                        luận & Công thức</h5>
+                                    <p>Từ quân chủ sang cộng hòa là thay đổi về chính thể, nhưng chừng nào sự thống trị
+                                        vẫn thuộc về giai cấp tư sản, kiểu nhà nước vẫn là tư sản (một bên thay đổi hình
+                                        thức nhưng giữ nguyên nội dung cốt lõi).</p>
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gpt); margin-top: 1rem; font-style: italic;">
+                                        <strong>Công thức:</strong><br>
+                                        - Kiểu nhà nước = bản chất giai cấp của quyền lực.<br>
+                                        - Hình thức nhà nước = cách tổ chức quyền lực.<br><br>
+                                        Thay đổi hình thức nhà nước không tất yếu làm thay đổi kiểu nhà nước.
+                                    </div>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Định nghĩa hai khái niệm cực kỳ ngắn gọn, sắc lẹm đúng trọng tâm ngay từ những dòng đầu.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Đưa ra 3 hệ quả lý luận xuất sắc ("tiêu chí khác nhau", "hình thức linh hoạt hơn", "không suy được kiểu từ tên gọi hình thức").</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Đánh đúng vào chức năng căn bản của nhà nước (đàn áp lực lượng công nhân nổi dậy ở Cách mạng Pháp 1848) để lấy làm bằng chứng. Rất am hiểu!</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Việc đúc kết bằng "Công thức tính" đóng khung cuối bài tạo ấn tượng rất chuyên môn và thân thiện.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Văn phong dõng dạc, chia các khoản (Bước 1, Bước 2, Bước 3) vô cùng rành mạch, chuẩn văn mẫu thi lý luận 10 điểm.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sonnet Pane -->
+                            <div class="model-pane" id="p3-s">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Claude 4.6 Sonnet):</h4>
+                                    <h4 class="mt-2"
+                                        style="border-bottom: 1px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                        Kiểu Nhà Nước vs. Hình Thức Nhà Nước — Phân Tích & Chứng Minh</h4>
+
+                                    <h5 class="mt-4">I. Sự Khác Biệt Cốt Lõi</h5>
+
+                                    <p><strong>1. Kiểu Nhà Nước (Type of State)</strong></p>
+                                    <p>Kiểu nhà nước là <strong>phạm trù bản chất</strong>, xác định nhà nước đó thuộc
+                                        về <strong>hình thái kinh tế — xã hội</strong> nào, tức là: giai cấp nào nắm
+                                        quyền lực nhà nước và nhà nước đó phục vụ lợi ích của giai cấp nào.</p>
+                                    <p>Theo lý luận Mác — Lênin, lịch sử có 4 kiểu nhà nước tương ứng với 4 hình thái
+                                        kinh tế — xã hội có giai cấp:</p>
+                                    <div class="matrix-container" style="margin-bottom: 1rem;">
+                                        <table class="matrix-table" style="font-size: 0.9rem;">
+                                            <tr>
+                                                <th>Kiểu nhà nước</th>
+                                                <th>Giai cấp thống trị</th>
+                                                <th>Cơ sở kinh tế</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Chủ nô</td>
+                                                <td>Chủ nô</td>
+                                                <td>Chiếm hữu nô lệ</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Phong kiến</td>
+                                                <td>Địa chủ, quý tộc</td>
+                                                <td>Sở hữu phong kiến về ruộng đất</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tư sản</td>
+                                                <td>Giai cấp tư sản</td>
+                                                <td>Tư hữu tư bản chủ nghĩa</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Xã hội chủ nghĩa</td>
+                                                <td>Giai cấp công nhân</td>
+                                                <td>Sở hữu công cộng</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p
+                                        style="border-left: 3px solid var(--sonnet); padding-left: 1rem; margin-top: 1rem;">
+                                        <em><strong>Kiểu nhà nước trả lời câu hỏi: Nhà nước của ai? Vì ai?</strong></em>
+                                    </p>
+
+                                    <p class="mt-4"><strong>2. Hình Thức Nhà Nước (Form of State)</strong></p>
+                                    <p>Hình thức nhà nước là <strong>phạm trù tổ chức</strong>, xác định nhà nước đó
+                                        được <strong>cấu trúc và vận hành</strong> như thế nào. Nó bao gồm ba yếu tố:
+                                    </p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Hình thức chính thể:</strong> cách thức tổ chức bộ máy quyền lực tối
+                                            cao (Quân chủ hoặc Cộng hòa).</li>
+                                        <li><strong>Hình thức cấu trúc nhà nước:</strong> quan hệ giữa trung ương và địa
+                                            phương (Đơn nhất, liên bang, liên minh).</li>
+                                        <li><strong>Chế độ chính trị:</strong> tổng thể phương pháp thực hiện quyền lực
+                                            (Dân chủ hoặc Phản dân chủ).</li>
+                                    </ul>
+                                    <p
+                                        style="border-left: 3px solid var(--sonnet); padding-left: 1rem; margin-top: 1rem;">
+                                        <em><strong>Hình thức nhà nước trả lời câu hỏi: Nhà nước được tổ chức như thế
+                                                nào? Quyền lực được thực thi ra sao?</strong></em>
+                                    </p>
+
+                                    <h5 class="mt-4">II. Chứng Minh Qua Thực Tiễn Lịch Sử: Nước Pháp (1789 — 1870)</h5>
+                                    <p>Nước Pháp trong vòng chưa đầy một thế kỷ đã trải qua các biến đổi hình thức nhà
+                                        nước liên tiếp và kịch tính: Quân chủ tuyệt đối → Cộng hòa thứ Nhất → Đế chế thứ
+                                        Nhất → Quân chủ lập hiến → Cộng hòa thứ Hai → Đế chế thứ Hai → Cộng hòa thứ Ba.
+                                    </p>
+
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem; margin-top: 1rem;">
+                                        <li><strong>Trước 1789:</strong> Nhà nước phong kiến quân chủ tuyệt đối — quyền
+                                            lực tập trung vào Louis XVI, phục vụ quý tộc. → <strong>Kiểu phong
+                                                kiến.</strong></li>
+                                        <li><strong>Sau Cách mạng 1789:</strong> Giai cấp tư sản Pháp giành được chính
+                                            quyền. Dù trải qua Cộng hòa rồi đến sự xưng đế của Napoleon, bộ máy nhà nước
+                                            vẫn luôn phục vụ <strong>giai cấp tư sản</strong> (Bộ luật Napoleon 1804 bảo
+                                            vệ quyền tư hữu, tự do khế ước, chế độ làm thuê được hợp pháp hóa).</li>
+                                    </ul>
+                                    <p><strong>Điểm mấu chốt:</strong> Khi Louis XVIII khôi phục vương quyền
+                                        (1814–1830), đây là sự phục hồi <em>hình thức quân chủ</em>, nhưng <strong>không
+                                            thể đảo ngược quan hệ sản xuất tư bản chủ nghĩa</strong>. Kiểu nhà nước
+                                        phong kiến thực sự đã chết từ 1789.</p>
+
+                                    <h5 class="mt-4">III. Kết Luận Lý Luận</h5>
+                                    <p>Ví dụ nước Pháp chứng minh nguyên lý cơ bản:</p>
+                                    <ol style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Kiểu nhà nước</strong> là phạm trù sâu hơn, ổn định hơn — nó chỉ
+                                            thay đổi qua <strong>cách mạng xã hội</strong>.</li>
+                                        <li><strong>Hình thức nhà nước</strong> linh hoạt và có thể thay đổi mà không
+                                            đụng chạm đến bản chất giai cấp — nó là "vỏ bọc" mà giai cấp thống trị lựa
+                                            chọn để duy trì sự cai trị.</li>
+                                    </ol>
+                                </div>
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Tách bạch hoàn hảo 3 yếu tố hình thành nên Hình thức nhà nước và thiết lập hệ đo lường Kiểu nhà nước rất chuẩn.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Thống kê hệ thống 7 lần thay đổi hình thể vương quyền của nước Pháp từ 1789–1870 vô cùng tỉ mỉ.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Lập luận chỉ ra sự "phục hồi vương quyền của Louis XVIII không thể đảo ngược quan hệ sản xuất Tư Bản" là minh chứng đặc sắc bậc nhất.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Việc kẻ bảng "4 Kiểu nhà nước" cùng với cụm highlight (Câu hỏi Nhà nước của ai?) giúp cơ cấu bài viết minh bạch như sách giáo khoa.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Ngôn ngữ chính luận đỉnh cao, gai góc nhưng thuyết phục triệt để bằng thuật ngữ chuyên ngành dày dặn.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROMPT 4 SECTION -->
+                        <div class="prompt-pane" id="prompt-4">
+                            <div class="the-prompt box-dark">
+                                <h3><i class="fa-solid fa-language"></i> Lệnh yêu cầu (Prompt) 4</h3>
+                                <p class="prompt-text">Đóng vai một giáo viên dạy tiếng Nhật, hãy phân biệt chi tiết
+                                    cách sử dụng 3 cấu trúc ngữ pháp chỉ sự nhượng bộ: ni shite wa, ni shitemo và ni
+                                    kakawarazu. Sau đó, hãy tự nghĩ ra một tình huống giao tiếp thực tế trong công ty,
+                                    viết 3 câu ví dụ áp dụng 3 cấu trúc này và phân tích xem sắc thái biểu cảm của người
+                                    nói (thái độ ngạc nhiên, bất mãn hay khách quan) thay đổi như thế nào trong từng
+                                    câu.</p>
+                            </div>
+                            <div class="model-tabs">
+                                <button class="model-tab gemini-tab active" data-model="g">Gemini 3.1 Pro</button>
+                                <button class="model-tab gpt-tab" data-model="p">GPT 5.4 Pro</button>
+                                <button class="model-tab sonnet-tab" data-model="s">Claude 4.6 Sonnet</button>
+                            </div>
+
+                            <!-- Gemini Pane -->
+                            <div class="model-pane active" id="p4-g">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Gemini 3.1 Pro):</h4>
+                                    <p>Chào bạn! Sensei rất vui vì bạn đã đặt một câu hỏi vô cùng xuất sắc. Việc nhầm
+                                        lẫn giữa các cấu trúc nhượng bộ và tương phản là "bệnh chung" của rất nhiều
+                                        người học tiếng Nhật ở trình độ Trung - Cao cấp (N3 - N2).</p>
+                                    <p>Với tư cách là giáo viên của bạn hôm nay, sensei sẽ bóc tách thật chi tiết bản
+                                        chất của 3 cấu trúc <strong>～にしては</strong>, <strong>～にしても</strong>, và
+                                        <strong>～にかかわらず</strong> để bạn nắm rõ cách dùng, cũng như cách chúng thổi "cái
+                                        hồn" (sắc thái cảm xúc) vào câu nói nhé.
+                                    </p>
+
+                                    <h5 class="mt-4">Phần 1: Phân biệt chi tiết 3 cấu trúc ngữ pháp</h5>
+
+                                    <p class="mt-2"><strong>1. ～にしては (ni shite wa): Sự ngạc nhiên so với tiêu
+                                            chuẩn</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Ý nghĩa:</strong> "Tuy là... nhưng...", "So với... thì..."</li>
+                                        <li><strong>Bản chất & Sắc thái:</strong> Dùng để diễn tả sự <strong>ngạc nhiên,
+                                                bất ngờ</strong> (có thể là khen ngợi hoặc chê bai) vì thực tế hoàn toàn
+                                            trái ngược với những gì người ta <em>thường kỳ vọng</em> ở một tiêu chuẩn
+                                            nào đó.</li>
+                                        <li><strong>Đặc điểm ngữ pháp:</strong> Đi kèm với những danh từ chỉ sự việc cụ
+                                            thể, có tiêu chuẩn rõ ràng (VD: tuổi tác, kinh nghiệm, giá tiền). KHÔNG đi
+                                            với các tính từ chỉ trạng thái chung chung.</li>
+                                        <li><em>Ví dụ:</em> 外国人<strong>にしては</strong>、日本語が上手ですね。(Tuy là người nước ngoài
+                                            nhưng tiếng Nhật giỏi ghê -> Ngạc nhiên, khen ngợi vì thường người nước
+                                            ngoài sẽ không nói trôi chảy như vậy).</li>
+                                    </ul>
+
+                                    <p class="mt-2"><strong>2. ～にしても (ni shitemo): Sự bất mãn trước mức độ thái
+                                            quá</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Ý nghĩa:</strong> "Cho dù là... đi chăng nữa (thì cũng...)"</li>
+                                        <li><strong>Bản chất & Sắc thái:</strong> Người nói <em>chấp nhận, đồng tình
+                                                hoặc nhượng bộ</em> với điều kiện ở vế trước (thậm chí là sự việc giả
+                                            định), nhưng vế sau lại thể hiện sự <strong>bất mãn, trách móc, hoặc không
+                                                thể hiểu nổi</strong> vì mức độ của sự việc vượt quá giới hạn cho phép.
+                                        </li>
+                                        <li><strong>Đặc điểm ngữ pháp:</strong> Thường đi kèm với những từ chỉ mức độ
+                                            quá đáng (quá đắt, quá muộn, quá nhiều).</li>
+                                        <li><em>Ví dụ:</em> 遅れる<strong>にしても</strong>、電話ぐらいしてよ。(Cho dù là có trễ đi chăng
+                                            nữa thì ít nhất cũng phải gọi một cuốc điện thoại chứ -> Trách móc).</li>
+                                    </ul>
+
+                                    <p class="mt-2"><strong>3. ～にかかわらず (ni kakawarazu): Sự khách quan, không màng đến
+                                            điều kiện</strong></p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>Ý nghĩa:</strong> "Bất kể...", "Không phân biệt..."</li>
+                                        <li><strong>Bản chất & Sắc thái:</strong> Đây là cấu trúc mang tính
+                                            <strong>khách quan, trang trọng</strong>, tuyệt đối không chứa đựng cảm xúc
+                                            cá nhân (như ngạc nhiên hay giận dữ). Nó khẳng định rằng sự việc vế sau sẽ
+                                            diễn ra bất chấp điều kiện vế trước có ra sao.
+                                        </li>
+                                        <li><strong>Đặc điểm ngữ pháp:</strong> Luôn đi với các từ chỉ sự đối lập
+                                            (行く・行かない, 晴雨 - nắng mưa), hoặc các từ bao hàm nhiều mức độ (年齢 - tuổi tác,
+                                            性別 - giới tính, 経験の有無 - có hay không có kinh nghiệm).</li>
+                                        <li><em>Ví dụ:</em> 天候<strong>にかかわらず</strong>、試合は行われます。(Bất kể thời tiết thế
+                                            nào, trận đấu vẫn sẽ diễn ra -> Thông báo khách quan).</li>
+                                    </ul>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Phần 2:
+                                        Ứng dụng vào tình huống công sở thực tế</h5>
+
+                                    <p><strong>Tình huống (Context):</strong> Trong công ty, Tanaka là một nhân viên mới
+                                        vào làm (新入社員 - shinnyuushain). Hôm nay, Tanaka nộp một bản báo cáo cho Trưởng
+                                        phòng (người nói). Tuy nhiên, bản báo cáo này làm vô cùng cẩu thả, sai rất nhiều
+                                        lỗi chính tả và format cơ bản.</p>
+                                    <p>Trưởng phòng sẽ dùng 3 cấu trúc này để nói chuyện với các đối tượng khác nhau,
+                                        tạo ra 3 sắc thái hoàn toàn khác biệt:</p>
+
+                                    <p class="mt-2"><strong>Câu 1: Dùng ～にしては (Thái độ: Ngạc nhiên, đánh giá)</strong>
+                                    </p>
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gemini); margin-top: 0.5rem; margin-bottom: 1rem;">
+                                        <p><strong>Câu nói:</strong>
+                                            「田中さん、有名大学を卒業した<strong>にしては</strong>、この報告書はミスが多いですね。」<br>
+                                            <em>(Tanaka-san, yuumei daigaku o sotsugyou shita <strong>ni shite
+                                                    wa</strong>, kono houkokusho wa misu ga ooi desu ne.)</em>
+                                        </p>
+                                        <p><strong>Dịch nghĩa:</strong> "Cậu Tanaka này, mang tiếng/so với việc là tốt
+                                            nghiệp đại học danh tiếng mà bản báo cáo này lại nhiều lỗi quá nhỉ."</p>
+                                        <p><strong>Phân tích sắc thái:</strong> Trưởng phòng cảm thấy <strong>ngạc nhiên
+                                                và thất vọng nhẹ</strong>. Tiêu chuẩn ở đây là "Tốt nghiệp đại học danh
+                                            tiếng" -> Kỳ vọng là phải làm việc cẩn thận, thông minh. Nhưng thực tế (báo
+                                            cáo đầy lỗi) lại trái ngược hoàn toàn với tiêu chuẩn đó.</p>
+                                    </div>
+
+                                    <p class="mt-2"><strong>Câu 2: Dùng ～にしても (Thái độ: Bất mãn, trách móc)</strong></p>
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gemini); margin-top: 0.5rem; margin-bottom: 1rem;">
+                                        <p><strong>Câu nói:</strong>
+                                            「田中さん、いくら新入社員<strong>にしても</strong>、この報告書のミスはひどすぎますよ。」<br>
+                                            <em>(Tanaka-san, ikura shinnyuushain <strong>ni shitemo</strong>, kono
+                                                houkokusho no misu wa hidosugimasu yo.)</em>
+                                        </p>
+                                        <p><strong>Dịch nghĩa:</strong> "Cậu Tanaka, cho dù cậu có là nhân viên mới đi
+                                            chăng nữa, thì lỗi trong bản báo cáo này cũng quá tồi tệ rồi đấy."</p>
+                                        <p><strong>Phân tích sắc thái:</strong> Trưởng phòng cực kỳ <strong>bất mãn và
+                                                đang khiển trách</strong> Tanaka. Ông ấy <em>nhượng bộ/chấp nhận sự
+                                                thật</em> rằng "Tanaka là người mới nên có thể mắc lỗi", nhưng mức độ
+                                            sai sót của bản báo cáo này là "quá giới hạn chịu đựng", không thể dùng lý
+                                            do "người mới" để ngụy biện được.</p>
+                                    </div>
+
+                                    <p class="mt-2"><strong>Câu 3: Dùng ～にかかわらず (Thái độ: Khách quan, quy tắc)</strong>
+                                    </p>
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gemini); margin-top: 0.5rem; margin-bottom: 1rem;">
+                                        <p><strong>Câu nói:</strong> (Trưởng phòng nói trước toàn thể nhân viên trong
+                                            cuộc họp)<br>
+                                            「皆さん、社歴の長さ<strong>にかかわらず</strong>、報告書を提出する前には必ず二重チェックを行ってください。」<br>
+                                            <em>(Minasan, shareki no nagasa <strong>ni kakawarazu</strong>, houkokusho o
+                                                teishutsu suru mae ni wa kanarazu nijyuu chekku o okonatte
+                                                kudasai.)</em>
+                                        </p>
+                                        <p><strong>Dịch nghĩa:</strong> "Mọi người chú ý, bất kể thâm niên làm việc lâu
+                                            hay mau, trước khi nộp báo cáo nhất định phải kiểm tra lại hai lần."</p>
+                                        <p><strong>Phân tích sắc thái:</strong> Đây là một <strong>chỉ thị khách
+                                                quan</strong>, mang tính quy tắc của phòng ban. Không có sự giận dữ hay
+                                            ngạc nhiên ở đây. Trưởng phòng nhấn mạnh rằng quy định "kiểm tra lại báo
+                                            cáo" áp dụng cho tất cả mọi người, không bị ảnh hưởng bởi biến số "thâm
+                                            niên".</p>
+                                    </div>
+
+                                    <p><em>Bạn thấy đấy, chỉ cần thay đổi cấu trúc ngữ pháp, người Nhật có thể truyền
+                                            tải những cảm xúc và ý đồ hoàn toàn khác nhau trong giao tiếp. Bạn đã nắm rõ
+                                            cách phân biệt 3 cấu trúc này chưa? Bạn có muốn thử tự viết 3 câu ví dụ của
+                                            riêng mình với một tình huống khác (ví dụ: đi ăn nhà hàng) để sensei sửa lỗi
+                                            giúp bạn không?</em></p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Phân biệt 3 cấu trúc ngữ pháp trung cao cấp (N3–N2) hoàn toàn chuẩn xác. Không hề nhầm lẫn trường hợp sử dụng.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Phân tích tới tận gốc rễ từng cấu trúc: Bản chất, đặc điểm đi kèm và ví dụ mẫu sinh động.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Nhập vai "Sensei" xuất sắc. Dẫn dắt vấn đề tự nhiên ("đây là bệnh chung" của người học tiếng Nhật) và chốt bằng câu hỏi tương tác sư phạm tinh tế.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Tạo bối cảnh Trưởng phòng phàn nàn nhân viên Tanaka cực kỳ chân thực. 3 cấu trúc ráp vào một ngữ cảnh duy nhất biến lý thuyết thành vở kịch hấp dẫn.</li>
+                                        <li><span class="crit">Tiếng Việt & Nhật:</span> <strong>(10/10)</strong> Kanji, Romaji, tiếng Nhật và tiếng Việt song hành hoàn hảo. Dịch chuẩn sắc thái, mượt mà và trực quan.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- GPT Pane -->
+                            <div class="model-pane" id="p4-p">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (GPT 5.4 Pro):</h4>
+                                    <p>Mình hiểu “ni kakatowarazu” ở đây là <strong>にかかわらず</strong> (<em>ni
+                                            kakawarazu</em>).<br>
+                                        Lưu ý nhỏ: nếu bạn muốn nghĩa “<strong>mặc dù / dù rằng</strong>” thật đậm,
+                                        trong tiếng Nhật người ta còn hay dùng <strong>にもかかわらず</strong> hơn. Còn
+                                        <strong>にかかわらず</strong> thường nghiêng về nghĩa <strong>“bất kể / không phân
+                                            biệt / không phụ thuộc vào”</strong>.
+                                    </p>
+
+                                    <p>Cách nhớ nhanh nhất là:</p>
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li><strong>にしては</strong> = lấy A làm chuẩn, rồi thấy B <strong>lệch kỳ
+                                                vọng</strong></li>
+                                        <li><strong>にしても</strong> = <strong>nhượng bộ A trước</strong>, nhưng vẫn giữ
+                                            kết luận B</li>
+                                        <li><strong>にかかわらず</strong> = <strong>gạt A ra khỏi điều kiện</strong>, B vẫn
+                                            đúng một cách khách quan</li>
+                                    </ul>
+
+                                    <h5 class="mt-4">1) にしては: “xét theo A mà nói thì B khá bất ngờ”</h5>
+                                    <p><strong>Mẫu:</strong> N / mệnh đề thường + にしては</p>
+                                    <p><strong>Ý nghĩa cốt lõi:</strong> Người nói lấy A làm chuẩn để so sánh, rồi nhận
+                                        xét rằng kết quả B <strong>không giống điều thường được mong đợi từ A</strong>.
+                                        Vì vậy cấu trúc này rất hay có sắc thái <strong>ngạc nhiên, đánh giá chủ quan,
+                                            khen hoặc chê</strong>.</p>
+                                    <p><strong> Ví dụ:</strong> 新人<strong>にしては</strong>、よくできています。<br>
+                                        <em>“So với một người mới thì làm tốt đấy.”</em>
+                                    </p>
+                                    <p>Ở đây, trọng tâm không phải “dù là người mới”, mà là: <strong>“Nếu xét theo tiêu
+                                            chuẩn của người mới, kết quả này vượt dự đoán.”</strong></p>
+                                    <p><strong>Sắc thái:</strong> Rất hay có <strong>cảm giác chủ quan</strong>. Thường
+                                        đi với lời <strong>nhận xét</strong>. Có thể khen hoặc chê, nhưng luôn có yếu tố
+                                        <strong>“khác với mức bình thường”</strong>.
+                                    </p>
+
+                                    <h5 class="mt-4">2) にしても: “dù có thừa nhận A đi nữa thì vẫn B”</h5>
+                                    <p><strong>Mẫu:</strong> N / mệnh đề thường + にしても</p>
+                                    <p><strong>Ý nghĩa cốt lõi:</strong> Người nói <strong>thừa nhận A là một lý do /
+                                            hoàn cảnh / điều kiện</strong>, nhưng sau đó vẫn nêu đánh giá hoặc kết luận
+                                        B.<br>
+                                        Nói cách khác, nó giống kiểu: <em>“Tôi công nhận A. Nhưng dù vậy thì B vẫn
+                                            đúng.”</em></p>
+                                    <p><strong>Ví dụ:</strong> 新人<strong>にしても</strong>、このミスは多すぎる。<br>
+                                        <em>“Dù là nhân viên mới đi nữa thì số lỗi này vẫn quá nhiều.”</em>
+                                    </p>
+                                    <p>Khác với <strong>にしては</strong>, ở đây người nói <strong>không so sánh với chuẩn
+                                            kỳ vọng</strong> trước tiên, mà đang <strong>nhượng bộ một phần</strong> cho
+                                        A rồi vẫn giữ phán đoán của mình.</p>
+                                    <p><strong>Sắc thái:</strong> Dễ mang cảm xúc như <strong>bất mãn, trách nhẹ, ngạc
+                                            nhiên, không chấp nhận hoàn toàn</strong>. Thường đi với các nhận xét như:
+                                        困る, ひどい, 多すぎる...</p>
+
+                                    <h5 class="mt-4">3) にかかわらず: “bất kể A, B vẫn áp dụng”</h5>
+                                    <p><strong>Mẫu hay gặp:</strong> N + にかかわらず | N1 / N2 にかかわらず</p>
+                                    <p><strong>Ý nghĩa cốt lõi:</strong> B <strong>không thay đổi</strong> dù A thế nào.
+                                        Cấu trúc này ít mang cảm xúc cá nhân, mà thiên về <strong>quy định, nguyên tắc,
+                                            thông báo, diễn đạt khách quan</strong>.</p>
+                                    <p><strong>Ví dụ:</strong> 経験の有無<strong>にかかわらず</strong>、応募できます。<br>
+                                        <em>“Bất kể có kinh nghiệm hay không đều có thể ứng tuyển.”</em>
+                                    </p>
+                                    <p><strong>Sắc thái:</strong> <strong>Khách quan</strong>. <strong>Trang
+                                            trọng</strong>, hay dùng trong công ty, thông báo, quy định. Không nhấn vào
+                                        cảm xúc cá nhân mà nhấn vào <strong>tính áp dụng đồng đều</strong>.</p>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Tình
+                                        huống công ty: Bảng Báo Giá (Yamada)</h5>
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gpt); margin-bottom: 1rem;">
+                                        <p><strong>Bối cảnh:</strong> Phòng kinh doanh sắp gửi <strong>bảng báo
+                                                giá</strong> cho khách hàng lớn. Yamada là <strong>nhân viên
+                                                mới</strong>.</p>
+
+                                        <p class="mt-2"><strong>Câu 1 — dùng にしては (Ngạc nhiên tích cực)</strong><br>
+                                            山田さんは新人<strong>にしては</strong>、見積書をとても正確に作れていますね。<br>
+                                            <em>“Yamada, so với một nhân viên mới, làm bảng báo giá rất chính xác
+                                                đấy.”</em><br>
+                                            <span style="font-size: 0.9em; opacity: 0.8;">Thái độ: Khen + hơi ngạc
+                                                nhiên. Trọng tâm: Độ lệch so với kỳ vọng.</span>
+                                        </p>
+
+                                        <p class="mt-2"><strong>Câu 2 — dùng にしても (Bất mãn / Trách nhẹ)</strong><br>
+                                            山田さんは新人<strong>にしても</strong>、金額の最終確認くらいはしてほしかったですね。<br>
+                                            <em>“Dù Yamada là nhân viên mới đi nữa, tôi vẫn muốn cậu ấy ít nhất phải
+                                                kiểm tra lại con số cuối cùng.”</em><br>
+                                            <span style="font-size: 0.9em; opacity: 0.8;">Thái độ: Không hài lòng, nhưng
+                                                có nhượng bộ trước. Trọng tâm: Công nhận hoàn cảnh A nhưng vẫn giữ phán
+                                                đoán B.</span>
+                                        </p>
+
+                                        <p class="mt-2"><strong>Câu 3 — dùng にかかわらず (Khách quan, quy định)</strong><br>
+                                            新人かベテランか<strong>にかかわらず</strong>、見積書は送信前に上司の承認が必要です。<br>
+                                            <em>“Bất kể là người mới hay nhân viên kỳ cựu, bảng báo giá trước khi gửi
+                                                đều phải có phê duyệt của cấp trên.”</em><br>
+                                            <span style="font-size: 0.9em; opacity: 0.8;">Thái độ: Trung lập, khách
+                                                quan. Trọng tâm: Quy tắc áp dụng đồng đều.</span>
+                                        </p>
+                                    </div>
+                                    <div class="code-wrapper">
+                                        <pre><code>Nói ngắn gọn:
+にしては = so với chuẩn thì bất ngờ
+にしても = dù công nhận lý do đó thì vẫn...
+にかかわらず = bất kể điều đó, quy tắc vẫn thế</code></pre>
+                                    </div>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Phát hiện ngay lỗi sai chính tả trong Prompt ("kakatowarazu" → "kakawarazu"), thể hiện năng lực hiểu ngôn ngữ tự nhiên cực nhạy bén!</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Giải thích logic "Lấy A làm chuẩn, nhượng bộ A, gạt A ra" vô cùng xúc tích, nắm đúng yếu huyệt của dân học Tiếng Nhật. Cảnh báo cả việc nhầm lẫn với "nimo kakawarazu".</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Bối cảnh Yamada (nhân viên mới) làm bảng báo giá (Mitsumorisho) mang đậm văn hóa doanh nghiệp Nhật. Tính sư phạm và ứng dụng là trên cả tuyệt vời.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Khả năng tổng hợp "So sánh 1 dòng" bằng code-block giúp người học luyện phân biệt siêu tốc. Thông minh và sáng tạo.</li>
+                                        <li><span class="crit">Tiếng Việt & Nhật:</span> <strong>(10/10)</strong> Dịch chính xác 100% ngữ khí tiếng Nhật sang tiếng Việt: "So với, Dù là, Bất kể là".</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sonnet Pane -->
+                            <div class="model-pane" id="p4-s">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Claude 4.6 Sonnet):</h4>
+                                    <h4 class="mt-2"
+                                        style="border-bottom: 1px solid #444; padding-bottom: 0.5rem; margin-bottom: 1rem;">
+                                        🎌 Phân biệt 3 cấu trúc nhượng bộ trong tiếng Nhật</h4>
+
+                                    <h5 class="mt-4">PHẦN 1 — Lý thuyết so sánh</h5>
+
+                                    <p class="mt-2"><strong>1. 〜にしては (ni shite wa)</strong><br>
+                                        <strong>→ "Xét ra thì... nhưng lại..."</strong> — Sự <strong>ngạc nhiên / bất
+                                            ngờ</strong> vì kết quả <em>không khớp</em> với kỳ vọng từ tiền đề.
+                                    </p>
+
+                                    <div class="matrix-container" style="margin-bottom: 1rem;">
+                                        <table class="matrix-table" style="font-size: 0.9rem;">
+                                            <tr>
+                                                <th style="width: 150px;">Yếu tố</th>
+                                                <th>Chi tiết</th>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Cấu trúc</strong></td>
+                                                <td>N / Vる / Aい / Aな + にしては + [kết quả trái kỳ vọng]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Logic</strong></td>
+                                                <td>Tiền đề → kỳ vọng X, nhưng thực tế lại ≠ X</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Sắc thái</strong></td>
+                                                <td>Ngạc nhiên, đôi khi ngụ ý khen hoặc chê nhẹ</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Chủ thể đánh giá</strong></td>
+                                                <td><strong>Người nói</strong> đang so sánh so với chuẩn của tiền đề
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Phạm vi dùng</strong></td>
+                                                <td>Hội thoại tự nhiên, cả văn viết thông thường</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p
+                                        style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-left: 3px solid var(--sonnet);">
+                                        💡 <em>Mấu chốt:</em> Tiền đề là <strong>cơ sở để đặt kỳ vọng</strong>. Vì kỳ
+                                        vọng đó không được đáp ứng, người nói cảm thấy bất ngờ.</p>
+
+                                    <p class="mt-4"><strong>2. 〜にしても (ni shite mo)</strong><br>
+                                        <strong>→ "Dù cho là... thì cũng..."</strong> — <strong>Chấp nhận</strong> tiền
+                                        đề nhưng vẫn nhận định rằng điều sau vẫn đúng / vẫn có vấn đề.
+                                    </p>
+
+                                    <div class="matrix-container" style="margin-bottom: 1rem;">
+                                        <table class="matrix-table" style="font-size: 0.9rem;">
+                                            <tr>
+                                                <th style="width: 150px;">Yếu tố</th>
+                                                <th>Chi tiết</th>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Cấu trúc</strong></td>
+                                                <td>N / Vる・た / Aい / Aな + にしても + [nhận định vẫn giữ nguyên]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Logic</strong></td>
+                                                <td>Dù chấp nhận/hiểu tiền đề, nhưng vế sau vẫn là sự thật</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Sắc thái</strong></td>
+                                                <td>Nhượng bộ một phần, <strong>không hài lòng</strong>, phê phán nhẹ
+                                                    hoặc mạnh</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Chủ thể đánh giá</strong></td>
+                                                <td>Người nói <strong>hiểu hoàn cảnh</strong> nhưng vẫn có ý kiến riêng
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Phạm vi dùng</strong></td>
+                                                <td>Rất phổ biến trong hội thoại hằng ngày</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p
+                                        style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-left: 3px solid var(--sonnet);">
+                                        💡 <em>Mấu chốt:</em> Người nói <strong>không phủ nhận</strong> lý do/hoàn cảnh
+                                        trong tiền đề, nhưng vẫn cho rằng điều sau là không thể bỏ qua.</p>
+
+                                    <p class="mt-4"><strong>3. 〜にもかかわらず (ni mo kakawarazu)</strong><br>
+                                        <strong>→ "Mặc dù... nhưng vẫn..."</strong> — Thực tế đi <strong>ngược
+                                            lại</strong> hoàn toàn so với tiền đề, được trình bày một cách <strong>khách
+                                            quan, trung lập</strong>.
+                                    </p>
+
+                                    <div class="matrix-container" style="margin-bottom: 1rem;">
+                                        <table class="matrix-table" style="font-size: 0.9rem;">
+                                            <tr>
+                                                <th style="width: 150px;">Yếu tố</th>
+                                                <th>Chi tiết</th>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Cấu trúc</strong></td>
+                                                <td>N / Vる・た / Aい / Aな + にもかかわらず + [kết quả đối lập]</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Logic</strong></td>
+                                                <td>Tiền đề là điều kiện/kỳ vọng tự nhiên → nhưng thực tế đi ngược lại
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Sắc thái</strong></td>
+                                                <td><strong>Khách quan, trang trọng</strong>, không bộc lộ cảm xúc rõ
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Chủ thể đánh giá</strong></td>
+                                                <td>Người nói trình bày sự kiện, ít can thiệp cảm xúc cá nhân</td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Phạm vi dùng</strong></td>
+                                                <td>Văn viết trang trọng, báo cáo, văn phong kinh doanh</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p
+                                        style="background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-left: 3px solid var(--sonnet);">
+                                        💡 <em>Mấu chốt:</em> Đây là cấu trúc mang tính <strong>văn bản/trang
+                                            trọng</strong> nhất trong ba cấu trúc. Nó trình bày mâu thuẫn một cách lạnh
+                                        lùng, không phán xét.</p>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">PHẦN 2 —
+                                        Tình huống thực tế trong công ty</h5>
+
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--sonnet); margin-bottom: 1rem;">
+                                        <p>🏢 <strong>Bối cảnh:</strong><br>
+                                            Tanaka-san là nhân viên mới vào công ty được <strong>3 tháng</strong>. Tuần
+                                            này, anh ấy đã nộp một <strong>bản báo cáo phân tích thị trường</strong> lên
+                                            cho trưởng phòng. Đây là lần đầu tiên anh thực hiện loại báo cáo này một
+                                            mình.</p>
+                                    </div>
+
+                                    <p class="mt-2"><strong>Câu 1 — にしては</strong></p>
+                                    <div style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <p><strong>田中さんは入社3ヶ月にしては、なかなかしっかりしたレポートを書いたね。</strong><br>
+                                            <em>Tanaka-san wa nyūsha sankagetsu ni shite wa, nakanaka shikkari shita
+                                                repōto o kaita ne.</em><br>
+                                            🇻🇳 <em>"Xét ra mới vào công ty có 3 tháng, Tanaka viết báo cáo khá chắc
+                                                chắn đấy nhỉ."</em>
+                                        </p>
+                                        <p><strong>📊 Phân tích sắc thái:</strong> Người nói — trưởng phòng —
+                                            <strong>không kỳ vọng</strong> một nhân viên 3 tháng có thể làm tốt. Cấu
+                                            trúc <em>にしては</em> ở đây không mang ý chê bai, mà là một lời khen ngụ ý
+                                            rằng: <em>"Tôi không ngờ em lại làm được đến vậy."</em>
+                                        </p>
+                                    </div>
+
+                                    <p class="mt-2"><strong>Câu 2 — にしても</strong></p>
+                                    <div style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <p><strong>初めてのレポートにしても、データの出典を書かないのはまずいよ。</strong><br>
+                                            <em>Hajimete no repōto ni shite mo, dēta no shutten o kakanai no wa mazui
+                                                yo.</em><br>
+                                            🇻🇳 <em>"Dù là báo cáo lần đầu đi nữa, việc không ghi nguồn dữ liệu thì vẫn
+                                                là vấn đề đấy."</em>
+                                        </p>
+                                        <p><strong>📊 Phân tích sắc thái:</strong> Người nói <strong>thừa nhận và thông
+                                                cảm</strong> với việc đây là lần đầu tiên, nhưng sự thông cảm đó
+                                            <strong>không xóa bỏ được sai sót</strong>. Thể hiện thái độ <strong>không
+                                                hài lòng có kiềm chế</strong> nhằm nhấn mạnh hoàn cảnh không thể biện
+                                            minh cho lỗi.
+                                        </p>
+                                    </div>
+
+                                    <p class="mt-2"><strong>Câu 3 — にもかかわらず</strong></p>
+                                    <div style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <p><strong>田中さんは初めてのレポート作成であったにもかかわらず、期日通りに高品質な資料を提出した。</strong><br>
+                                            <em>Tanaka-san wa hajimete no repōto sakusei de atta ni mo kakawarazu,
+                                                kijitsu dōri ni kōhinshitsu na shiryō o teishutsu shita.</em><br>
+                                            🇻🇳 <em>"Mặc dù đây là lần đầu tiên Tanaka thực hiện báo cáo, anh ấy vẫn
+                                                nộp tài liệu chất lượng cao đúng hạn."</em>
+                                        </p>
+                                        <p><strong>📊 Phân tích sắc thái:</strong> Đây là văn phong của một <strong>bản
+                                                đánh giá nhân viên chính thức</strong>. Người viết không bộc lộ cá nhân,
+                                            chỉ đang <strong>ghi nhận sự thật</strong> một cách trang trọng và khách
+                                            quan.</p>
+                                    </div>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">✏️ Tổng
+                                        kết qua 3 câu cùng chủ đề</h5>
+                                    <div class="code-wrapper">
+                                        <pre><code>Cùng nói về Tanaka — nhân viên mới làm báo cáo lần đầu:
+
+😲 にしては        → "Ủa, mới 3 tháng mà làm được thế này à?" (ngạc nhiên, khen ngụ ý)
+😤 にしても        → "Thôi thì lần đầu cũng hiểu, nhưng lỗi này thì không ổn." (phê phán có kiềm chế)
+😐 にもかかわらず   → "Mặc dù là lần đầu, vẫn hoàn thành tốt." (tường thuật khách quan)</code></pre>
+                                    </div>
+                                    <p>Ba cấu trúc đều là <strong>nhượng bộ</strong> — đều thừa nhận tiền đề — nhưng
+                                        <strong>mục đích giao tiếp và cảm xúc ẩn sau</strong> hoàn toàn khác nhau. Đây
+                                        chính là lý do vì sao chúng không thể thay thế cho nhau dù nghĩa từ điển trông
+                                        có vẻ tương tự! 🎯
+                                    </p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Phân rã 3 dạng ngữ pháp nhượng bộ (N3–N2) không một chút sai sót, thể hiện độ am hiểu JLPT xuất sắc.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Bảng biểu "Yếu tố – Chi tiết" siêu trực quan. Mỗi cấu trúc đều có "Logic, Sắc thái, Chủ thể đánh giá" rất khoa học.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Bối cảnh đánh giá nhân viên (khen ngợi vs phê bình vs email nhân sự) mô phỏng hoàn hảo môi trường công sở Nhật Bản (Hōrensō).</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Đoạn "Tổng kết qua 3 câu cùng chủ đề" dùng emoji (😲, 😤, 😐) và code-block biến ngữ học khô khan thành phong cách meme cực kỳ dễ hiểu.</li>
+                                        <li><span class="crit">Tiếng Việt & Nhật:</span> <strong>(10/10)</strong> Trình bày Romaji kèm theo nghĩa tiếng Việt trơn tru như một cuốn giáo trình "hack não" chuẩn mực.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROMPT 5 SECTION -->
+                        <div class="prompt-pane" id="prompt-5">
+                            <div class="the-prompt box-dark">
+                                <h3><i class="fa-solid fa-futbol"></i> Lệnh yêu cầu (Prompt) 5</h3>
+                                <p class="prompt-text">Đóng vai huấn luyện viên Carlo Ancelotti, hãy phân tích 2 điểm
+                                    yếu lớn nhất trong hệ thống phòng ngự của câu lạc bộ Real Madrid hiện tại khi đối
+                                    đầu với những đội bóng chơi pressing tầm cao. Từ đó, hãy đề xuất chi tiết cách điều
+                                    chỉnh vị trí của các tiền vệ trung tâm để thoát pressing và triển khai bóng lên
+                                    tuyến trên một cách hiệu quả nhất.</p>
+                            </div>
+                            <div class="model-tabs">
+                                <button class="model-tab gemini-tab active" data-model="g">Gemini 3.1 Pro</button>
+                                <button class="model-tab gpt-tab" data-model="p">GPT 5.4 Pro</button>
+                                <button class="model-tab sonnet-tab" data-model="s">Claude 4.6 Sonnet</button>
+                            </div>
+
+                            <!-- Gemini Pane -->
+                            <div class="model-pane active" id="p5-g">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Gemini 3.1 Pro):</h4>
+
+                                    <p>🤨 <em>Nhướng mày</em></p>
+                                    <p>Chào cậu. Cứ ngồi xuống đi. Bóng đá hiện đại, cũng giống như việc cậu tối ưu hóa
+                                        một thuật toán hay xây dựng một hệ thống phần mềm phức tạp vậy, nó đòi hỏi sự
+                                        đồng bộ tuyệt đối. Nếu một mắt xích bị lỗi, toàn bộ hệ thống sẽ chệch nhịp.</p>
+                                    <p>Gần đây, khi Real Madrid phải đối đầu với những đội bóng pressing tầm cao cực
+                                        rát, cỗ máy của chúng ta thực sự đã bộc lộ một vài điểm nghẽn. Với tư cách là
+                                        huấn luyện viên trưởng, tôi luôn phải nhìn thẳng vào sự thật. Dưới đây là hai
+                                        "lỗ hổng" lớn nhất mà chúng ta đang phải xử lý.</p>
+
+                                    <h5 class="mt-4">1. Sự thiếu vắng một "Metronome" để điều tiết nhịp độ</h5>
+                                    <p>Điểm yếu đầu tiên, và có lẽ là rõ ràng nhất, là khoảng trống mà Toni Kroos để
+                                        lại. Trong nhiều năm, cách Real Madrid thoát pressing dồn dập là đưa bóng cho
+                                        Toni. Cậu ấy là một chiếc máy đếm nhịp (metronome), luôn biết chính xác khi nào
+                                        cần giữ bóng, khi nào cần một đường chuyền một chạm để phá vỡ tuyến pressing đầu
+                                        tiên.</p>
+                                    <p>Hiện tại, chúng ta có Aurelien (Tchouameni), Eduardo (Camavinga) và Fede
+                                        (Valverde). Họ sở hữu động cơ vĩnh cửu và thể chất phi thường, nhưng khả năng
+                                        nhận thức không gian tĩnh và "thoát pressing bằng nhãn quan" chưa thể đạt đến độ
+                                        sắc bén như Toni. Đôi khi, các tiền vệ của chúng ta giữ bóng thêm 1-2 nhịp để
+                                        tìm phương án, và trong bóng đá đỉnh cao, một giây chần chừ đó là đủ để hệ thống
+                                        pressing của đối phương ập vào và bóp nghẹt không gian.</p>
+
+                                    <h5 class="mt-4">2. Sự đứt gãy cự ly đội hình và việc các tiền đạo bị cô lập</h5>
+                                    <p>Điểm yếu thứ hai nằm ở cấu trúc cự ly. Khi bị ép sân, bản năng của Vinicius,
+                                        Mbappe hay Rodrygo là sẵn sàng cho các pha bứt tốc ở phía trên để phản công. Tuy
+                                        nhiên, điều này vô tình tạo ra một khoảng trống mênh mông giữa hàng tiền vệ và
+                                        hàng tiền đạo.</p>
+                                    <p>Khi cự ly đội hình bị giãn dãn ra, các tiền vệ trung tâm của chúng ta không có
+                                        những "trạm trung chuyển" gần nhất để ban bật ngắn. Họ buộc phải tung ra những
+                                        đường chuyền dài có độ rủi ro cao, hoặc phải tự mình rê dắt qua áp lực – một
+                                        phương án cực kỳ nguy hiểm nếu mất bóng ở khu vực 1/3 sân nhà.</p>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Giải
+                                        pháp chiến thuật: Tái thiết lập định vị hàng tiền vệ</h5>
+                                    <p>Để giải quyết bài toán này, chúng ta không thể chỉ dựa vào nỗ lực cá nhân mà phải
+                                        điều chỉnh lại cấu trúc hình học của hệ thống.</p>
+
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li class="mt-2"><strong>1. Chuyển đổi sang cấu trúc triển khai 3-2 (Asymmetric
+                                                Build-up)</strong><br>
+                                            Thay vì để hai trung vệ giăng ngang và hai tiền vệ trung tâm đứng song song
+                                            phía trên (dễ bị bắt bài), tôi sẽ yêu cầu Tchouameni (hoặc người đá thấp
+                                            nhất) lùi hẳn xuống, tạo thành một hàng phòng ngự 3 người cùng với Rudiger
+                                            và Militao.<br>
+                                            <span style="opacity: 0.8;">➡️ <em>Hiệu ứng:</em> Mở rộng chiều ngang mặt
+                                                sân, kéo giãn đội hình pressing của đối phương. Đồng thời, hai hậu vệ
+                                                cánh sẽ được đẩy lên cao hơn để ghim các cầu thủ chạy cánh của đối thủ
+                                                lại.</span>
+                                        </li>
+
+                                        <li class="mt-2"><strong>2. Tiền vệ đứng lệch tầng (Staggered
+                                                Positioning)</strong><br>
+                                            Đây là cốt lõi của việc thoát pressing. Fede và Eduardo (hoặc Jude) tuyệt
+                                            đối không được đứng trên cùng một đường ngang. Một người sẽ lùi sâu đóng vai
+                                            trò mỏ neo. Người còn lại (thường là Fede với khả năng bao sân) sẽ di chuyển
+                                            vào vùng "half-space" (hành lang trong).<br>
+                                            <span style="opacity: 0.8;">➡️ <em>Hiệu ứng:</em> Việc đứng lệch tầng tạo ra
+                                                các hình tam giác chuyền bóng liên tục, khiến đối phương khó cắt cử
+                                                người theo kèm 1-1 mà không phá vỡ cự ly đội hình của chính họ.</span>
+                                        </li>
+
+                                        <li class="mt-2"><strong>3. Khai thác nguyên lý "Người thứ ba" (Third-Man
+                                                Run)</strong><br>
+                                            Nếu tiền vệ nhận bóng đang quay lưng lại với khung thành đối phương và bị áp
+                                            sát, nguyên tắc là không được phép xoay người. Thay vào đó, chúng ta sử dụng
+                                            Bellingham như một điểm nảy tường.<br>
+                                            <span style="opacity: 0.8;">➡️ <em>Cách vận hành:</em> Trung vệ tung đường
+                                                chuyền xuyên tuyến thẳng lên cho Bellingham. Ngay lập tức, Bellingham
+                                                nhả bóng một chạm (lay-off) lại cho Valverde – người đang băng lên với
+                                                tư thế đối diện với khung thành đối phương. Bằng một chuỗi hành động
+                                                này, chúng ta loại bỏ hoàn toàn tuyến pressing đầu tiên và tuyến thứ hai
+                                                của đối thủ.</span>
+                                        </li>
+                                    </ul>
+                                    <p><em>Cơ sở của mọi chiến thuật là hiểu rõ mảnh ghép mình đang có trong tay để sắp
+                                            xếp chúng thành một cỗ máy trơn tru nhất. Cậu thấy sao về cách giải quyết hệ
+                                            thống này? Cậu có muốn tôi đi sâu hơn vào cách phân công vai trò cụ thể cho
+                                            Bellingham khi chúng ta chuyển trạng thái từ phòng ngự sang tấn công
+                                            không?</em></p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Bắt trúng "huyệt" của Real Madrid hiện tại: Sự thiếu vắng của Toni Kroos và thói quen chờ bóng trên cao của dàn siêu sao.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Kiến thức bóng đá uyên thâm với các thuật ngữ: Asymmetric Build-up, Staggered (đứng lệch tầng), Third-Man Run. Rất đẳng cấp.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Nhập vai "Cụ" Carlo Ancelotti xuất sắc! Cử chỉ "🤨 Nhướng mày" kinh điển là một cú ăn điểm tuyệt đỉnh về độ duyên dáng và dí dỏm.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Giải pháp thoát pressing dùng Bellingham làm "tường nảy" rất sát với cách vận hành thực tế của chiến lược gia người Ý.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Văn phong của một "bố già" bóng đá, xưng hô "Tôi – Cậu", điềm tĩnh, uy quyền và đầy trải nghiệm.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- GPT Pane -->
+                            <div class="model-pane" id="p5-p">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (GPT 5.4 Pro):</h4>
+
+                                    <p>Nếu nói theo giọng của Carlo Ancelotti, tôi sẽ nói thế này: <strong>vấn đề của
+                                            Real Madrid khi gặp pressing tầm cao không phải là thiếu kỹ thuật; vấn đề là
+                                            thiếu đúng khoảng cách và đúng cao độ giữa các tiền vệ ở pha 1 và pha 2
+                                            triển khai bóng.</strong> Tôi hiểu câu hỏi của bạn ở góc độ <strong>“phòng
+                                            ngự có bóng”</strong>: thoát áp từ sân nhà để không bị bóp nghẹt ngay từ
+                                        đường chuyền đầu tiên.</p>
+
+                                    <h5 class="mt-4">Điểm yếu tủ huyệt thứ nhất: Đội hình bị kéo giãn theo trục dọc.
+                                    </h5>
+                                    <p>Khi tuyến đầu bị khóa, khoảng cách giữa hàng thủ và hàng tiền vệ của Madrid
+                                        thường dài ra quá nhanh; tiền vệ không di chuyển cùng khối, nên nếu đối thủ bẻ
+                                        được lớp pressing đầu tiên thì hàng thủ lập tức phải lùi sâu và mất compactness.
+                                        Nhận định này đã xuất hiện khá rõ sau các trận như Liverpool và Rayo: Alvaro
+                                        Benito nói thẳng rằng Madrid “becomes stretched too easily”, “the distances
+                                        between the lines are too large”, còn Coaches’ Voice mô tả Liverpool liên tục
+                                        dùng chuyển động ở trung lộ và biên để kéo giãn hàng thủ Madrid rồi mở ra khoảng
+                                        nhận bóng ở giữa. <a href="#"
+                                            style="color: var(--gpt); font-size: 0.9em; text-decoration: none;">[Managing
+                                            Madrid]</a></p>
+
+                                    <h5 class="mt-4">Điểm yếu chí mạng thứ hai: Góc chuyền đầu tiên quá dễ đoán.</h5>
+                                    <p>Khi nhịp chuyền chậm đi một nhịp, pivot đứng phẳng, còn hai interior cùng rơi về
+                                        một cao độ, đối thủ rất dễ dùng cover shadow để khóa đường vào trung lộ rồi dồn
+                                        Madrid ra biên. Chính Benito cũng chỉ ra rằng đội “thinking instead of
+                                        reacting”, khiến circulation chậm và buildup dễ đoán; còn ở trận Liverpool,
+                                        Madrid nhiều lần nhảy áp lực từ biên nhưng lại để lộ “spare wide player” cho đối
+                                        thủ tăng tốc ra ngoài. Nói ngắn gọn: <strong>Madrid thường cho đối thủ biết
+                                            trước đường thoát áp tiếp theo.</strong> <a href="#"
+                                            style="color: var(--gpt); font-size: 0.9em; text-decoration: none;">[Managing
+                                            Madrid]</a></p>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Quy tắc
+                                        bất di bất dịch cho ba tiền vệ trung tâm</h5>
+                                    <p>Nếu là tôi, tôi sẽ đặt ra một quy tắc: <strong>một người thấp, một người trung
+                                            gian, một người cao ở phía yếu; không bao giờ để cả ba đứng cùng một mặt
+                                            phẳng.</strong> Opta đã chỉ ra rằng khi Madrid làm build-up chậm hơn, có tổ
+                                        chức hơn, số đợt phản công họ phải chịu giảm từ 1.47 xuống 0.83 mỗi trận; nghĩa
+                                        là thoát pressing tốt hơn cũng chính là phòng ngự tốt hơn. <a href="#"
+                                            style="color: var(--gpt); font-size: 0.9em; text-decoration: none;">[Opta
+                                            Analyst]</a></p>
+
+                                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                                        <li class="mt-2"><strong>Tchouaméni</strong> là mỏ neo số 1, nhưng không đứng
+                                            thẳng chính giữa hai trung vệ. Cậu ấy phải lệch nửa bước sang phía đối diện
+                                            bóng, cao hơn cặp trung vệ khoảng 8-10 mét, mở thân người về phía sân đối
+                                            diện để thoát khỏi bẫy cover shadow.</li>
+                                        <li class="mt-2"><strong>Valverde</strong> là interior rơi thấp ở bên phải: mẫu
+                                            tiền vệ rất hợp vai trò này vì có khả năng kéo bóng (progressive carries) và
+                                            tăng tốc.</li>
+                                        <li class="mt-2"><strong>Camavinga</strong> làm vai trò tương tự ở bên trái khi
+                                            đối thủ khóa biên phải.</li>
+                                        <li class="mt-2"><strong>Bellingham</strong> thì ngược lại: đứng ở
+                                            <strong>weak-side half-space</strong>, giữa tiền vệ 6 và hậu vệ biên của đối
+                                            thủ, để làm điểm nhận đường chuyền thứ ba.</li>
+                                    </ul>
+
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--gpt); margin-bottom: 1rem;">
+                                        <p><strong>Chuỗi phối hợp lối thoát (Mẫu):</strong></p>
+                                        <p style="margin-bottom: 0;"><strong>Khi bóng ở bên phải:</strong> Trung vệ phải
+                                            → Valverde → Tchouaméni một chạm → Bellingham/Camavinga phía yếu → Đưa ngay
+                                            lên Vinícius/Mbappé. Không quay lại thêm một vòng nữa.</p>
+                                    </div>
+
+                                    <p>Mẫu thoát pressing tôi muốn thấy sẽ rất rõ. Điều cuối cùng: <strong>tiền vệ gần
+                                            bóng và hậu vệ biên gần bóng không được chiếm cùng một hành lang ở cùng một
+                                            cao độ.</strong> Nếu Valverde rơi xuống “nửa hậu vệ biên”, thì hậu vệ biên
+                                        thật phải đứng cao để ghim winger đối thủ.</p>
+
+                                    <h5 class="mt-4">Chốt lại theo kiểu Carlo:</h5>
+                                    <p style="font-style: italic; font-size: 1.1em; color: var(--gpt);">"Madrid không
+                                        cần thêm một tiền vệ để thoát pressing; Madrid cần ba tiền vệ đứng đúng cao độ.
+                                        Một người cho an toàn, một người cho nhịp, một người cho cú đâm phía sau hàng
+                                        press."</p>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(9.5/10)</strong> Phân tích chính xác các điểm yếu của Real Madrid (cự ly đội hình giãn, góc chuyền dễ đoán). Góp nhặt và trích dẫn dữ liệu thật từ Opta Analyst và Managing Madrid.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Nêu cụ thể chi tiết luân chuyển bóng (Trung vệ phải → Valverde → Tchouameni → Bellingham) vô cùng sắc gọn, y như giáo án sa bàn thật.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(8.5/10)</strong> Nhập vai Carlo Ancelotti ở mức tạm ổn. Bài viết mang giọng điệu của một "Phân tích viên dữ liệu bóng đá" hơn là một HLV kỳ cựu đang trò chuyện với cầu thủ. Roleplay không mượt như Gemini hay Claude.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Giải pháp thoát Pressing được hệ thống hóa thành quy tắc "Một thấp – Một trung gian – Một cao" rất dễ nhớ. Khả năng trích xuất nguồn website là lợi thế cạnh tranh tuyệt đối.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Thuật ngữ bóng đá đặc sệt: "cover shadow", "compactness", "weak-side half-space", "interior". Rất "nặng đô" và đã tai.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Sonnet Pane -->
+                            <div class="model-pane" id="p5-s">
+                                <div class="response-text box-dark">
+                                    <h4>Suy luận & Giải thích (Claude 4.6 Sonnet):</h4>
+                                    <p><em>[Hắng giọng, xốc lại áo khoác]</em></p>
+                                    <p>Bene. Câu hỏi hay. Tôi sẽ nói thẳng — chúng tôi có vấn đề, và tôi biết chúng.</p>
+
+                                    <h5 class="mt-4">Điểm yếu thứ nhất — "Khoảng trống tử thần" giữa các tuyến</h5>
+                                    <p>Khi đối thủ pressing tầm cao cường độ cao, các trung vệ của tôi — Rüdiger, Alaba
+                                        <em>(khi còn khoẻ)</em>, Tchouaméni đóng vai "false pivot" — bị đặt vào tình
+                                        huống mà <strong>khoảng cách giữa hàng thủ và hàng tiền vệ giãn ra quá
+                                            lớn</strong>. Đặc biệt khi Tchouaméni bị kéo về phòng thủ, Valverde và
+                                        Bellingham lại thiên về phía trước — tạo ra một khoảng trống mênh mông ở trung
+                                        tuyến. Đội pressing tầm cao sẽ lợi dụng chính xác vùng này để thực hiện những
+                                        pha counterpressing cực kỳ nguy hiểm sau khi đoạt bóng.
+                                    </p>
+
+                                    <h5 class="mt-4">Điểm yếu thứ hai — "Bẫy biên" khi triển khai bóng từ thủ môn</h5>
+                                    <p>Sơ đồ 4-3-3 truyền thống của chúng tôi khiến các trung vệ thường phải chuyền sang
+                                        cánh cho hậu vệ biên. Nhưng trước những đội như Liverpool, Man City, hay Arsenal
+                                        với pressing đồng bộ cao, hậu vệ biên bị khoá chặt ngay lập tức — tạo ra
+                                        <strong>điểm mù ở trung lộ</strong>, buộc chúng tôi phải đá dài không kiểm soát.
+                                    </p>
+
+                                    <p>Bây giờ để tôi chỉ cho các anh xem tôi sẽ điều chỉnh thế nào.</p>
+
+                                    <div class="mt-4 mb-4 text-center">
+                                        <img src="images/sonnet-tactics.png" alt="Sơ đồ chiến thuật Real Madrid"
+                                            style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.1);">
+                                        <p style="font-size: 0.9em; opacity: 0.8; margin-top: 5px;"><em>Biểu đồ minh họa
+                                                chiến thuật do AI Claude 4.6 Sonnet xây dựng</em></p>
+                                    </div>
+
+                                    <h5 class="mt-4"
+                                        style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">Điều
+                                        chỉnh chiến thuật — Giải pháp của tôi</h5>
+
+                                    <p class="mt-2"><strong>Bước 1 — Biến đội hình 4-3-3 thành 3-2-5 khi có
+                                            bóng</strong><br>
+                                        Khi Courtois cầm bóng, Tchouaméni trượt sang đóng vai trung vệ phải tạm thời,
+                                        còn Camavinga <em>thả xuống</em> vào khoảng trống giữa hai trung vệ. Đây là cơ
+                                        chế "false pivot" — đội hình trở thành cấu trúc 3 người ở tuyến sau, vô hiệu hoá
+                                        bẫy bắt ép 2 tiền đạo của đối thủ.</p>
+
+                                    <p class="mt-2"><strong>Bước 2 — Valverde kéo dãn chiều ngang</strong><br>
+                                        Valverde cần mở rộng ra cánh phải ngay lập tức, kéo tiền vệ trái của đối thủ ra
+                                        khỏi trung tâm. Điều này tạo ra một hành lang tự do ở tim sân. Đây là nguyên tắc
+                                        cơ bản — <em>bạn không thể vừa pressing trung tâm vừa khoá được cánh với cùng
+                                            một cầu thủ</em>.</p>
+
+                                    <p class="mt-2"><strong>Bước 3 — Bellingham đóng vai "người thứ ba"</strong><br>
+                                        Bellingham không nên chạy đến đón bóng — anh ấy cần đứng yên ở vùng "half-space"
+                                        và đợi. Khi Camavinga nhận bóng từ trung vệ, toàn bộ pressing line của đối thủ
+                                        đổ về phía Camavinga. Lúc đó Bellingham mới chạy vào khoảng trống sau lưng tiền
+                                        vệ đối phương — đây là nguyên lý <em>third-man combination</em> mà tôi đã dùng
+                                        rất nhiều thời ở Bayern và Chelsea.</p>
+
+                                    <p class="mt-2"><strong>Bước 4 — Vinícius làm "bẫy độ sâu"</strong><br>
+                                        Vinícius Jr cần chạy chiều sâu liên tục dọc đường biên trái — không phải để nhận
+                                        bóng ngay, mà để kéo hậu vệ phải đối thủ ra cao, tạo khoảng trống cho Bellingham
+                                        xâm nhập vùng cấm từ phía trong.</p>
+
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); padding: 1rem; border-left: 3px solid var(--sonnet); margin-top: 1.5rem; font-style: italic;">
+                                        <p>Đây không phải chiến thuật phức tạp. Đây là bóng đá thông minh — positional
+                                            play thuần tuý. Đội nào pressing tầm cao mạnh nhất cũng sẽ bị bẫy ngược lại
+                                            nếu chúng ta di chuyển đúng lúc.</p>
+                                    </div>
+                                </div>
+
+                                <div class="eval-box">
+                                    <h4>Đánh giá chi tiết mô hình này:</h4>
+                                    <ul class="eval-list">
+                                        <li><span class="crit">Độ chính xác:</span> <strong>(10/10)</strong> Bắt đúng 2 "tử huyệt" chí mạng của hệ thống 4–3–3 Real hiện tại: Hở sườn giữa sân và bẫy Pressing Biên của các đội Premier League.</li>
+                                        <li><span class="crit">Chi tiết:</span> <strong>(10/10)</strong> Lý thuyết Positional Play (định hướng vị trí) được giải thích tuyệt đỉnh qua 4 bước triển khai thoát Pressing liên hoàn.</li>
+                                        <li><span class="crit">Ngữ cảnh:</span> <strong>(10/10)</strong> Nhập vai siêu sắc bén với cử chỉ "[Hắng giọng, xốc lại áo khoác]" cùng câu chào tiếng Ý "Bene". Khí chất điềm đạm, đẳng cấp của một HLV vĩ đại.</li>
+                                        <li><span class="crit">Sáng tạo:</span> <strong>(10/10)</strong> Khả năng cung cấp mô phỏng "Sơ Đồ Hệ Thống" (bằng ảnh Diagram tích hợp vào kết quả) đã hoàn toàn gây sững sờ về năng lực hình tượng hóa của AI.</li>
+                                        <li><span class="crit">Tiếng Việt:</span> <strong>(10/10)</strong> Văn phong chân thực chuyên gia, lời nói sắc lẹm "bạn không thể vừa pressing trung tâm vừa khóa được cánh". Dịch thuật mượt mà như VTV!</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUMMARY MATRIX SECTION -->
+        <section class="summary section" id="summary">
+            <div class="container">
+                <h2 class="section-title fade-in">IV. Bảng Đánh Giá Tổng Hợp</h2>
+                <div class="matrix-container glass-card fade-in">
+                    <table class="matrix-table">
+                        <thead>
+                            <tr>
+                                <th>Tiêu chí (Thang điểm 10)</th>
+                                <th class="col-gemini">Gemini 3.1 Pro</th>
+                                <th class="col-gpt">GPT 5.4 Pro</th>
+                                <th class="col-sonnet">Claude 4.6 Sonnet</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Độ chính xác thông tin</strong></td>
+                                <td><strong>(9.5/10)</strong> Chuẩn xác, an toàn, tính giáo dục cao.</td>
+                                <td><strong>(9/10)</strong> Logic và dữ liệu xuất sắc, đôi khi hơi cứng nhắc.</td>
+                                <td><strong>(10/10)</strong> Hoàn hảo, không sai sót, thông tin rành mạch.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Độ chi tiết và chiều sâu</strong></td>
+                                <td><strong>(9/10)</strong> Chi tiết tốt, giải thích dễ hiểu cho người mới.</td>
+                                <td><strong>(9.5/10)</strong> Đào sâu bản chất, thường có trích dẫn/thuật ngữ.</td>
+                                <td><strong>(10/10)</strong> Phân rã vấn đề siêu việt, đối chiếu trực quan.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Hiểu ngữ cảnh & ý định</strong></td>
+                                <td><strong>(10/10)</strong> Nhập vai siêu việt, thấu hiểu ý đồ người dùng.</td>
+                                <td><strong>(8.5/10)</strong> Hiểu yêu cầu nhưng nhập vai đôi chỗ gượng gạo.</td>
+                                <td><strong>(9.5/10)</strong> Nhập vai tốt, hiểu rõ ẩn ý và bối cảnh sự việc.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sáng tạo & Đa dạng</strong></td>
+                                <td><strong>(9.5/10)</strong> Kể chuyện hấp dẫn, văn phong thân thiện.</td>
+                                <td><strong>(9/10)</strong> Nhấn mạnh quy tắc ngắn gọn, tóm tắt thông minh.</td>
+                                <td><strong>(10/10)</strong> Cung cấp sơ đồ, bảng biểu, meme đa góc nhìn.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Xử lý ngôn ngữ Tiếng Việt</strong></td>
+                                <td><strong>(10/10)</strong> Mượt mà, tự nhiên, "chuẩn người Việt" nhất.</td>
+                                <td><strong>(9.5/10)</strong> Dùng tốt từ lóng chuyên ngành, giọng dứt khoát.</td>
+                                <td><strong>(9.5/10)</strong> Trang trọng, sắc sảo, thích hợp báo cáo học thuật.</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td><strong>Tâm điểm / Thế mạnh</strong></td>
+                                <td><strong>Giao tiếp & Sư phạm:</strong> Hoàn hảo cho việc học tập, giải thích khái
+                                    niệm phức tạp một cách thân thiện, kể chuyện và nhập vai đỉnh cao.</td>
+                                <td><strong>Tư duy Logic & Dữ liệu:</strong> Phù hợp nhất cho lập trình sâu, tìm kiếm
+                                    tài liệu chuẩn xác, phân tích chuyên môn với phong thái học thuật nghiêm túc.</td>
+                                <td><strong>Cấu trúc & Trực quan:</strong> Khả năng phân rã vấn đề phức tạp thành
+                                    bảng/sơ đồ số một. Tuyệt vời cho việc tóm tắt, so sánh và báo cáo tổng hợp.</td>
+                            </tr>
+                            <tr class="weak-row">
+                                <td><strong>Điểm yếu</strong></td>
+                                <td>Thiếu một chút cứng cáp ở các tác vụ cần sự sắc lạnh của logic chuyên sâu (mặc dù
+                                    vẫn làm rất tốt).</td>
+                                <td>Khả năng nhập vai đóng kịch thiếu sự mềm mại, đôi khi tạo cảm giác "máy móc và giáo
+                                    điều".</td>
+                                <td>Bị an toàn trong ngôn từ ở một số tình huống cần sự phá cách, nhưng bù lại rất chắc
+                                    chắn.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- OVERALL CONCLUSION -->
+                <div class="conclusion glass-card mt-4 fade-in">
+                    <h3>V. Nhận xét tổng quan & Bài học thu được</h3>
+                    <p>Qua 5 tác vụ đại diện cho các lĩnh vực cốt lõi (Khoa học máy tính, Khoa học Tự nhiên, Khoa học Xã
+                        hội, Ngôn ngữ học, và Phân tích Chiến thuật), chúng ta có thể kết luận rằng <strong>không có mô
+                            hình AI nào là "tuyệt đối tốt nhất" cho mọi hoàn cảnh</strong>. Sự khác biệt nằm ở triết lý
+                        thiết kế của mỗi mô hình:</p>
+                    <ul style="margin-top: 1rem; margin-bottom: 1rem;">
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Gemini 3.1 Pro</strong> giống như
+                            một người Thầy/Người mentor tận tâm. Nó tỏa sáng khi cần truyền đạt kiến thức, giải thích
+                            khái niệm bằng ngôn ngữ giản dị, và bộc lộ chỉ số EQ cao nhất qua khả năng nhập vai linh
+                            hoạt.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>GPT 5.4 Pro</strong> là một Chuyên
+                            gia dữ liệu sắc lạnh. Với khả năng lập luận sắc bén, bám sát các luồng logic phức tạp, và
+                            cung cấp thông tin/thuật ngữ chuyên ngành, định dạng này đặc biệt mạnh mẽ khi giải quyết các
+                            bài toán tối ưu (C++) hoặc nghiên cứu tài liệu có độ khó cao.</li>
+                        <li style="margin-bottom: 0.5rem; line-height: 1.6;"><strong>Claude 4.6 Sonnet</strong> là một Kiến
+                            trúc sư thấu đáo. Điểm mạnh khủng khiếp của mô hình này là năng lực hệ thống hóa (tạo bảng,
+                            vẽ sơ đồ, gạch đầu dòng rõ ràng), khiến thông tin trở nên trong suốt và dễ tiêu hóa nhất, vô
+                            cùng hữu dụng khi thực hiện báo cáo so sánh.</li>
+                    </ul>
+
+                    <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 12px; padding: 1.2rem 1.5rem; margin-bottom: 1rem;">
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-stopwatch"></i> Nhận xét về tốc độ phản hồi</h4>
+                        <p style="line-height: 1.7;">Trong quá trình thực hiện 5 prompt, tốc độ trả lời của 3 mô hình có sự chênh lệch rất lớn: <strong>Gemini 3.1 Pro</strong> nhanh nhất (phản hồi gần như tức thì, chỉ vài giây), tiếp theo là <strong>Claude 4.6 Sonnet</strong> (ổn định trong khoảng 1–2 phút), và cuối cùng là <strong>GPT 5.4 Pro</strong> — mô hình này cần thời gian suy luận rất lâu, có thể lên tới <strong>1 tiếng</strong> để đưa ra một phản hồi hoàn chỉnh. Đây là một yếu tố quan trọng cần cân nhắc khi lựa chọn công cụ AI cho các tác vụ có yêu cầu về thời gian.</p>
+                    </div>
+                    <p><strong>Bài học thu được:</strong> Để khai thác tối đa sức mạnh của GenAI (AI tạo sinh), người
+                        dùng (Pro-prompter) cần nắm vững đặc tính và "điểm rơi phong độ" của từng mô hình. Việc kết hợp
+                        chúng — dùng GPT để phân tích logic cốt lõi, dùng Sonnet để cấu trúc lại thành bảng biểu, và
+                        dùng Gemini để biên tập văn phong thân thiện — chính là kỹ năng thiết yếu trong kỷ nguyên AI
+                        hiện nay.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 Báo Cáo Chuyên Đề AI. Sinh viên: Nguyễn Tuấn Thành - 25112107.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

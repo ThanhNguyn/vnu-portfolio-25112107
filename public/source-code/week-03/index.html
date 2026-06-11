@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering | Báo Cáo Nghiên Cứu</title>
+    <meta name="description" content="Báo cáo nghiên cứu phát triển kỹ năng viết prompt hiệu quả trong học tập - Nguyễn Tuấn Thành">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --bg:#06070a;--bg-s:#0c0e14;--bg-card:#10131a;
+            --surface:rgba(16,19,26,0.7);--surface-h:rgba(22,26,38,0.85);
+            --t1:#edeef2;--t2:#8b8fa4;--t3:#555870;
+            --a1:#7c6aef;--a2:#a78bfa;--a3:#38bdf8;--a4:#22d3ee;
+            --g1:linear-gradient(135deg,#7c6aef,#a78bfa);
+            --g2:linear-gradient(135deg,#38bdf8,#22d3ee);
+            --g3:linear-gradient(135deg,#fb923c,#f472b6);
+            --g-hero:radial-gradient(ellipse at 50% 0%,rgba(124,106,239,0.12) 0%,transparent 60%);
+            --b:rgba(124,106,239,0.12);--b-h:rgba(124,106,239,0.25);
+            --glow:0 0 40px rgba(124,106,239,0.08);
+            --r:20px;--rs:12px;
+        }
+        html{scroll-behavior:smooth;scroll-padding-top:80px}
+        body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+        /* ===== CANVAS BG ===== */
+        #particles{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+        /* ===== PROGRESS BAR ===== */
+        .progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--g1);z-index:9999;transition:width .15s;border-radius:0 2px 2px 0;box-shadow:0 0 12px rgba(124,106,239,0.5)}
+
+        /* ===== NAV ===== */
+        nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(6,7,10,0.65);backdrop-filter:blur(24px) saturate(1.6);border-bottom:1px solid var(--b);transition:all .3s}
+        nav.shrink{height:52px;box-shadow:var(--glow)}
+        .logo{font-size:1.05rem;font-weight:800;background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:flex;align-items:center;gap:8px}
+        .logo i{font-size:.9rem}
+        .nav-menu{display:flex;gap:2px;list-style:none}
+        .nav-menu a{color:var(--t2);text-decoration:none;padding:8px 16px;border-radius:8px;font-size:.8rem;font-weight:600;transition:all .25s;letter-spacing:-.01em}
+        .nav-menu a:hover,.nav-menu a.on{color:var(--t1);background:rgba(124,106,239,0.1)}
+        .mob-btn{display:none;background:0;border:0;color:var(--t1);font-size:1.3rem;cursor:pointer}
+
+        /* ===== HERO ===== */
+        .hero{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;background:var(--g-hero)}
+        .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
+        .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 18px;border-radius:100px;background:rgba(124,106,239,0.08);border:1px solid rgba(124,106,239,0.2);font-size:.72rem;color:var(--a2);font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:28px;animation:rise .7s ease both}
+        .chip .pulse{width:6px;height:6px;border-radius:50%;background:var(--a1);animation:blink 2s infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+        .hero h1{font-size:clamp(2rem,5.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;margin-bottom:20px;animation:rise .7s ease .08s both}
+        .hero h1 em{font-style:normal;background:var(--g1);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+        .hero>p{font-size:1.05rem;color:var(--t2);max-width:560px;margin-bottom:36px;animation:rise .7s ease .16s both}
+        .info-row{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;animation:rise .7s ease .24s both}
+        .info-item{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--t3);font-weight:500}
+        .info-item i{color:var(--a2);font-size:.75rem}
+        .scroll-cue{position:absolute;bottom:36px;left:50%;transform:translateX(-50%);z-index:2;animation:float 2.5s ease-in-out infinite}
+        .scroll-cue i{font-size:1.1rem;color:var(--t3)}
+        @keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+        /* ===== LAYOUT ===== */
+        .container{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:100px 24px}
+        .sec-head{margin-bottom:56px}
+        .sec-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:8px;background:var(--g1);font-size:.7rem;font-weight:800;letter-spacing:.06em;margin-bottom:16px}
+        .sec-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+        .sec-desc{color:var(--t2);font-size:.95rem;max-width:520px}
+        .divider{height:1px;background:var(--b);margin:0 auto}
+
+        /* ===== CARDS ===== */
+        .card{background:var(--surface);border:1px solid var(--b);border-radius:var(--r);padding:28px;transition:all .35s ease;backdrop-filter:blur(8px)}
+        .card:hover{background:var(--surface-h);border-color:var(--b-h);transform:translateY(-3px);box-shadow:var(--glow)}
+        .cards-stack{display:flex;flex-direction:column;gap:16px}
+
+        /* TASK CARDS */
+        .tc-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+        .tc-icon{width:42px;height:42px;border-radius:var(--rs);display:grid;place-items:center;font-size:1rem;color:#fff;flex-shrink:0}
+        .tc-icon.i1{background:var(--g1)}.tc-icon.i2{background:var(--g2)}.tc-icon.i3{background:var(--g3)}
+        .tc-head h3{font-size:1rem;font-weight:700;letter-spacing:-.01em}
+        .badge{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+        .badge-p{background:rgba(124,106,239,0.12);color:var(--a2)}
+        .badge-c{background:rgba(56,189,248,0.12);color:var(--a3)}
+        .badge-q{background:rgba(251,146,60,0.12);color:#fb923c}
+        .tc-body{font-size:.88rem;color:var(--t2);line-height:1.8}
+        .tc-body strong{color:var(--a2);font-weight:600}
+
+        /* ===== TABS ===== */
+        .prompt-block{margin-bottom:56px}
+        .prompt-label{font-size:1.1rem;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .dot-a{background:var(--a1)}.dot-b{background:var(--a3)}.dot-c{background:#fb923c}
+
+        .tabs{display:flex;gap:3px;padding:3px;border-radius:var(--rs);background:rgba(12,14,20,0.8);border:1px solid var(--b);margin-bottom:16px}
+        .tab{flex:1;padding:10px 12px;border:0;border-radius:9px;background:0;color:var(--t3);font-family:inherit;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .25s;text-align:center}
+        .tab:hover{color:var(--t2)}
+        .tab.on{background:var(--g1);color:#fff;box-shadow:0 4px 16px rgba(124,106,239,0.25)}
+
+        .panel{display:none;animation:fadeUp .35s ease}
+        .panel.on{display:block}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+        /* PROMPT BOX */
+        .pbox{background:rgba(12,14,20,0.9);border:1px solid var(--b);border-radius:var(--rs);padding:22px;margin-bottom:14px;position:relative}
+        .pbox::before{content:'PROMPT';position:absolute;top:10px;right:14px;font-size:.58rem;font-weight:800;letter-spacing:.08em;color:var(--t3);background:rgba(124,106,239,0.06);padding:2px 8px;border-radius:4px}
+        .pbox p,.pbox li{font-family:'JetBrains Mono',monospace;font-size:.84rem;color:var(--t1);line-height:1.85}
+        .pbox ol,.pbox ul{padding-left:18px;margin-top:6px}
+
+        /* AI RESPONSE */
+        .ai-res{background:linear-gradient(135deg,rgba(16,185,129,0.04),rgba(12,14,20,0.85));border:1px solid rgba(16,185,129,0.15);border-radius:var(--rs);padding:24px;position:relative}
+        .ai-res::before{content:'✦ GEMINI';position:absolute;top:10px;right:14px;font-size:.58rem;font-weight:800;letter-spacing:.08em;color:#34d399;background:rgba(16,185,129,0.08);padding:2px 8px;border-radius:4px}
+        .ai-res h5{color:#6ee7b7;font-size:.85rem;font-weight:700;margin:14px 0 5px}
+        .ai-res h5:first-child{margin-top:0}
+        .ai-res p{color:var(--t2);font-size:.85rem;line-height:1.8;margin-bottom:6px}
+        .ai-res strong{color:var(--t1)}
+        .ai-res .em-line{color:var(--a4);font-weight:600;font-style:italic;margin-top:10px}
+        .ai-res .note{background:rgba(124,106,239,0.06);border:1px solid rgba(124,106,239,0.15);border-radius:8px;padding:14px;margin-top:14px}
+        .ai-res .note h6{color:var(--a2);font-size:.78rem;font-weight:700;margin-bottom:5px}
+        .ai-res .note p{font-size:.8rem;margin:0}
+
+        /* PLACEHOLDER */
+        .ph{background:rgba(124,106,239,0.03);border:2px dashed rgba(124,106,239,0.15);border-radius:var(--rs);padding:36px 20px;text-align:center;color:var(--t3);font-size:.82rem}
+        .ph i{font-size:1.6rem;display:block;margin-bottom:8px;color:rgba(124,106,239,0.25)}
+
+        /* ===== TABLES ===== */
+        .tw{overflow-x:auto;border-radius:var(--rs);border:1px solid var(--b);margin-top:20px}
+        table{width:100%;border-collapse:collapse;min-width:640px}
+        thead th{background:rgba(124,106,239,0.07);padding:13px 18px;text-align:left;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--a2);border-bottom:1px solid var(--b)}
+        tbody td{padding:12px 18px;font-size:.84rem;color:var(--t2);border-bottom:1px solid rgba(124,106,239,0.05);vertical-align:top}
+        tbody tr:hover td{background:rgba(124,106,239,0.03)}
+        tbody td:first-child{font-weight:600;color:var(--t1);white-space:nowrap}
+
+        /* ===== ANALYSIS ===== */
+        .a-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+        .a-card{background:var(--surface);border:1px solid var(--b);border-radius:var(--r);padding:26px;transition:all .35s}
+        .a-card:hover{transform:translateY(-3px);box-shadow:var(--glow);border-color:var(--b-h)}
+        .a-card h4{font-size:.95rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+        .a-card h4 .n{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-size:.72rem;font-weight:800;color:#fff;flex-shrink:0}
+        .a-card p{color:var(--t2);font-size:.86rem}
+        .hl{color:var(--a2);font-weight:600}
+        .sp{margin-top:12px;padding-left:14px;border-left:2px solid rgba(124,106,239,0.2)}
+        .sp h5{font-size:.84rem;font-weight:700;color:var(--a4);margin-bottom:3px}
+        .sp p{font-size:.82rem}
+
+        /* ===== 4C MODEL ===== */
+        .grid-4c{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+        .mc{background:var(--surface);border:1px solid var(--b);border-radius:var(--r);padding:26px;position:relative;overflow:hidden;transition:all .35s}
+        .mc:hover{transform:translateY(-3px);box-shadow:var(--glow)}
+        .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+        .mc:nth-child(1)::before{background:var(--g1)}.mc:nth-child(2)::before{background:var(--g2)}
+        .mc:nth-child(3)::before{background:var(--g3)}.mc:nth-child(4)::before{background:linear-gradient(135deg,#10b981,#34d399)}
+        .mc .big{position:absolute;top:8px;right:16px;font-size:2.4rem;font-weight:900;opacity:.05}
+        .mc h4{font-size:1rem;font-weight:700;margin-bottom:6px}
+        .mc h4 span{color:var(--t3);font-weight:400}
+        .mc>p{color:var(--t2);font-size:.85rem;margin-bottom:12px}
+        .mc .tip-box{background:rgba(124,106,239,0.06);border-radius:8px;padding:10px 14px;font-size:.78rem;color:var(--a4);display:flex;align-items:flex-start;gap:7px}
+        .mc .tip-box i{margin-top:2px;flex-shrink:0;font-size:.7rem}
+
+        /* CONCLUSION */
+        .conclusion{background:linear-gradient(135deg,rgba(124,106,239,0.06),rgba(56,189,248,0.06));border:1px solid rgba(124,106,239,0.15);border-radius:var(--r);padding:36px;text-align:center;margin-top:48px}
+        .conclusion p{font-size:1rem;color:var(--t2);max-width:640px;margin:0 auto;font-style:italic;line-height:1.85}
+        .conclusion strong{color:var(--t1)}
+
+        /* FOOTER */
+        footer{position:relative;z-index:1;text-align:center;padding:36px 24px;border-top:1px solid var(--b);color:var(--t3);font-size:.75rem}
+
+        /* REVEAL */
+        .rv{opacity:0;transform:translateY(24px);transition:opacity .55s ease,transform .55s ease}
+        .rv.show{opacity:1;transform:translateY(0)}
+
+        /* RESPONSIVE */
+        @media(max-width:768px){
+            nav{padding:0 16px}
+            .nav-menu{display:none;position:fixed;top:52px;left:0;right:0;background:rgba(6,7,10,0.95);backdrop-filter:blur(20px);flex-direction:column;padding:16px;border-bottom:1px solid var(--b)}
+            .nav-menu.open{display:flex}
+            .mob-btn{display:block}
+            .hero{padding:90px 16px 50px}
+            .container{padding:60px 16px}
+            .info-row{gap:14px}
+            .grid-4c{grid-template-columns:1fr}
+            .tabs{flex-direction:column}
+            .a-grid{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+
+<!-- Particle Canvas -->
+<canvas id="particles"></canvas>
+
+<!-- Progress Bar -->
+<div class="progress-bar" id="pbar" style="width:0%"></div>
+
+<!-- Nav -->
+<nav id="nav">
+    <div class="logo"><i class="fas fa-microchip"></i> Prompt Lab</div>
+    <button class="mob-btn" onclick="document.querySelector('.nav-menu').classList.toggle('open')"><i class="fas fa-bars"></i></button>
+    <ul class="nav-menu">
+        <li><a href="#hero" class="on">Tổng quan</a></li>
+        <li><a href="#s1">Tác vụ</a></li>
+        <li><a href="#s2">Thử nghiệm</a></li>
+        <li><a href="#s3">Phân tích</a></li>
+        <li><a href="#s4">Mô hình 4C</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+    <div class="chip"><span class="pulse"></span> Nghiên cứu Prompt Engineering</div>
+    <h1>Phát Triển Kỹ Năng<br>Viết <em>Prompt</em> Hiệu Quả</h1>
+    <p>Thử nghiệm và phân tích 3 kỹ thuật quan trọng: Role-prompting, Chain-of-thought & Few-shot Examples trên công cụ Gemini AI.</p>
+    <div class="info-row">
+        <div class="info-item"><i class="fas fa-user-graduate"></i> Nguyễn Tuấn Thành</div>
+        <div class="info-item"><i class="fas fa-hashtag"></i> 25112107</div>
+        <div class="info-item"><i class="fas fa-calendar-days"></i> 2026</div>
+    </div>
+    <div class="scroll-cue"><i class="fas fa-chevron-down"></i></div>
+</section>
+
+<!-- Section I -->
+<div class="container" id="s1">
+    <div class="sec-head rv">
+        <div class="sec-tag">I</div>
+        <h2 class="sec-title">Lựa chọn & Phân tích Tác vụ</h2>
+        <p class="sec-desc">Ba tác vụ học tập phổ biến nhất được lựa chọn để thử nghiệm kỹ thuật viết Prompt</p>
+    </div>
+    <div class="cards-stack">
+        <div class="card rv">
+            <div class="tc-head"><div class="tc-icon i1"><i class="fas fa-file-lines"></i></div><div><h3>Tóm tắt tài liệu học thuật</h3><span class="badge badge-p">Summarization</span></div></div>
+            <div class="tc-body"><strong>Chủ đề:</strong> Tác động của biến đổi khí hậu lên sinh vật biển<br><strong>🎯 Mục tiêu:</strong> Rút trích thông tin cốt lõi từ văn bản dài, tiết kiệm thời gian đọc hiểu.<br><strong>⚠️ Thách thức:</strong> AI dễ tóm tắt lan man, bỏ sót từ khóa học thuật hoặc làm mất ngữ cảnh gốc nếu prompt không rõ ràng.</div>
+        </div>
+        <div class="card rv">
+            <div class="tc-head"><div class="tc-icon i2"><i class="fas fa-lightbulb"></i></div><div><h3>Giải thích khái niệm phức tạp</h3><span class="badge badge-c">Explanation</span></div></div>
+            <div class="tc-body"><strong>Chủ đề:</strong> Công nghệ Blockchain<br><strong>🎯 Mục tiêu:</strong> Đơn giản hóa kiến thức trừu tượng, biến thuật ngữ chuyên ngành thành ngôn ngữ dễ hiểu.<br><strong>⚠️ Thách thức:</strong> AI có xu hướng "nhai lại" định nghĩa hàn lâm khô khan, khiến người mới khó tiếp thu.</div>
+        </div>
+        <div class="card rv">
+            <div class="tc-head"><div class="tc-icon i3"><i class="fas fa-clipboard-question"></i></div><div><h3>Tạo bộ câu hỏi ôn tập</h3><span class="badge badge-q">Quiz Generation</span></div></div>
+            <div class="tc-body"><strong>Chủ đề:</strong> Lịch sử Việt Nam giai đoạn 1945 – 1954<br><strong>🎯 Mục tiêu:</strong> Hệ thống hóa kiến thức, tạo công cụ tự kiểm tra năng lực ghi nhớ và tư duy phân tích.<br><strong>⚠️ Thách thức:</strong> AI thường chỉ đưa ra câu hỏi dạng "nhớ" (học vẹt). Cần điều hướng để tạo câu hỏi tư duy bậc cao.</div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section II -->
+<div class="container" id="s2">
+    <div class="sec-head rv">
+        <div class="sec-tag">II</div>
+        <h2 class="sec-title">Xây dựng & Thử nghiệm Prompt</h2>
+        <p class="sec-desc">So sánh 3 phiên bản Prompt cho từng tác vụ: Cơ bản → Cải tiến → Nâng cao</p>
+    </div>
+
+    <!-- TASK 1 -->
+    <div class="prompt-block rv" id="t1">
+        <div class="prompt-label"><span class="dot dot-a"></span> Tác vụ 1: Tóm tắt tài liệu học thuật</div>
+        <div class="tabs" data-g="t1">
+            <button class="tab on" onclick="sw('t1',0,this)">⚡ Cơ bản</button>
+            <button class="tab" onclick="sw('t1',1,this)">🔧 Cải tiến</button>
+            <button class="tab" onclick="sw('t1',2,this)">🚀 Nâng cao</button>
+        </div>
+        <div class="panel on" data-g="t1">
+            <div class="pbox"><p>Tóm tắt bài viết về ảnh hưởng của biến đổi khí hậu đối với sinh vật biển.</p></div>
+            <div class="ai-res">
+                <p>Vì bạn không đính kèm một bài viết cụ thể, mình sẽ tổng hợp và tóm tắt những tác động chính của biến đổi khí hậu đối với sinh vật biển dựa trên các nghiên cứu và đồng thuận khoa học hiện tại.</p>
+                <h5>1. Nhiệt độ nước biển tăng (Ocean Warming)</h5>
+                <p>Đại dương hấp thụ phần lớn lượng nhiệt dư thừa từ hiệu ứng nhà kính. <strong>Hiện tượng tẩy trắng san hô:</strong> Khi nước quá ấm, san hô sẽ trục xuất các tảo cộng sinh. <strong>Sự di cư bắt buộc:</strong> Nhiều loài cá đang phải bơi về phía hai cực hoặc lặn xuống vùng nước sâu hơn.</p>
+                <h5>2. Axit hóa đại dương (Ocean Acidification)</h5>
+                <p>Đại dương hấp thụ khoảng 30% lượng khí CO₂ do con người thải ra, làm giảm độ pH của nước biển. Axit hóa làm giảm lượng ion carbonate – vật liệu chính để các loài hàu, cua, tôm, san hô xây dựng vỏ và bộ xương.</p>
+                <h5>3. Suy giảm lượng oxy (Deoxygenation)</h5>
+                <p>Nước biển ấm lên giữ ít oxy hòa tan hơn, tạo ra các "vùng biển chết". Các loài sinh vật di chuyển chậm sẽ bị chết ngạt.</p>
+                <h5>4. Mất môi trường sống ven biển</h5>
+                <p>Băng tan làm mực nước biển dâng, nhấn chìm rừng ngập mặn, rạn san hô nông, và bãi cỏ biển – "vườn ươm" tự nhiên cho cá non.</p>
+                <h5>5. Phá vỡ chuỗi thức ăn</h5>
+                <p>Biến đổi khí hậu làm thay đổi thời gian sinh sản và phát triển của sinh vật phù du – nền tảng của chuỗi thức ăn đại dương.</p>
+                <p class="em-line">Tóm lại: Biến đổi khí hậu không chỉ thay đổi môi trường vật lý của đại dương mà còn đe dọa trực tiếp sự sống còn của các sinh vật biển.</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t1">
+            <div class="pbox"><p>Hãy tóm tắt bài viết về ảnh hưởng của sự nóng lên toàn cầu đối với hệ sinh thái biển. Đoạn tóm tắt cần dài khoảng 150 chữ, tập trung vào 3 ý chính: hiện tượng san hô tẩy trắng, sự di cư của các loài cá, và tác động lên chuỗi thức ăn.</p></div>
+            <div class="ai-res">
+                <p>Sự nóng lên toàn cầu đang tàn phá nặng nề hệ sinh thái biển, nổi bật qua ba tác động nghiêm trọng. <strong>Thứ nhất</strong>, nhiệt độ nước biển tăng cao gây ra hiện tượng <strong>san hô tẩy trắng</strong> hàng loạt. Khi nước quá ấm, san hô mất đi các tảo cộng sinh cung cấp dinh dưỡng, dẫn đến suy kiệt và làm sụp đổ môi trường sống của vô số loài sinh vật. <strong>Thứ hai</strong>, sự thay đổi nhiệt độ buộc nhiều loài cá phải <strong>di cư</strong> về phía hai cực hoặc lặn xuống các vùng nước sâu và lạnh hơn để sinh tồn, làm xáo trộn vĩnh viễn sự cân bằng của các hệ sinh thái bản địa. <strong>Cuối cùng</strong>, nước biển ấm lên làm đảo lộn chu kỳ sinh trưởng của sinh vật phù du, gây <strong>đứt gãy nghiêm trọng chuỗi thức ăn</strong> đại dương. Nguồn thức ăn nền tảng suy giảm đe dọa trực tiếp đến cá non và các loài săn mồi, đẩy nhiều hệ sinh thái đến bờ vực suy vong.</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t1">
+            <div class="pbox">
+                <p>Đóng vai là một giáo sư sinh học biển. Hãy tóm tắt tài liệu khoa học về "Tác động của biến đổi khí hậu lên hệ sinh thái đại dương" dành cho sinh viên năm nhất chưa có nhiều kiến thức nền. Yêu cầu:</p>
+                <ol>
+                    <li>Sử dụng ngôn ngữ học thuật nhưng dễ hiểu.</li>
+                    <li>Cấu trúc bài tóm tắt thành 3 bullet points chính: Nguyên nhân cốt lõi, Tác động cụ thể, và Hậu quả dài hạn.</li>
+                    <li>Áp dụng kỹ thuật Chain-of-thought: Hãy suy luận từ nguyên nhân nhiệt độ tăng dẫn đến hậu quả trực tiếp, sau đó mới nêu hậu quả gián tiếp.</li>
+                    <li>Cung cấp một định nghĩa ngắn gọn về "san hô tẩy trắng" ở cuối bài bằng một khung lưu ý.</li>
+                </ol>
+            </div>
+            <div class="ai-res">
+                <p><em>Chào các em sinh viên năm nhất. Chào mừng các em đến với thế giới của Sinh học Biển!</em></p>
+                <h5>🔬 Nguyên nhân cốt lõi</h5>
+                <p>Mọi chuyện bắt nguồn từ sự gia tăng nồng độ khí nhà kính (chủ yếu là CO₂) trong khí quyển do hoạt động công nghiệp. Đại dương giống như một "tấm bọt biển" khổng lồ, âm thầm hấp thụ hơn 90% lượng nhiệt dư thừa và khoảng 30% lượng khí CO₂ mà chúng ta thải ra.</p>
+                <h5>💥 Tác động cụ thể (Trực tiếp → Gián tiếp)</h5>
+                <p><strong>Hậu quả trực tiếp:</strong> Nhiệt độ bề mặt nước biển tăng lên đáng kể, gây sốc nhiệt cho nhiều loài sinh vật.</p>
+                <p><strong>Hậu quả gián tiếp:</strong> Nhiệt độ cao đảo lộn dòng hải lưu, khiến lượng oxy hòa tan giảm sút ("vùng biển chết"). Nhiều loài cá buộc phải di cư về phía hai cực. Nước biển hấp thụ quá nhiều CO₂ dẫn đến <strong>axit hóa đại dương</strong>, hòa tan vỏ của các sinh vật mỏng manh.</p>
+                <h5>⏱️ Hậu quả dài hạn</h5>
+                <p>Sự đứt gãy trong toàn bộ chuỗi thức ăn đại dương. Suy giảm sinh vật phù du dẫn đến nạn đói cho cá nhỏ, suy kiệt quần thể loài săn mồi lớn, mất mát không thể đảo ngược về đa dạng sinh học, sụp đổ rạn san hô, đe dọa trực tiếp nguồn thực phẩm của hàng tỷ người.</p>
+                <div class="note">
+                    <h6>📌 Sổ tay Giáo sư: "San hô tẩy trắng" (Coral Bleaching) là gì?</h6>
+                    <p>Hiện tượng xảy ra khi san hô bị "stress" do nhiệt độ nước biển tăng cao. Bình thường, san hô sống cộng sinh với tảo siêu nhỏ (zooxanthellae) bên trong mô – tảo vừa cung cấp thức ăn, vừa tạo màu sắc rực rỡ. Khi nước quá nóng, san hô trục xuất tảo ra ngoài, lộ bộ xương canxi trắng toát. Nếu nhiệt độ không giảm xuống, chúng sẽ chết vì "chết đói" và bệnh tật.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tw">
+            <table><thead><tr><th>Tiêu chí</th><th>Prompt Cơ bản</th><th>Prompt Cải tiến</th><th>Prompt Nâng cao</th></tr></thead>
+            <tbody>
+                <tr><td>Độ chi tiết</td><td>Rất chung chung, chỉ liệt kê ý cơ bản.</td><td>Đủ ý, độ dài kiểm soát tốt (~150 chữ).</td><td>Rất sâu sắc, bố cục khoa học chuẩn.</td></tr>
+                <tr><td>Tính ứng dụng</td><td>Thấp, chỉ để biết sơ qua.</td><td>Khá, dùng để ôn tập nhanh.</td><td>Cao, lý tưởng làm tài liệu cho SV.</td></tr>
+                <tr><td>Khác biệt cốt lõi</td><td>AI tự quyết định độ dài và cấu trúc.</td><td>AI bám sát giới hạn từ và ý chính.</td><td>Văn phong chuyên gia, logic nhân-quả, giải thích thuật ngữ bổ trợ.</td></tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    <!-- TASK 2 -->
+    <div class="prompt-block rv" id="t2">
+        <div class="prompt-label"><span class="dot dot-b"></span> Tác vụ 2: Giải thích khái niệm phức tạp</div>
+        <div class="tabs" data-g="t2">
+            <button class="tab on" onclick="sw('t2',0,this)">⚡ Cơ bản</button>
+            <button class="tab" onclick="sw('t2',1,this)">🔧 Cải tiến</button>
+            <button class="tab" onclick="sw('t2',2,this)">🚀 Nâng cao</button>
+        </div>
+        <div class="panel on" data-g="t2">
+            <div class="pbox"><p>Giải thích Công nghệ Blockchain là gì.</p></div>
+            <div class="ai-res">
+                <p>Blockchain là một <strong>cuốn sổ cái kỹ thuật số công khai và phi tập trung</strong>. Bạn có thể hình dung nó giống như một tài liệu Google Docs được chia sẻ cho hàng ngàn người – mọi người đều thấy nội dung, nhưng một khi thông tin đã được ghi vào và xác nhận, nó sẽ bị khóa vĩnh viễn.</p>
+                <h5>1. Khối (Block)</h5>
+                <p>Mỗi "khối" giống như một trang trong cuốn sổ cái, chứa: <strong>Dữ liệu</strong> (thông tin giao dịch), <strong>Mã băm (Hash)</strong> – "dấu vân tay kỹ thuật số" duy nhất của khối, và <strong>Mã băm của khối trước đó</strong> – yếu tố cốt lõi tạo nên sự liên kết.</p>
+                <h5>2. Chuỗi (Chain)</h5>
+                <p>Vì mỗi khối chứa mã băm của khối liền trước, chúng tạo thành một "chuỗi" liên kết chặt chẽ. Nếu hacker thay đổi dữ liệu ở một khối cũ, toàn bộ phần còn lại của chuỗi sẽ bị phá vỡ. Đây là lý do blockchain <strong>cực kỳ an toàn</strong>.</p>
+                <h5>3. Mạng lưới Phi tập trung</h5>
+                <p>Cuốn sổ cái được sao chép và phân phối cho hàng ngàn máy tính (nodes) trên toàn thế giới. Khi có giao dịch mới, các máy tính sẽ kiểm tra và đồng thuận trước khi tạo khối mới.</p>
+                <p class="em-line">Ưu điểm: Minh bạch – Bảo mật cao – Không cần trung gian. Ứng dụng từ tiền điện tử đến quản lý chuỗi cung ứng, y tế, bảo mật danh tính và hợp đồng thông minh.</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t2">
+            <div class="pbox"><p>Hãy giải thích công nghệ Blockchain là gì. Cần giải thích rõ cấu trúc của một "block", cách các block liên kết với nhau, và tại sao công nghệ này lại có tính bảo mật cao. Hãy dùng ngôn ngữ phổ thông.</p></div>
+            <div class="ai-res">
+                <p>Blockchain là một <strong>cuốn sổ cái kỹ thuật số</strong> dùng để ghi chép giao dịch. Thay vì được giữ bởi một người duy nhất, nó được sao chép và chia sẻ cho hàng ngàn người cùng xem và quản lý.</p>
+                <h5>1. Cấu trúc của một "Block"</h5>
+                <p>Mỗi khối chứa 3 thành phần: <strong>Dữ liệu</strong> (ví dụ: "Người A chuyển cho Người B 1 Bitcoin"), <strong>Mã băm (Hash)</strong> – dấu vân tay kỹ thuật số duy nhất, thay đổi hoàn toàn nếu dữ liệu bị sửa dù chỉ một chút, và <strong>Mã băm của khối trước đó</strong> – ngoại trừ Genesis Block, mọi khối đều lưu "dấu vân tay" của khối đứng trước.</p>
+                <h5>2. Cách các khối liên kết thành "Chain"</h5>
+                <p>Khối 2 chứa mã băm Khối 1, Khối 3 chứa mã băm Khối 2... tạo thành một <strong>sợi dây xích không thể tách rời</strong>.</p>
+                <h5>3. Tại sao bảo mật cực kỳ cao?</h5>
+                <p><strong>Hiệu ứng Domino:</strong> Sửa dữ liệu Khối 2 → mã băm thay đổi → Khối 3 không còn khớp → toàn bộ chuỗi bị đánh dấu "không hợp lệ".</p>
+                <p><strong>Mạng lưới Phi tập trung:</strong> Dữ liệu được copy cho hàng ngàn máy tính (Nodes). Hacker phải hack <strong>hơn 50% tổng số máy tính</strong> cùng lúc – điều gần như bất khả thi.</p>
+                <p class="em-line">Tóm lại: Thông tin một khi đã đưa vào Blockchain thì không ai có thể âm thầm sửa chữa hay xóa bỏ được.</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t2">
+            <div class="pbox">
+                <p>Đóng vai một chuyên gia công nghệ đang giải thích cho một học sinh cấp 2. Hãy giải thích "Công nghệ Blockchain" bằng cách sử dụng phép ẩn dụ (Ví dụ: hãy ví nó như một cuốn sổ cái chung của lớp học mà ai cũng có thể xem nhưng không ai có thể tự ý sửa điểm). Hãy trình bày theo cấu trúc:</p>
+                <ol>
+                    <li>Khái niệm cốt lõi (sử dụng phép ẩn dụ).</li>
+                    <li>Ba đặc điểm chính (Phi tập trung, Minh bạch, Bất biến) – giải thích mỗi đặc điểm bằng 1 câu đơn giản liên hệ với ví dụ cuốn sổ cái.</li>
+                    <li>Một ví dụ ứng dụng thực tế ngoài tiền điện tử (Bitcoin).</li>
+                </ol>
+            </div>
+            <div class="ai-res">
+                <p><em>Chào em! Công nghệ Blockchain nghe có vẻ phức tạp, nhưng ý tưởng cốt lõi lại cực kỳ gần gũi.</em></p>
+                <h5>📖 Khái niệm cốt lõi: Cuốn sổ cái chung của lớp học</h5>
+                <p>Hãy tưởng tượng lớp em có một "Cuốn sổ cái" ghi điểm thi đua. Thay vì chỉ giao cho lớp trưởng giữ, thầy cô phát cho <strong>tất cả mọi người</strong> mỗi bạn một bản sao giống hệt nhau. Khi có sự kiện mới ("Bạn Nguyên được 10 điểm"), cả lớp cùng xác nhận và ghi bằng <strong>mực không thể tẩy xóa</strong>. Mỗi trang sổ = một "Block", các trang nối tiếp nhau = "Chain". Đó chính là Blockchain!</p>
+                <h5>🔑 Ba đặc điểm chính</h5>
+                <p><strong>Phi tập trung:</strong> Cuốn sổ không nằm trong tay một người duy nhất – mọi thành viên trong lớp đều giữ một bản, nên không ai có thể lạm quyền.</p>
+                <p><strong>Minh bạch:</strong> Bất cứ lúc nào, em cũng có thể mở cuốn sổ của mình ra xem toàn bộ lịch sử điểm số từ đầu năm đến giờ.</p>
+                <p><strong>Bất biến:</strong> Nếu ai lén sửa điểm 5 thành 10, sẽ bị phát hiện ngay vì cuốn sổ của <strong>tất cả những người còn lại</strong> vẫn ghi là 5 điểm.</p>
+                <h5>🍎 Ứng dụng thực tế: Truy xuất nguồn gốc thực phẩm</h5>
+                <p>Mua quả táo trong siêu thị, chỉ cần quét mã QR là biết: trồng ở vườn nào, thu hoạch ngày nào, nhiệt độ xe chở hàng bao nhiêu độ. Vì dữ liệu trên Blockchain là "bất biến", <strong>không tổ chức nào có thể làm giả</strong> hạn sử dụng hay nguồn gốc.</p>
+            </div>
+        </div>
+        <div class="tw">
+            <table><thead><tr><th>Tiêu chí</th><th>Prompt Cơ bản</th><th>Prompt Cải tiến</th><th>Prompt Nâng cao</th></tr></thead>
+            <tbody>
+                <tr><td>Độ dễ hiểu</td><td>Khó hiểu, nhiều thuật ngữ chuyên ngành.</td><td>Dễ hiểu hơn, làm rõ cơ chế hoạt động.</td><td>Cực kỳ trực quan và sinh động.</td></tr>
+                <tr><td>Cấu trúc</td><td>Một đoạn văn dài liền mạch.</td><td>Chia theo các ý được yêu cầu.</td><td>Chia mục rõ ràng (Khái niệm, Đặc điểm, Ứng dụng).</td></tr>
+                <tr><td>Khác biệt cốt lõi</td><td>Trả về định nghĩa giống Wikipedia.</td><td>Trả lời đúng trọng tâm bảo mật.</td><td>Dùng Role-prompting & Few-shot, biến kiến thức thành câu chuyện.</td></tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    <!-- TASK 3 -->
+    <div class="prompt-block rv" id="t3">
+        <div class="prompt-label"><span class="dot dot-c"></span> Tác vụ 3: Tạo bộ câu hỏi ôn tập</div>
+        <div class="tabs" data-g="t3">
+            <button class="tab on" onclick="sw('t3',0,this)">⚡ Cơ bản</button>
+            <button class="tab" onclick="sw('t3',1,this)">🔧 Cải tiến</button>
+            <button class="tab" onclick="sw('t3',2,this)">🚀 Nâng cao</button>
+        </div>
+        <div class="panel on" data-g="t3">
+            <div class="pbox"><p>Tạo câu hỏi ôn tập lịch sử Việt Nam 1945-1954.</p></div>
+            <div class="ai-res">
+                <p>Giai đoạn 1945 - 1954 là một thời kỳ hào hùng. Mình đã chia câu hỏi thành hai phần: <strong>Trắc nghiệm</strong> và <strong>Tự luận</strong>.</p>
+                <h5>📝 Phần 1: Trắc nghiệm (8 câu)</h5>
+                <p><strong>Câu 1:</strong> Kẻ thù nguy hiểm nhất sau CM tháng Tám? → C. Quân Trung Hoa Dân Quốc / <strong>Câu 2:</strong> Biện pháp chiến lược giải quyết nạn đói? → B. Tăng gia sản xuất / <strong>Câu 3:</strong> Sự kiện bùng nổ kháng chiến toàn quốc? → A. Lời kêu gọi của Hồ Chí Minh (19/12/1946)</p>
+                <p><strong>Câu 4:</strong> Chiến thuật Việt Bắc 1947? → B. "Vườn không nhà trống" + du kích / <strong>Câu 5:</strong> Mục tiêu Biên giới 1950? → B. Khai thông đường sang TQ</p>
+                <p><strong>Câu 6:</strong> Đảng đổi tên thành? → B. Đảng Lao động Việt Nam / <strong>Câu 7:</strong> Trọng tâm Kế hoạch Na-va? → A. Tập trung binh lực / <strong>Câu 8:</strong> Quyết định của Võ Nguyên Giáp? → A. "Đánh chắc, tiến chắc"</p>
+                <h5>📝 Phần 2: Tự luận (4 câu)</h5>
+                <p><strong>Câu 1:</strong> Phân tích chủ trương ngoại giao của Đảng (9/1945 – 12/1946). <strong>Câu 2:</strong> So sánh Việt Bắc 1947 và Biên giới 1950. <strong>Câu 3:</strong> Chứng minh Điện Biên Phủ là thắng lợi quân sự lớn nhất. <strong>Câu 4:</strong> Nội dung và ý nghĩa Hiệp định Genève 1954.</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t3">
+            <div class="pbox"><p>Tạo một bài trắc nghiệm gồm 5 câu hỏi về lịch sử Việt Nam giai đoạn 1945 – 1954. Cung cấp 4 đáp án (A, B, C, D) cho mỗi câu và đánh dấu đáp án đúng ở cuối bài.</p></div>
+            <div class="ai-res">
+                <h5>Bài Trắc Nghiệm: Lịch sử Việt Nam (1945 - 1954)</h5>
+                <p><strong>Câu 1:</strong> Sự kiện nào đánh dấu kháng chiến toàn quốc bùng nổ?<br>A. Fontainebleau thất bại &nbsp; B. Pháp chiếm Hải Phòng &nbsp; <strong>C. Lời kêu gọi toàn quốc kháng chiến (19/12/1946) ✅</strong> &nbsp; D. Tối hậu thư 18/12</p>
+                <p><strong>Câu 2:</strong> Việt Bắc 1947 phá sản chiến lược nào của Pháp?<br><strong>A. "Đánh nhanh, thắng nhanh" ✅</strong> &nbsp; B. "Đánh lâu dài" &nbsp; C. "Dùng người Việt đánh người Việt" &nbsp; D. "Phòng ngự cứ điểm"</p>
+                <p><strong>Câu 3:</strong> Mục đích chiến lược Biên giới 1950?<br>A. Giải phóng đồng bằng Bắc Bộ &nbsp; B. Buộc Pháp đàm phán &nbsp; C. Phá Kế hoạch Na-va &nbsp; <strong>D. Khai thông biên giới Việt – Trung ✅</strong></p>
+                <p><strong>Câu 4:</strong> Cốt lõi bước 1 Kế hoạch Na-va?<br>A. Xây Điện Biên Phủ thành tập đoàn &nbsp; <strong>B. Tập trung binh lực, xây đội quân cơ động mạnh ✅</strong> &nbsp; C. Tấn công Việt Bắc &nbsp; D. Phong tỏa biên giới</p>
+                <p><strong>Câu 5:</strong> Quyết định lịch sử của Đại tướng Võ Nguyên Giáp tại Điện Biên Phủ?<br>A. Du kích → vận động &nbsp; <strong>B. "Đánh nhanh" → "Đánh chắc, tiến chắc" ✅</strong> &nbsp; C. Mở mặt trận ngoại giao &nbsp; D. Phòng ngự → tiến công</p>
+            </div>
+        </div>
+        <div class="panel" data-g="t3">
+            <div class="pbox">
+                <p>Đóng vai một giáo viên Lịch sử giàu kinh nghiệm biên soạn đề thi. Hãy thiết kế một bộ câu hỏi ôn tập về chủ đề "Việt Nam giai đoạn 1945-1954" bao gồm:</p>
+                <ul>
+                    <li>5 câu hỏi trắc nghiệm: Bao phủ các sự kiện chính (Cách mạng tháng Tám, Lời kêu gọi toàn quốc kháng chiến, Chiến dịch Điện Biên Phủ). 4 đáp án, chỉ ra đáp án đúng kèm <strong>giải thích chi tiết lý do tại sao đúng và tại sao các phương án kia sai</strong>.</li>
+                    <li>2 câu hỏi tự luận ngắn: Đòi hỏi tư duy phân tích, không hỏi các câu học vẹt ngày tháng.</li>
+                </ul>
+            </div>
+            <div class="ai-res">
+                <p><em>Với tư cách giáo viên Lịch sử, bộ câu hỏi này được thiết kế theo hướng phát triển năng lực tư duy, giảm thiểu học vẹt.</em></p>
+                <h5>🎯 Câu 1: Khó khăn lớn nhất sau CM tháng Tám?</h5>
+                <p>Đáp án: <strong>C. Thế lực ngoại xâm và nội phản</strong>. Lý do: Hơn 30 vạn quân ngoại quốc tràn vào với mục tiêu tiêu diệt chính quyền non trẻ – đe dọa trực tiếp đến độc lập, chủ quyền. Nạn đói (A), nạn dốt (B), kiệt quệ tài chính (D) là khó khăn lớn nhưng không trực tiếp xóa sổ nền độc lập.</p>
+                <h5>🎯 Câu 2: "Giọt nước tràn ly" buộc phát động kháng chiến?</h5>
+                <p>Đáp án: <strong>D. Tối hậu thư 18/12/1946</strong> đòi giao quyền kiểm soát Thủ đô. Nếu chấp nhận = mất nước mà không cần chiến đấu. Các sự kiện A, B, C là leo thang nhưng ta vẫn cố ngoại giao; chỉ đến Tối hậu thư, con đường đàm phán mới khép lại.</p>
+                <h5>🎯 Câu 3: Điểm khác biệt Biên giới 1950 vs Việt Bắc 1947?</h5>
+                <p>Đáp án: <strong>C. Khai thông liên lạc quốc tế</strong>. Việt Bắc 1947 là phản công/phòng ngự, còn Biên giới 1950 là ta <strong>chủ động tiến công</strong> để mở cửa biên giới Việt-Trung.</p>
+                <h5>🎯 Câu 4: Mục đích xây Điện Biên Phủ thành tập đoàn cứ điểm?</h5>
+                <p>Đáp án: <strong>B. Làm "cái cối xay thịt"</strong> thu hút và nghiền nát chủ lực Việt Minh. Na-va tự tin với hỏa lực áp đảo. ĐBPhủ ở Tây Bắc, không nhằm tấn công Việt Bắc (A). Đường mòn HCM (D) thuộc giai đoạn chống Mỹ.</p>
+                <h5>🎯 Câu 5: Cơ sở đổi phương châm "đánh chắc, tiến chắc"?</h5>
+                <p>Đáp án: <strong>B. Địch đã tăng viện, phòng ngự kiên cố</strong>. Pháp kịp xây hầm ngầm, bãi mìn dày đặc. Đánh nhanh lúc này là "nướng quân". Quyết định của Đại tướng là sự đánh giá khách quan và bản lĩnh.</p>
+                <div class="note">
+                    <h6>✍️ Tự luận 1 (So sánh)</h6>
+                    <p>Phân tích sự khác biệt vị thế ngoại giao của VN khi ký Hiệp định Sơ bộ (1946 – thế yếu, nhượng bộ câu giờ) với Hiệp định Genève (1954 – thế mạnh, người chiến thắng). Quy luật: "Thực lực là cái chiêng, ngoại giao là cái tiếng".</p>
+                </div>
+                <div class="note" style="margin-top:10px">
+                    <h6>✍️ Tự luận 2 (Ý nghĩa thời đại)</h6>
+                    <p>Làm sáng tỏ: "Điện Biên Phủ là tiếng chuông báo tử cho chủ nghĩa thực dân cũ trên toàn thế giới". Lần đầu tiên quân đội thuộc địa đánh bại đế quốc → cổ vũ phong trào giải phóng Á-Phi-Mỹ Latinh.</p>
+                </div>
+            </div>
+        </div>
+        <div class="tw">
+            <table><thead><tr><th>Tiêu chí</th><th>Prompt Cơ bản</th><th>Prompt Cải tiến</th><th>Prompt Nâng cao</th></tr></thead>
+            <tbody>
+                <tr><td>Chất lượng</td><td>Câu hỏi lẫn lộn, quá dễ.</td><td>Cấu trúc trắc nghiệm chuẩn, chỉ hỏi và đáp án.</td><td>Đa dạng (Trắc nghiệm + Tự luận bậc cao).</td></tr>
+                <tr><td>Hỗ trợ học</td><td>Thấp, chỉ kiểm tra trí nhớ ngắn hạn.</td><td>Trung bình, dò bài nhanh.</td><td>Rất cao, giải thích đáp án giúp SV học lại khi sai.</td></tr>
+                <tr><td>Khác biệt cốt lõi</td><td>AI trả lời ngẫu nhiên.</td><td>AI tạo đúng format trắc nghiệm.</td><td>Role-prompting + Constraint, output thành "gia sư" thực thụ.</td></tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section III -->
+<div class="container" id="s3">
+    <div class="sec-head rv">
+        <div class="sec-tag">III</div>
+        <h2 class="sec-title">Phân tích Hiệu quả Prompt</h2>
+        <p class="sec-desc">Mối liên hệ giữa cấu trúc Prompt và chất lượng đầu ra của AI</p>
+    </div>
+    <div class="a-grid">
+        <div class="a-card rv">
+            <h4><span class="n" style="background:var(--g3)">1</span> Vấn đề Prompt cơ bản</h4>
+            <p>Do thiếu ngữ cảnh và giới hạn, AI phải tự <span class="hl">"đoán" ý định</span> của người dùng. Kết quả là câu trả lời "chống cháy", chung chung và văn phong khô khan giống bách khoa toàn thư.</p>
+        </div>
+        <div class="a-card rv">
+            <h4><span class="n" style="background:var(--g2)">2</span> Sức mạnh Prompt cải tiến</h4>
+            <p>Khi thêm yếu tố <span class="hl">định dạng</span> (số chữ, số câu hỏi, ý chính), AI phân bổ trọng số (attention) vào đúng từ khóa. Chất lượng cải thiện rõ rệt, tránh <span class="hl">"ảo giác" (hallucination)</span>.</p>
+        </div>
+        <div class="a-card rv" style="grid-column:1/-1">
+            <h4><span class="n" style="background:var(--g1)">3</span> Sự vượt trội Prompt nâng cao</h4>
+            <div class="sp"><h5>🎭 Role-prompting (Đóng vai)</h5><p>Thiết lập "tone and voice" cho AI. Một "giáo sư" sẽ dùng từ ngữ khác với "người giải thích cho học sinh cấp 2", đóng khung tư duy vào dữ liệu chuyên môn chất lượng hơn.</p></div>
+            <div class="sp" style="margin-top:14px"><h5>📝 Few-shot / Ví dụ mẫu</h5><p>Rất hiệu quả trong tác vụ 2 (ví dụ cuốn sổ cái). AI dùng ví dụ làm điểm neo để mở rộng logic, câu trả lời không bị máy móc.</p></div>
+            <div class="sp" style="margin-top:14px"><h5>🧠 Chain-of-thought</h5><p>Yêu cầu AI giải thích "tại sao phương án kia sai" ép AI tìm kiếm mối liên hệ logic, sinh ra kiến thức sâu thay vì truy xuất một chiều.</p></div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- Section IV -->
+<div class="container" id="s4">
+    <div class="sec-head rv">
+        <div class="sec-tag">IV</div>
+        <h2 class="sec-title">Mô hình 4C – Viết Prompt Hiệu Quả</h2>
+        <p class="sec-desc">Bốn nguyên tắc vàng đúc kết từ thực nghiệm</p>
+    </div>
+    <div class="grid-4c">
+        <div class="mc rv"><div class="big">C</div><h4>🌍 Context <span>(Bối cảnh)</span></h4><p>Luôn xác định AI là ai và đối tượng đọc là ai.</p><div class="tip-box"><i class="fas fa-lightbulb"></i><span>Công thức: <code style="color:var(--a2)">Đóng vai là [Chuyên gia X], hãy viết cho [Đối tượng Y]...</code></span></div></div>
+        <div class="mc rv"><div class="big">C</div><h4>🎯 Clear Objective <span>(Mục tiêu)</span></h4><p>Xác định chính xác tác vụ: Tóm tắt, Giải thích, So sánh.</p><div class="tip-box"><i class="fas fa-lightbulb"></i><span>Dùng <strong>động từ mạnh</strong> ở đầu câu lệnh.</span></div></div>
+        <div class="mc rv"><div class="big">C</div><h4>📏 Constraints <span>(Ràng buộc)</span></h4><p>Giới hạn không gian sáng tạo của AI để tránh lan man.</p><div class="tip-box"><i class="fas fa-lightbulb"></i><span>Định lượng rõ: số chữ, định dạng (bảng, bullet points), những gì <em>không được</em> đưa vào.</span></div></div>
+        <div class="mc rv"><div class="big">C</div><h4>💡 Clues/Examples <span>(Ví dụ)</span></h4><p>Cung cấp cho AI một mẫu hoặc bước tư duy ban đầu.</p><div class="tip-box"><i class="fas fa-lightbulb"></i><span>Đưa 1 ví dụ output mong muốn, AI sẽ copy cấu trúc đó chính xác đến <strong>99%</strong>.</span></div></div>
+    </div>
+    <div class="conclusion rv">
+        <p><strong>Kết luận:</strong> Prompt Engineering không chỉ là việc ra lệnh cho máy móc, mà là <strong>quá trình tư duy rành mạch, phân rã vấn đề</strong> của chính người học. Khi ta biết cách đặt một câu hỏi đủ sâu cho AI, bản thân ta cũng đã hiểu được một nửa bản chất của kiến thức đó.</p>
+    </div>
+</div>
+
+<footer><p>© 2026 Nguyễn Tuấn Thành – MSSV: 25112107 · Prompt Engineering Report</p></footer>
+
+<script>
+// Tab System
+function sw(g,i,btn){
+    const ps=document.querySelectorAll(`.panel[data-g="${g}"]`);
+    const ts=btn.parentElement.querySelectorAll('.tab');
+    ts.forEach(t=>t.classList.remove('on'));
+    ps.forEach(p=>p.classList.remove('on'));
+    btn.classList.add('on');ps[i].classList.add('on');
+}
+
+// Nav shrink + active link
+const nav=document.getElementById('nav');
+const secs=document.querySelectorAll('[id^="s"],#hero');
+const links=document.querySelectorAll('.nav-menu a');
+window.addEventListener('scroll',()=>{
+    nav.classList.toggle('shrink',scrollY>60);
+    // Progress bar
+    const h=document.documentElement.scrollHeight-innerHeight;
+    document.getElementById('pbar').style.width=(scrollY/h*100)+'%';
+    // Active link
+    let cur='';
+    secs.forEach(s=>{if(scrollY>=s.offsetTop-250)cur=s.id});
+    links.forEach(a=>{a.classList.remove('on');if(a.getAttribute('href')==='#'+cur)a.classList.add('on')});
+});
+
+// Reveal on scroll
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Particles
+(function(){
+    const c=document.getElementById('particles'),x=c.getContext('2d');
+    let w,h,pts=[];
+    function resize(){w=c.width=innerWidth;h=c.height=innerHeight}
+    resize();window.addEventListener('resize',resize);
+    for(let i=0;i<60;i++)pts.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.5+.5,dx:(Math.random()-.5)*.3,dy:(Math.random()-.5)*.3,o:Math.random()*.3+.1});
+    function draw(){
+        x.clearRect(0,0,w,h);
+        pts.forEach(p=>{
+            p.x+=p.dx;p.y+=p.dy;
+            if(p.x<0)p.x=w;if(p.x>w)p.x=0;if(p.y<0)p.y=h;if(p.y>h)p.y=0;
+            x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);
+            x.fillStyle=`rgba(124,106,239,${p.o})`;x.fill();
+        });
+        // Lines
+        for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+            const d=Math.hypot(pts[i].x-pts[j].x,pts[i].y-pts[j].y);
+            if(d<120){x.beginPath();x.moveTo(pts[i].x,pts[i].y);x.lineTo(pts[j].x,pts[j].y);
+            x.strokeStyle=`rgba(124,106,239,${.04*(1-d/120)})`;x.stroke()}
+        }
+        requestAnimationFrame(draw);
+    }
+    draw();
+})();
+</script>
+</body>
+</html>
