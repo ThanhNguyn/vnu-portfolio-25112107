@@ -595,7 +595,7 @@ export function CodeExplorer({
 
                   {/* Code Container */}
                   <div className="flex-1 overflow-x-auto">
-                    <pre className="m-0 p-0 overflow-visible bg-transparent leading-5">
+                    <pre className="m-0 p-0 overflow-visible bg-transparent leading-5" style={{ margin: 0, padding: 0 }}>
                       <code
                         ref={codeRef}
                         className={`language-${activeLanguage} text-xs leading-5 block w-full whitespace-pre`}
